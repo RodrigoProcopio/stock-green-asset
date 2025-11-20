@@ -6,16 +6,17 @@ export function Contact() {
       id="contact"
       className="relative overflow-hidden border-t border-white/10 bg-black py-24 text-white scroll-mt-24"
     >
-
-      {/* 🎥 Vídeo de fundo */}
+      {/* 🎥 Vídeo de fundo (WEBM) */}
       <video
-        src="/videos/solutions.mp4"
         autoPlay
         muted
         loop
         playsInline
+        preload="auto"
         className="absolute inset-0 h-full w-full object-cover opacity-30"
-      />
+      >
+        <source src="/videos/solutions.webm" type="video/webm" />
+      </video>
 
       {/* 🔷 Camada de overlay para escurecer o vídeo */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90" />
@@ -29,7 +30,6 @@ export function Contact() {
       {/* CONTEÚDO */}
       <div className="relative mx-auto max-w-6xl px-4 md:px-6">
         <div className="grid gap-16 md:grid-cols-2 md:items-start">
-
           {/* 🔹 ESQUERDA: Informações */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300/80">
@@ -45,13 +45,14 @@ export function Contact() {
             </p>
 
             <div className="mt-6 grid gap-4 text-sm text-white/70">
-
               {/* Email Brasil */}
               <div>
-                <p className="text-xs uppercase tracking-[0.22em] text-white/50">E-mail Brasil</p>
+                <p className="text-xs uppercase tracking-[0.22em] text-white/50">
+                  E-mail Brasil
+                </p>
                 <a
                   href="mailto:contato@stockcapital.com.br"
-                  className="mt-1 inline-block text-sm text-emerald-300 hover:text-emerald-200 transition"
+                  className="mt-1 inline-block text-sm text-emerald-300 transition hover:text-emerald-200"
                 >
                   contato@stockcapital.com.br
                 </a>
@@ -59,54 +60,55 @@ export function Contact() {
 
               {/* Email Argentina */}
               <div>
-                <p className="text-xs uppercase tracking-[0.22em] text-white/50">E-mail Argentina</p>
+                <p className="text-xs uppercase tracking-[0.22em] text-white/50">
+                  E-mail Argentina
+                </p>
                 <a
                   href="mailto:contato@stockcapital.com.br"
-                  className="mt-1 inline-block text-sm text-emerald-300 hover:text-emerald-200 transition"
+                  className="mt-1 inline-block text-sm text-emerald-300 transition hover:text-emerald-200"
                 >
                   contato@stockcapital.com.br
                 </a>
               </div>
 
-              {/* 🔗 Canais Institucionais (clicáveis) */}
+              {/* 🔗 Canais Institucionais */}
               <div>
                 <p className="text-xs uppercase tracking-[0.22em] text-white/50">
                   Canais institucionais
                 </p>
 
                 <div className="mt-1 flex flex-wrap items-center gap-2 text-xs">
-
-                  <a href="#" className="text-white/70 hover:text-emerald-300 transition">
+                  <a href="#" className="text-white/70 transition hover:text-emerald-300">
                     IR Portal
                   </a>
                   <span className="text-white/40">·</span>
 
-                  <a href="#" className="text-white/70 hover:text-emerald-300 transition">
+                  <a href="#" className="text-white/70 transition hover:text-emerald-300">
                     Canal Confidencial
                   </a>
                   <span className="text-white/40">·</span>
 
-                  <a href="#" className="text-white/70 hover:text-emerald-300 transition">
+                  <a href="#" className="text-white/70 transition hover:text-emerald-300">
                     Canal Ambiental
                   </a>
-
                 </div>
-  {/* 🌍 Logo Global Compact — centralizada e maior */}
-  <div className="mt-10 flex justify-left">
-    <img
-      src="/images/Global-Compact.png"
-      alt="UN Global Compact"
-      className="h-54 w-auto opacity-90 hover:opacity-100 transition"
-    />
-  </div>
-              </div>
 
+                {/* 🌍 Logo Global Compact — agora em .webp */}
+                <div className="mt-10 flex justify-left">
+                  <img
+                    src="/images/Global-Compact.webp"
+                    alt="UN Global Compact"
+                    className="h-54 w-auto opacity-90 transition hover:opacity-100"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
           {/* 🔹 DIREITA: Formulário */}
           <motion.div
-            className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl h-fit shadow-lg shadow-black/30"
+            className="h-fit rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl shadow-lg shadow-black/30"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -117,7 +119,6 @@ export function Contact() {
             </p>
 
             <form className="mt-4 space-y-4">
-
               {/* Nome */}
               <div>
                 <label className="text-xs text-white/60">Nome</label>
@@ -171,7 +172,6 @@ export function Contact() {
               </p>
             </form>
           </motion.div>
-
         </div>
       </div>
     </section>

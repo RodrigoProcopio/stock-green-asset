@@ -17,15 +17,17 @@ export function Solutions() {
       id="solutions"
       className="relative overflow-hidden bg-black text-white"
     >
-      {/* 🎥 Vídeo de fundo */}
+      {/* 🎥 Vídeo de fundo otimizado (.webm) */}
       <video
-        src="/videos/solutions.mp4"
         autoPlay
         muted
         loop
         playsInline
+        preload="auto"
         className="absolute inset-0 h-full w-full object-cover opacity-40"
-      />
+      >
+        <source src="/videos/solutions.webm" type="video/webm" />
+      </video>
 
       {/* Overlay para contraste */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />

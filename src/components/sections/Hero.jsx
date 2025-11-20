@@ -17,8 +17,8 @@ export function Hero() {
           transition: {
             duration: 1.1,
             delay: i * 0.4,
-            ease: "easeOut"
-          }
+            ease: "easeOut",
+          },
         }));
 
         await new Promise((res) => setTimeout(res, 5000));
@@ -28,8 +28,8 @@ export function Hero() {
           y: 30,
           transition: {
             duration: 0.4,
-            ease: "easeIn"
-          }
+            ease: "easeIn",
+          },
         });
 
         await new Promise((res) => setTimeout(res, 800));
@@ -54,17 +54,24 @@ export function Hero() {
       id="home"
       className="relative min-h-screen overflow-hidden text-white scroll-mt-24"
     >
-      {/* Vídeo de fundo */}
+      {/* Vídeo otimizado (.webm) */}
       <div className="absolute inset-0">
         <video
-          src="/videos/hero-forest.mp4"
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
           className="h-full w-full object-cover"
-        />
+        >
+          <source
+            src="/videos/hero-forest.webm"
+            type="video/webm"
+          />
+        </video>
+
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
+
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-[-10%] top-[10%] h-72 w-72 rounded-full bg-emerald-400/12 blur-3xl" />
           <div className="absolute right-[-5%] bottom-[5%] h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
@@ -95,7 +102,7 @@ export function Hero() {
             />
           </div>
 
-          {/* Título – animado em loop */}
+          {/* Título com animação */}
           <h1 className="text-4xl font-semibold leading-tight md:text-7xl md:leading-[1.15]">
             <motion.span
               className="block text-white"

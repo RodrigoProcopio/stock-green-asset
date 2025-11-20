@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 export function Sustainability() {
   const { t } = useTranslation();
 
-  // Scroll simples para o elemento #contact
   const handleScrollToContact = useCallback(() => {
     const contactElement = document.getElementById("contact");
     if (contactElement) {
@@ -23,11 +22,12 @@ export function Sustainability() {
         <div className="absolute right-8 top-10 h-52 w-52 rounded-full bg-emerald-400/10 blur-3xl" />
       </div>
 
-      {/* Watermarks ONU múltiplas */}
+      {/* Watermarks ONU múltiplas (agora usando .webp) */}
       <div className="pointer-events-none absolute inset-0 hidden md:block z-0">
+        
         {/* Logo 1 */}
         <motion.img
-          src="/images/ungc-logo.png"
+          src="/images/ungc-logo.webp"
           alt="UN Global Compact"
           className="absolute left-1/2 top-1/2 w-[520px] -translate-x-1/2 -translate-y-1/2 opacity-[0.16]"
           initial={{ scale: 0.6, opacity: 0, x: 300, y: 0 }}
@@ -43,7 +43,7 @@ export function Sustainability() {
 
         {/* Logo 2 */}
         <motion.img
-          src="/images/ungc-logo.png"
+          src="/images/ungc-logo.webp"
           alt="UN Global Compact"
           className="absolute left-1/2 top-1/2 w-[420px] -translate-x-1/2 -translate-y-1/2 opacity-[0.12]"
           initial={{ scale: 0.5, opacity: 0, x: 0, y: -140 }}
@@ -59,7 +59,7 @@ export function Sustainability() {
 
         {/* Logo 3 */}
         <motion.img
-          src="/images/ungc-logo.png"
+          src="/images/ungc-logo.webp"
           alt="UN Global Compact"
           className="absolute left-1/2 top-1/2 w-[340px] -translate-x-1/2 -translate-y-1/2 opacity-[0.1]"
           initial={{ scale: 0.45, opacity: 0, x: -320, y: 120 }}
@@ -77,7 +77,7 @@ export function Sustainability() {
       {/* Conteúdo principal */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 md:px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-14">
-
+          
           {/* Coluna esquerda */}
           <motion.div
             className="md:w-1/2"
@@ -123,7 +123,7 @@ export function Sustainability() {
             </button>
           </motion.div>
 
-          {/* CTA à direita, MAS conteúdo centralizado */}
+          {/* CTA à direita */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
