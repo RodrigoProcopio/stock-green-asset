@@ -1,0 +1,201 @@
+{
+  "hero": {
+    "line1": "Moldeando el Futuro",
+    "line2": "y Transformando el Mundo",
+    "line3": "a tu Alrededor.",
+    "ctaTalkToTeam": "Habla con el Equipo",
+    "ctaSolutions": "Nuestras Soluciones",
+    "ctaSustainability": "Sostenibilidad",
+    "ctaProjects": "Proyectos Sociales"
+  },
+
+  "navbar": {
+    "navigation": "Menú",
+    "ourFocus": "Nuestro Enfoque",
+    "close": "Cerrar Navegación",
+    "links": {
+      "home": "Inicio",
+      "about": "Sobre Nosotros",
+      "solutions": "Soluciones",
+      "projects": "Proyectos",
+      "sustainability": "Sostenibilidad",
+      "team": "Equipo",
+      "contact": "Contacto"
+    },
+    "focus": {
+      "solutions": {
+        "title": "Soluciones",
+        "description": "Créditos de carbono, Protocolo GHG y ESG para empresas que lideran la transición hacia una economía baja en carbono."
+      },
+      "projects": {
+        "title": "Proyectos",
+        "description": "Proyectos ambientales con trazabilidad, monitoreo en tiempo real y total transparencia en la generación de créditos de carbono."
+      },
+      "sustainability": {
+        "title": "Sostenibilidad",
+        "description": "Pacto Global de la ONU, ODS y principios ICMA integrados a la estrategia financiera, la gobernanza y el impacto socioambiental."
+      }
+    },
+    "about": {
+      "badge": "Quiénes Somos",
+      "headline": "Somos una compañía multinacional con operaciones en Brasil y Argentina, que actúa en la economía baja en carbono para conectar proyectos sostenibles, preservación ambiental y operaciones financieras. Nuestro compromiso es generar un impacto positivo para las próximas generaciones mediante soluciones transparentes, seguras e innovadoras que impulsen un futuro más verde y resiliente.",
+      "mission": {
+        "title": "Misión",
+        "text": "Ofrecer proyectos de economía baja en carbono que generen riqueza de forma sostenible, a través de soluciones financieras transparentes y seguras, capaces de conectar empresas e inversores con oportunidades de impacto real."
+      },
+      "vision": {
+        "title": "Visión",
+        "text": "Alcanzar la excelencia global en el mercado financiero para 2030, entregando soluciones innovadoras y sostenibles que consoliden a Stock Capital como referencia en finanzas verdes y gobernanza ESG."
+      },
+      "values": {
+        "title": "Valores",
+        "text": "Ética, Lealtad, Transparencia, Excelencia, Seguridad e Innovación orientan nuestra gobernanza y todas las relaciones de largo plazo que construimos."
+      }
+    }
+  },
+
+  "solutions": {
+    "badge": "Nuestras Soluciones",
+    "heading": {
+      "strong": "Nuestras",
+      "light": "Soluciones"
+    },
+    "carbon": {
+      "titleStrong": "Créditos",
+      "titleLight": "de Carbono",
+      "item1": "Generación y comercialización de créditos de carbono certificados",
+      "item2": "Proyectos desarrollados bajo los estándares VCS y CCB Verra",
+      "item3": "Proyectos validados y con trazabilidad en conformidad con normas nacionales e internacionales",
+      "item4": "Proyectos auditados y verificados por auditoría independiente",
+      "item5": "Soluciones de compensación personalizadas, adaptadas a las necesidades de los clientes"
+    },
+    "ghg": {
+      "titleStrong": "Inventario de Gases de",
+      "titleLight": "Efecto Invernadero (GHG Protocol)",
+      "item1": "Diagnóstico completo de las emisiones (Alcances 1, 2 y 3)",
+      "item2": "Aplicación del GHG Protocol con precisión técnica",
+      "item3": "Apoyo en la definición de metas climáticas",
+      "item4": "Informes compatibles con los requisitos regulatorios y voluntarios"
+    },
+    "esg": {
+      "titleStrong": "Gobernanza",
+      "titleLight": "ESG",
+      "item1": "Sostenibilidad con estrategia",
+      "item2": "Estructuración de políticas e indicadores ESG",
+      "item3": "Integración de prácticas ESG al modelo de negocio",
+      "item4": "Apoyo a la toma de decisiones con foco en riesgos y oportunidades"
+    },
+    "cta": {
+      "small": "Agenda una reunión",
+      "main": "Habla con nuestro equipo"
+    }
+  },
+
+  "projects": {
+    "sectionEyebrow": "Nuestros Proyectos",
+    "statusLine": "EN VALIDACIÓN    PROYECTO VERRA ID: {{id}}",
+    "projectName": "Stock Carbon",
+    "projectSubtitle": "Mazuay REDD+",
+    "card": {
+      "tag": "Stock Carbon – Mazuay REDD+",
+      "title": "Sobre el Proyecto",
+      "paragraph1": "El Proyecto Stock Carbon Mazuay REDD+ busca reducir las emisiones de carbono provenientes de la deforestación y la degradación forestal, promoviendo la conservación y la gestión sostenible de los bosques en áreas críticas de preservación.",
+      "paragraph2": "La iniciativa contribuye al cumplimiento de las metas globales de reducción de gases de efecto invernadero (GEI), genera beneficios ambientales y sociales para las comunidades locales y preserva la biodiversidad de ecosistemas amenazados."
+    },
+    "cta": {
+      "kicker": "Saber más",
+      "main": "Conozca el Proyecto"
+    }
+  },
+
+  "sustainability": {
+    "badge": "Sostenibilidad",
+    "heading": {
+      "line1": "Sostenibilidad",
+      "line2": "en Stock Capital"
+    },
+    "cta": {
+      "kicker": "Saber más",
+      "main": "Sostenibilidad"
+    },
+    "buttons": {
+      "manifesto": "Acceder al Manifiesto",
+      "view": "Ver"
+    },
+    "intro": {
+      "p1": "Nos comprometemos públicamente con la sostenibilidad al adherirnos al Pacto Global de la ONU, incorporando prácticas avanzadas de responsabilidad social y ambiental alineadas con los ODS.",
+      "p2": "Este compromiso guía nuestras decisiones y refleja nuestra determinación de construir un impacto real y duradero para la sociedad y el medio ambiente."
+    },
+    "principles": {
+      "humanRights": {
+        "title": "Derechos Humanos",
+        "items": [
+          "Principio 1: Las empresas deben apoyar y respetar la protección de los derechos humanos proclamados internacionalmente;",
+          "Principio 2: Asegurarse de no ser cómplices de abusos de los derechos humanos."
+        ]
+      },
+      "labour": {
+        "title": "Trabajo",
+        "items": [
+          "Principio 3: Las empresas deben defender la libertad de asociación y el reconocimiento efectivo del derecho a la negociación colectiva;",
+          "Principio 4: La eliminación de todas las formas de trabajo forzoso y obligatorio;",
+          "Principio 5: La abolición efectiva del trabajo infantil; y",
+          "Principio 6: La eliminación de la discriminación en relación con el empleo y la ocupación."
+        ]
+      },
+      "environment": {
+        "title": "Medio Ambiente",
+        "items": [
+          "Principio 7: Las empresas deben apoyar un enfoque preventivo frente a los desafíos ambientales;",
+          "Principio 8: Llevar a cabo iniciativas que promuevan una mayor responsabilidad ambiental; y",
+          "Principio 9: Fomentar el desarrollo y la difusión de tecnologías respetuosas con el medio ambiente."
+        ]
+      },
+      "anticorruption": {
+        "title": "Anticorrupción",
+        "items": [
+          "Principio 10: Las empresas deben trabajar contra la corrupción en todas sus formas, incluida la extorsión y el soborno."
+        ]
+      }
+    }
+  },
+
+  "governance": {
+    "badge": "Gobernanza",
+    "heading": {
+      "line1": "Creemos que el mercado de capitales",
+      "line2": "puede ser transparente, accesible y sostenible."
+    },
+    "buttonIr": "Acceder al IR Portal",
+    "body": {
+      "p1": "Nuestra filosofía de gobernanza parte de la convicción de que la conexión entre el capital y los proyectos sostenibles debe darse con reglas claras, información confiable y procesos robustos. Por eso estructuramos nuestros flujos de decisión, compliance y gestión de riesgo para garantizar que cada operación refleje transparencia, seguridad y alineación con la economía baja en carbono.",
+      "p2": "Actuando en Brasil y Argentina, seguimos las mejores prácticas globales del mercado financiero y los principios ESG, alineados con la ética, la lealtad, la transparencia, la excelencia y la innovación. Nuestra gobernanza integra la actuación del consejo, de la dirección ejecutiva y de estructuras independientes de monitoreo, garantizando responsabilidad en cada etapa de la cadena de valor.",
+      "p3": "Al hacer el mercado de capitales más accesible y sostenible, ofrecemos a los inversionistas informes claros, canales dedicados de relacionamiento y un compromiso continuo con la integridad. El IR Portal es uno de los pilares de este camino, reuniendo información estratégica para apoyar decisiones confiables y de largo plazo."
+    }
+  },
+
+  "team": {
+    "badge": "Equipo",
+    "heading": {
+      "strong": "Nuestro",
+      "light": "Equipo"
+    },
+    "coreSection": "Equipo Ejecutivo",
+    "advisorySection": "Advisory Board",
+
+    "core": {
+      "augusto": { "role": "Chairman & CEO" },
+      "axel": { "role": "COO" },
+      "igorVille": { "role": "Compliance Officer" },
+      "igorDudeque": { "role": "Chief Investment Officer" }
+    },
+
+    "advisory": {
+      "celso": { "role": "Advisor" },
+      "patrick": { "role": "Advisor" },
+      "alberto": { "role": "Advisor" },
+      "kaline": { "role": "Advisor" },
+      "ortiz": { "role": "Advisor" }
+    }
+  }
+}
