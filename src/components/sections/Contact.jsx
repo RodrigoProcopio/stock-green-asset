@@ -12,6 +12,7 @@ export function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("⌛ Enviando formulário...");
     setIsSending(true);
     setStatus(null);
 
