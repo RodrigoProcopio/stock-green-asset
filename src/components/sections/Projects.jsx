@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export function Projects() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
-  const handleScrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+  const handleGoToProject = () => {
+    navigate("/projects/mazuay-redd"); // rota da nova página
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -50,7 +50,7 @@ export function Projects() {
           className="absolute -bottom-40 -right-40 w-[720px] h-[720px] bg-cyan-500/45 rounded-full blur-[150px]"
         />
 
-        {/* Glow central – respirando no meio da tela */}
+        {/* Glow central */}
         <motion.div
           initial={{ opacity: 0.1, scale: 1 }}
           animate={{
@@ -75,7 +75,6 @@ export function Projects() {
               {t("projects.sectionEyebrow")}
             </p>
 
-            {/* Texto da faixa de status */}
             <div className="mt-4">
               <p className="text-[0.7rem] font-medium uppercase tracking-[0.25em] text-white/40">
                 {t("projects.statusLine", { id: "5343" })}
@@ -106,12 +105,10 @@ export function Projects() {
                   {t("projects.card.tag")}
                 </p>
 
-                {/* Título do card */}
                 <h3 className="mt-2 text-lg font-semibold">
                   {t("projects.card.title")}
                 </h3>
 
-                {/* Texto do card */}
                 <p className="mt-2 text-sm text-white/70">
                   {t("projects.card.paragraph1")}
                 </p>
@@ -122,11 +119,10 @@ export function Projects() {
             </motion.div>
           </div>
 
-          {/* Coluna direita reservada para futuros conteúdos */}
           <div />
         </div>
 
-        {/* CTA único ao final */}
+        {/* CTA: Conheça o Projeto → página de detalhes */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -135,7 +131,7 @@ export function Projects() {
           className="mt-12 flex justify-center"
         >
           <button
-            onClick={handleScrollToContact}
+            onClick={handleGoToProject}
             className="group inline-flex flex-col gap-3 items-center cursor-pointer"
           >
             <span className="text-xs font-medium uppercase tracking-[0.26em] text-white/70">

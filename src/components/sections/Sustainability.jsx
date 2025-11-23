@@ -1,16 +1,16 @@
 import { useCallback } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export function Sustainability() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
-  const handleScrollToContact = useCallback(() => {
-    const contactElement = document.getElementById("contact");
-    if (contactElement) {
-      contactElement.scrollIntoView({ behavior: "smooth" });
-    }
-  }, []);
+  // CTA da direita: ir para a página SustainabilityPage.jsx
+  const handleGoToSustainabilityPage = useCallback(() => {
+    navigate("/sustainability"); // ajuste a rota se for diferente
+  }, [navigate]);
 
   return (
     <section
@@ -22,12 +22,11 @@ export function Sustainability() {
         <div className="absolute right-8 top-10 h-52 w-52 rounded-full bg-emerald-400/10 blur-3xl" />
       </div>
 
-      {/* Watermarks ONU múltiplas (agora usando .webp) */}
+      {/* Watermarks ONU múltiplas */}
       <div className="pointer-events-none absolute inset-0 hidden md:block z-0">
-        
         {/* Logo 1 */}
         <motion.img
-          src="/images/ungc-logo.webp"
+          src="/images/Logos/ungc-logo.webp"
           alt="UN Global Compact"
           className="absolute left-1/2 top-1/2 w-[520px] -translate-x-1/2 -translate-y-1/2 opacity-[0.16]"
           initial={{ scale: 0.6, opacity: 0, x: 300, y: 0 }}
@@ -43,7 +42,7 @@ export function Sustainability() {
 
         {/* Logo 2 */}
         <motion.img
-          src="/images/ungc-logo.webp"
+          src="/images/Logos/ungc-logo.webp"
           alt="UN Global Compact"
           className="absolute left-1/2 top-1/2 w-[420px] -translate-x-1/2 -translate-y-1/2 opacity-[0.12]"
           initial={{ scale: 0.5, opacity: 0, x: 0, y: -140 }}
@@ -59,7 +58,7 @@ export function Sustainability() {
 
         {/* Logo 3 */}
         <motion.img
-          src="/images/ungc-logo.webp"
+          src="/images/Logos/ungc-logo.webp"
           alt="UN Global Compact"
           className="absolute left-1/2 top-1/2 w-[340px] -translate-x-1/2 -translate-y-1/2 opacity-[0.1]"
           initial={{ scale: 0.45, opacity: 0, x: -320, y: 120 }}
@@ -77,7 +76,6 @@ export function Sustainability() {
       {/* Conteúdo principal */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 md:px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-14">
-          
           {/* Coluna esquerda */}
           <motion.div
             className="md:w-1/2"
@@ -98,13 +96,15 @@ export function Sustainability() {
               </span>
             </h2>
 
-            {/* Botão Manifesto */}
-            <button
-              type="button"
+            {/* Botão Manifesto – link externo SDGs */}
+            <a
+              href="https://sdgs.un.org/partnerships/stock-capital-holding-ltda3"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 inline-flex items-center justify-center rounded-full border border-emerald-400/60 px-6 py-2 text-xs font-medium uppercase tracking-[0.22em] text-white/90 ring-1 ring-emerald-500/40 shadow-[0_0_18px_rgba(16,185,129,0.45)] transition-all duration-300 hover:bg-emerald-400 hover:text-black hover:shadow-[0_0_28px_rgba(16,185,129,0.85)]"
             >
               {t("sustainability.buttons.manifesto")}
-            </button>
+            </a>
 
             <p className="mt-8 text-sm text-white/70 md:text-base">
               {t("sustainability.intro.p1")}
@@ -114,16 +114,18 @@ export function Sustainability() {
               {t("sustainability.intro.p2")}
             </p>
 
-            {/* Botão Ver */}
-            <button
-              type="button"
+            {/* Botão Ver – link externo UN Global Compact */}
+            <a
+              href="https://unglobalcompact.org/what-is-gc/participants/161633"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center justify-center rounded-full border border-emerald-400/60 px-6 py-2 text-xs font-medium uppercase tracking-[0.22em] text-white/90 ring-1 ring-emerald-500/40 shadow-[0_0_18px_rgba(16,185,129,0.45)] transition-all duration-300 hover:bg-emerald-400 hover:text-black hover:shadow-[0_0_28px_rgba(16,185,129,0.85)]"
             >
               {t("sustainability.buttons.view")}
-            </button>
+            </a>
           </motion.div>
 
-          {/* CTA à direita */}
+          {/* CTA à direita – ir para página SustainabilityPage */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -132,7 +134,7 @@ export function Sustainability() {
             className="md:w-1/2 flex justify-end"
           >
             <button
-              onClick={handleScrollToContact}
+              onClick={handleGoToSustainabilityPage}
               className="group inline-flex flex-col gap-3 items-center text-center cursor-pointer"
             >
               <span className="text-xs font-medium uppercase tracking-[0.26em] text-white/70">
@@ -153,7 +155,6 @@ export function Sustainability() {
               </div>
             </button>
           </motion.div>
-
         </div>
       </div>
     </section>

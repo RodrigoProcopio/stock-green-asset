@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export function Hero() {
   const { t } = useTranslation();
   const titleControls = useAnimation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     let isCancelled = false;
@@ -147,11 +149,14 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
+            {/* Botão Crédito de Carbono com brilho */}
             <motion.button
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               className="
+                relative
                 inline-flex items-center justify-center
+                overflow-hidden
                 rounded-full border border-emerald-400/80
                 bg-emerald-400/10
                 px-8 py-3
@@ -159,16 +164,47 @@ export function Hero() {
                 text-emerald-100
                 hover:bg-emerald-400 hover:text-black
                 transition-all
-                shadow-[0_0_22px_rgba(16,185,129,0.45)]
+                shadow-[0_0_22px_rgba(16,185,129,0.6)]
                 whitespace-nowrap
               "
-              onClick={() => scrollTo("#contact")}
+              onClick={() => navigate('/projects/mazuay-redd')}
             >
-              {t("hero.ctaTalkToTeam")}
+              {/* Texto do botão */}
+              <span className="relative z-10">
+                {t('hero.ctaCarbonCredit')}
+              </span>
+
+              {/* Luz deslizando */}
+              <motion.span
+                aria-hidden="true"
+                className="
+                  pointer-events-none
+                  absolute inset-y-0
+                  left-[-20%]
+                  w-1/2
+                  bg-gradient-to-r from-transparent via-emerald-200/70 to-transparent
+                  opacity-0
+                "
+                animate={{
+                  x: ['-120%', '120%'],
+                  opacity: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 1.4,
+                  repeat: Infinity,
+                  repeatDelay: 2.0,
+                  ease: 'easeInOut',
+                }}
+              />
             </motion.button>
 
+            {/* Botão Nossas Soluções */}
             <motion.button
-              whileHover={{ scale: 1.03 }}
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 0 18px rgba(16,185,129,0.45)",
+                borderColor: "rgba(16,185,129,0.85)",
+              }}
               whileTap={{ scale: 0.97 }}
               className="
                 inline-flex items-center justify-center
@@ -177,17 +213,22 @@ export function Hero() {
                 px-8 py-3
                 text-xs font-semibold uppercase tracking-[0.22em]
                 text-white/85
-                hover:border-white/60 hover:bg-white/5 hover:text-white
+                hover:border-emerald-400/80 hover:bg-white/5 hover:text-white
                 transition-all backdrop-blur-sm
                 whitespace-nowrap
               "
-              onClick={() => scrollTo("#solutions")}
+              onClick={() => scrollTo('#solutions')}
             >
-              {t("hero.ctaSolutions")}
+              {t('hero.ctaSolutions')}
             </motion.button>
 
+            {/* Botão Sustentabilidade */}
             <motion.button
-              whileHover={{ scale: 1.03 }}
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 0 18px rgba(16,185,129,0.45)",
+                borderColor: "rgba(16,185,129,0.85)",
+              }}
               whileTap={{ scale: 0.97 }}
               className="
                 inline-flex items-center justify-center
@@ -196,33 +237,40 @@ export function Hero() {
                 px-8 py-3
                 text-xs font-semibold uppercase tracking-[0.22em]
                 text-white/85
-                hover:border-white/60 hover:bg-white/5 hover:text-white
+                hover:border-emerald-400/80 hover:bg-white/5 hover:text-white
                 transition-all backdrop-blur-sm
                 whitespace-nowrap
               "
-              onClick={() => scrollTo("#sustainability")}
+              onClick={() => scrollTo('#sustainability')}
             >
-              {t("hero.ctaSustainability")}
+              {t('hero.ctaSustainability')}
             </motion.button>
 
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="
-                inline-flex items-center justify-center
-                rounded-full border border-white/25
-                bg-black/30
-                px-8 py-3
-                text-xs font-semibold uppercase tracking-[0.22em]
-                text-white/85
-                hover:border-white/60 hover:bg-white/5 hover:text-white
-                transition-all backdrop-blur-sm
-                whitespace-nowrap
-              "
-              onClick={() => scrollTo("#projects")}
-            >
-              {t("hero.ctaProjects")}
-            </motion.button>
+            {/* Botão Projetos Sociais */}
+<motion.button
+  whileHover={{
+    scale: 1.03,
+    boxShadow: "0 0 18px rgba(16,185,129,0.45)",
+    borderColor: "rgba(16,185,129,0.85)",
+  }}
+  whileTap={{ scale: 0.97 }}
+  className="
+    inline-flex items-center justify-center
+    rounded-full border border-white/25
+    bg-black/30
+    px-8 py-3
+    text-xs font-semibold uppercase tracking-[0.22em]
+    text-white/85
+    hover:border-emerald-400/80 hover:bg-white/5 hover:text-white
+    transition-all backdrop-blur-sm
+    whitespace-nowrap
+  "
+  onClick={() => navigate('/social-projects')}
+>
+  {t('hero.ctaProjects')}
+</motion.button>
+
+
           </motion.div>
         </div>
       </div>

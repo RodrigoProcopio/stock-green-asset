@@ -3,16 +3,21 @@ import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import logoStock from "../../assets/logo-stock-capital.svg";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useNavigate, useLocation } from "react-router-dom";
 
 // Agora guardamos só as KEYS, e não o texto direto
 const navItems = [
-  { key: "navbar.links.home", href: "#home" },             // Hero
-  { key: "navbar.links.about", href: "#about" },           // About.jsx
-  { key: "navbar.links.solutions", href: "#solutions" },   // Solutions.jsx
-  { key: "navbar.links.projects", href: "#projects" },     // Projects.jsx
-  { key: "navbar.links.sustainability", href: "#sustainability" }, // Sustainability.jsx
-  { key: "navbar.links.team", href: "#team" },             // Team.jsx
-  { key: "navbar.links.contact", href: "#contact" },       // Contact.jsx
+  { key: "navbar.links.home", href: "#home" },
+  { key: "navbar.links.about", href: "#about" },
+  { key: "navbar.links.solutions", href: "#solutions" },
+  { key: "navbar.links.projects", href: "#projects" },
+  { key: "navbar.links.socialProjects", href: "/social-projects" },
+  { key: "navbar.links.sustainability", href: "#sustainability" },
+  { key: "navbar.links.governance", href: "#governance" },
+  { key: "navbar.links.team", href: "#team" },
+  { key: "navbar.links.advisoryBoard", href: "#advisory" },
+  { key: "navbar.links.partners", href: "#partners" },
+  { key: "navbar.links.contact", href: "#contact" },
 ];
 
 // Destaques da direita também em keys
@@ -25,12 +30,12 @@ const sectionHighlights = [
   {
     key: "navbar.focus.projects.title",
     descriptionKey: "navbar.focus.projects.description",
-    target: "#projects",
+    target: "/projects/mazuay-redd",
   },
   {
     key: "navbar.focus.sustainability.title",
     descriptionKey: "navbar.focus.sustainability.description",
-    target: "#sustainability",
+    target: "/sustainability",
   },
 ];
 
@@ -39,6 +44,8 @@ export function Navbar() {
 
   const logoTopControls = useAnimation();
   const logoBottomControls = useAnimation();
+  const navigate = useNavigate();
+  const location = useLocation(); 
 
   const { t } = useTranslation();
 
@@ -60,18 +67,33 @@ export function Navbar() {
 
   const handleNavClick = (href) => {
     setIsOpen(false);
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // Âncoras (#home, #about, etc.)
+    if (href.startsWith("#")) {
+      // Se NÃO estiver na home, navega para "/" com hash
+      if (location.pathname !== "/") {
+        navigate({
+          pathname: "/",
+          hash: href,
+        });
+      } else {
+        // Já está na home: apenas faz scroll suave
+        const el = document.querySelector(href);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+      return;
     }
+
+    // Rotas normais (ex: /social-projects)
+    navigate(href);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Destaques da direita usam a mesma navegação
   const handleHighlightClick = (target) => {
-    setIsOpen(false);
-    const el = document.querySelector(target);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    handleNavClick(target);
   };
 
   return (
@@ -146,41 +168,41 @@ export function Navbar() {
             transition={{ duration: 0.25 }}
           >
             {/* Seletor de idioma */}
-<div className="absolute right-16 top-4 md:right-24 md:top-9">
-  <LanguageSwitcher />
-</div>
+            <div className="absolute right-16 top-4 md:right-24 md:top-9">
+              <LanguageSwitcher />
+            </div>
 
-{/* Botão fechar */}
-<div className="absolute right-16 top-4 md:right-8 md:top-8">
-  <button
-    onClick={() => setIsOpen(false)}
-    aria-label="Fechar navegação"
-    className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/20 bg-black/70 hover:bg-white/10"
-  >
-    <span className="relative block h-4 w-4">
-      {/* traço 1 */}
-      <span
-        className="
-          absolute left-1/2 top-1/2
-          h-[1.5px] w-full
-          -translate-x-1/2 -translate-y-1/2
-          rotate-45
-          bg-white
-        "
-      />
-      {/* traço 2 */}
-      <span
-        className="
-          absolute left-1/2 top-1/2
-          h-[1.5px] w-full
-          -translate-x-1/2 -translate-y-1/2
-          -rotate-45
-          bg-white
-        "
-      />
-    </span>
-  </button>
-</div>
+            {/* Botão fechar */}
+            <div className="absolute right-16 top-4 md:right-8 md:top-8">
+              <button
+                onClick={() => setIsOpen(false)}
+                aria-label="Fechar navegação"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/20 bg-black/70 hover:bg-white/10"
+              >
+                <span className="relative block h-4 w-4">
+                  {/* traço 1 */}
+                  <span
+                    className="
+                      absolute left-1/2 top-1/2
+                      h-[1.5px] w-full
+                      -translate-x-1/2 -translate-y-1/2
+                      rotate-45
+                      bg-white
+                    "
+                  />
+                  {/* traço 2 */}
+                  <span
+                    className="
+                      absolute left-1/2 top-1/2
+                      h-[1.5px] w-full
+                      -translate-x-1/2 -translate-y-1/2
+                      -rotate-45
+                      bg-white
+                    "
+                  />
+                </span>
+              </button>
+            </div>
 
             {/* Conteúdo do overlay */}
             <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-10 pt-16 md:flex-row md:items-stretch md:gap-12 md:pt-24">
@@ -225,33 +247,39 @@ export function Navbar() {
                   ))}
                 </nav>
 
-               {/* Links inferiores */}
-<div className="mt-10 space-y-2 text-sm">
-  {[
-    { label: "IR Portal", url: "https://ri-portal.super.site/" },
-    { label: "Canal Confidencial", url: "https://app.pipefy.com/public/form/dirpZ0Km" },
-    { label: "Canal Ambiental", url: "https://app.pipefy.com/public/form/k2OJAxcz" },
-  ].map((item) => (
-    <a
-      key={item.label}
-      href={item.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="
-        block 
-        text-white/45 
-        transition-all 
-        duration-200 
-        hover:text-emerald-400 
-        hover:font-semibold
-        transform
-        hover:translate-x-1
-      "
-    >
-      {item.label}
-    </a>
-  ))}
-</div>
+                {/* Links inferiores */}
+                <div className="mt-10 space-y-2 text-sm">
+                  {[
+                    { label: "RI Portal", url: "https://ri-portal.super.site/" },
+                    {
+                      label: "Canal Confidencial",
+                      url: "https://app.pipefy.com/public/form/dirpZ0Km",
+                    },
+                    {
+                      label: "Canal Ambiental",
+                      url: "https://app.pipefy.com/public/form/k2OJAxcz",
+                    },
+                  ].map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        block 
+                        text-white/45 
+                        transition-all 
+                        duration-200 
+                        hover:text-emerald-400 
+                        hover:font-semibold
+                        transform
+                        hover:translate-x-1
+                      "
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
               </div>
 
               {/* Destaques da direita – Our Focus */}

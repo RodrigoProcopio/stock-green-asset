@@ -1,11 +1,11 @@
 {
   "hero": {
-    "line1": "Moldeando el Futuro",
+    "line1": "Dando Forma al Futuro",
     "line2": "y Transformando el Mundo",
     "line3": "a tu Alrededor.",
-    "ctaTalkToTeam": "Habla con el Equipo",
+    "ctaCarbonCredit": "Crédito de Carbono",
     "ctaSolutions": "Nuestras Soluciones",
-    "ctaSustainability": "Sostenibilidad",
+    "ctaSustainability": "Sustentabilidad",
     "ctaProjects": "Proyectos Sociales"
   },
 
@@ -14,38 +14,42 @@
     "ourFocus": "Nuestro Enfoque",
     "close": "Cerrar Navegación",
     "links": {
-      "home": "Inicio",
-      "about": "Sobre Nosotros",
+      "home": "Home",
+      "about": "Quiénes Somos",
       "solutions": "Soluciones",
       "projects": "Proyectos",
-      "sustainability": "Sostenibilidad",
+      "socialProjects": "Proyectos Sociales",
+      "sustainability": "Sustentabilidad",
+      "governance": "Gobernanza",
       "team": "Equipo",
+      "advisoryBoard": "Advisory Board",
+      "partners": "Nuestros Socios",
       "contact": "Contacto"
     },
     "focus": {
       "solutions": {
         "title": "Soluciones",
-        "description": "Créditos de carbono, Protocolo GHG y ESG para empresas que lideran la transición hacia una economía baja en carbono."
+        "description": "Créditos de carbono, Protocolo GHG y ESG para empresas que lideran la transición hacia una economía de bajo carbono."
       },
       "projects": {
         "title": "Proyectos",
         "description": "Proyectos ambientales con trazabilidad, monitoreo en tiempo real y total transparencia en la generación de créditos de carbono."
       },
       "sustainability": {
-        "title": "Sostenibilidad",
-        "description": "Pacto Global de la ONU, ODS y principios ICMA integrados a la estrategia financiera, la gobernanza y el impacto socioambiental."
+        "title": "Sustentabilidad",
+        "description": "Pacto Global de la ONU, ODS y principios ICMA integrados a la estrategia financiera, a la gobernanza y al impacto socioambiental."
       }
     },
     "about": {
       "badge": "Quiénes Somos",
-      "headline": "Somos una compañía multinacional con operaciones en Brasil y Argentina, que actúa en la economía baja en carbono para conectar proyectos sostenibles, preservación ambiental y operaciones financieras. Nuestro compromiso es generar un impacto positivo para las próximas generaciones mediante soluciones transparentes, seguras e innovadoras que impulsen un futuro más verde y resiliente.",
+      "headline": "Somos una empresa multinacional con operaciones en Brasil y Argentina, que actúa en la economía de bajo carbono para conectar proyectos sostenibles, preservación ambiental y operaciones financieras. Nuestro compromiso es generar impacto positivo para las próximas generaciones mediante soluciones transparentes, seguras e innovadoras que impulsan un futuro más verde y resiliente.",
       "mission": {
         "title": "Misión",
-        "text": "Ofrecer proyectos de economía baja en carbono que generen riqueza de forma sostenible, a través de soluciones financieras transparentes y seguras, capaces de conectar empresas e inversores con oportunidades de impacto real."
+        "text": "Ofrecer proyectos de economía de bajo carbono que generen riqueza de forma sostenible, a través de soluciones financieras transparentes y seguras, capaces de conectar empresas e inversores con oportunidades de impacto real."
       },
       "vision": {
         "title": "Visión",
-        "text": "Alcanzar la excelencia global en el mercado financiero para 2030, entregando soluciones innovadoras y sostenibles que consoliden a Stock Capital como referencia en finanzas verdes y gobernanza ESG."
+        "text": "Alcanzar la excelencia global en el mercado financiero hasta 2030, entregando soluciones innovadoras y sostenibles que consoliden a Stock Capital como referencia en finanzas verdes y gobernanza ESG."
       },
       "values": {
         "title": "Valores",
@@ -64,14 +68,14 @@
       "titleStrong": "Créditos",
       "titleLight": "de Carbono",
       "item1": "Generación y comercialización de créditos de carbono certificados",
-      "item2": "Proyectos desarrollados bajo los estándares VCS y CCB Verra",
+      "item2": "Proyectos desarrollados bajo los estándares Verra VCS y CCB",
       "item3": "Proyectos validados y con trazabilidad en conformidad con normas nacionales e internacionales",
-      "item4": "Proyectos auditados y verificados por auditoría independiente",
-      "item5": "Soluciones de compensación personalizadas, adaptadas a las necesidades de los clientes"
+      "item4": "Proyectos auditados y verificados por auditorías independientes",
+      "item5": "Soluciones personalizadas de compensación, adaptadas a las necesidades de los clientes"
     },
     "ghg": {
-      "titleStrong": "Inventario de Gases de",
-      "titleLight": "Efecto Invernadero (GHG Protocol)",
+      "titleStrong": "Inventario de Gases",
+      "titleLight": "de Efecto Invernadero (GHG Protocol)",
       "item1": "Diagnóstico completo de las emisiones (Alcances 1, 2 y 3)",
       "item2": "Aplicación del GHG Protocol con precisión técnica",
       "item3": "Apoyo en la definición de metas climáticas",
@@ -80,7 +84,7 @@
     "esg": {
       "titleStrong": "Gobernanza",
       "titleLight": "ESG",
-      "item1": "Sostenibilidad con estrategia",
+      "item1": "Sustentabilidad con estrategia",
       "item2": "Estructuración de políticas e indicadores ESG",
       "item3": "Integración de prácticas ESG al modelo de negocio",
       "item4": "Apoyo a la toma de decisiones con foco en riesgos y oportunidades"
@@ -104,59 +108,152 @@
     },
     "cta": {
       "kicker": "Saber más",
-      "main": "Conozca el Proyecto"
+      "main": "Conoce el Proyecto"
     }
   },
 
   "sustainability": {
-    "badge": "Sostenibilidad",
+    "badge": "Sustentabilidad",
     "heading": {
-      "line1": "Sostenibilidad",
+      "line1": "Sustentabilidad",
       "line2": "en Stock Capital"
     },
     "cta": {
       "kicker": "Saber más",
-      "main": "Sostenibilidad"
+      "main": "Sustentabilidad"
     },
     "buttons": {
       "manifesto": "Acceder al Manifiesto",
       "view": "Ver"
     },
     "intro": {
-      "p1": "Nos comprometemos públicamente con la sostenibilidad al adherirnos al Pacto Global de la ONU, incorporando prácticas avanzadas de responsabilidad social y ambiental alineadas con los ODS.",
+      "p1": "Asumimos públicamente nuestro compromiso con la sustentabilidad al adherirnos al Pacto Global de la ONU, incorporando prácticas avanzadas de responsabilidad social y ambiental alineadas con los ODS.",
       "p2": "Este compromiso guía nuestras decisiones y refleja nuestra determinación de construir un impacto real y duradero para la sociedad y el medio ambiente."
     },
     "principles": {
       "humanRights": {
         "title": "Derechos Humanos",
         "items": [
-          "Principio 1: Las empresas deben apoyar y respetar la protección de los derechos humanos proclamados internacionalmente;",
-          "Principio 2: Asegurarse de no ser cómplices de abusos de los derechos humanos."
+          "Principio 1: Las empresas deben apoyar y respetar la protección de los derechos humanos reconocidos internacionalmente;",
+          "Principio 2: Asegurarse de no ser cómplices de abusos a los derechos humanos."
         ]
       },
       "labour": {
         "title": "Trabajo",
         "items": [
           "Principio 3: Las empresas deben defender la libertad de asociación y el reconocimiento efectivo del derecho a la negociación colectiva;",
-          "Principio 4: La eliminación de todas las formas de trabajo forzoso y obligatorio;",
+          "Principio 4: La eliminación de todas las formas de trabajo forzoso u obligatorio;",
           "Principio 5: La abolición efectiva del trabajo infantil; y",
-          "Principio 6: La eliminación de la discriminación en relación con el empleo y la ocupación."
+          "Principio 6: La eliminación de la discriminación en el empleo y la ocupación."
         ]
       },
       "environment": {
         "title": "Medio Ambiente",
         "items": [
-          "Principio 7: Las empresas deben apoyar un enfoque preventivo frente a los desafíos ambientales;",
+          "Principio 7: Las empresas deben mantener un enfoque preventivo frente a los desafíos ambientales;",
           "Principio 8: Llevar a cabo iniciativas que promuevan una mayor responsabilidad ambiental; y",
-          "Principio 9: Fomentar el desarrollo y la difusión de tecnologías respetuosas con el medio ambiente."
+          "Principio 9: Fomentar el desarrollo y la difusión de tecnologías ambientalmente amigables."
         ]
       },
       "anticorruption": {
         "title": "Anticorrupción",
         "items": [
-          "Principio 10: Las empresas deben trabajar contra la corrupción en todas sus formas, incluida la extorsión y el soborno."
+          "Principio 10: Las empresas deben trabajar contra la corrupción en todas sus formas, incluyendo la extorsión y el soborno."
         ]
       }
+    },
+    "un": {
+      "globalCompactLabel": "Pacto Global de la ONU",
+      "logoAlt": "Pacto Global de las Naciones Unidas"
+    },
+    "ods": {
+      "badge": "Objetivos de la ONU",
+      "heading": "Los Objetivos de Desarrollo Sostenible",
+      "description": "Reafirmamos nuestro compromiso con los Objetivos de Desarrollo Sostenible (ODS), conectando nuestras iniciativas de inversión sustentable con metas globales para un futuro más inclusivo, equitativo y resiliente al clima.",
+      "goals": {
+        "5": {
+          "title": "Igualdad de Género",
+          "description": "Lograr la igualdad de género y empoderar a todas las mujeres y niñas."
+        },
+        "6": {
+          "title": "Agua Limpia y Saneamiento",
+          "description": "Garantizar la disponibilidad y la gestión sostenible del agua y el saneamiento para todos."
+        },
+        "8": {
+          "title": "Trabajo Decente y Crecimiento Económico",
+          "description": "Promover el crecimiento económico sostenido, inclusivo y sustentable, el empleo pleno y productivo y el trabajo decente para todos."
+        },
+        "13": {
+          "title": "Acción por el Clima",
+          "description": "Adoptar medidas urgentes para combatir el cambio climático y sus efectos."
+        },
+        "17": {
+          "title": "Alianzas para Lograr los Objetivos",
+          "description": "Fortalecer los medios de implementación y revitalizar la alianza mundial para el desarrollo sostenible."
+        }
+      },
+      "goalAlt": "ODS {{id}} - {{title}}",
+      "goalLabel": "Objetivo {{id}}: {{title}}",
+      "logoAlt": "ODS - Objetivos de Desarrollo Sostenible",
+      "viewAll": "Ver los 17 objetivos"
+    },
+    "icma": {
+      "badge": "Compromisos con las Partes Interesadas",
+      "heading": "Compromisos con las Partes Interesadas",
+      "p1": "Como signatarios de la Asociación Internacional del Mercado de Capitales (ICMA), nos comprometemos a adherirnos a las mejores prácticas internacionales de gobernanza, transparencia y responsabilidad en los mercados de capitales.",
+      "p2": "Nos alineamos con las directrices de la ICMA para la emisión de instrumentos financieros que integran creación de valor con criterios ambientales, sociales y de gobernanza (ESG), reforzando nuestro compromiso con un mercado financiero innovador y sustentable.",
+      "p3": "Nuestro framework se basa en principios esenciales, entre ellos:",
+      "guideline1": {
+        "title": "1. Guías de Bonos Verdes, Sociales y Sustentables (2021)",
+        "text": "– Reguladas por la ICMA, establecen las mejores prácticas para la emisión de instrumentos en los mercados de capitales."
+      },
+      "guideline2": {
+        "title": "2. Principios de Préstamos Verdes y Sociales (2021)",
+        "text": "– Publicados por la Loan Market Association (LMA), definen estándares para préstamos bilaterales y sindicados con instituciones financieras y agencias multilaterales."
+      },
+      "p4": "Estos principios estructuran nuestro framework, garantizando el cumplimiento de los más altos estándares internacionales de sustentabilidad y responsabilidad social. Promueven transparencia, integridad en la captación de recursos y alineación con las expectativas de los inversores y de la sociedad.",
+      "p5": "Desarrollamos este framework con foco en una comunicación clara y transparente con nuestras partes interesadas, asegurando que todas las etapas de nuestros proyectos y la gestión de los recursos se conduzcan de manera responsable.",
+      "principlesLabel": "Principios de la ICMA",
+      "accordions": {
+        "useOfProceeds": {
+          "title": "1. Uso de los recursos",
+          "p1": "Los recursos captados por medio de instrumentos sustentables se destinan a proyectos elegibles que generan impacto ambiental y social positivo, incluyendo:",
+          "li1": "Desarrollo de proyectos forestales (REDD+) y proyectos de remoción de carbono, así como recuperación de áreas degradadas;",
+          "li2": "Preservación y restauración de paisajes naturales;",
+          "li3": "Programas de educación ambiental;",
+          "li4": "Programas de asistencia educativa y capacitación profesional para jóvenes en comunidades en situación de vulnerabilidad."
+        },
+        "projectSelection": {
+          "title": "2. Proceso de evaluación y selección de proyectos",
+          "p1": "El proceso de selección de proyectos sigue criterios técnicos, socioambientales y de gobernanza, incluyendo:",
+          "li1": "Debida diligencia y diagnóstico socioambiental;",
+          "li2": "Análisis de viabilidad técnica y ambiental;",
+          "li3": "Cumplimiento legal y regulatorio; y",
+          "li4": "Evaluación del impacto socioambiental."
+        },
+        "management": {
+          "title": "3. Gestión de los recursos",
+          "p1": "Los recursos captados por medio de los Bonos Sustentables emitidos serán gestionados por Stock Capital de acuerdo con las mejores prácticas de gobernanza y con nuestro Framework de Sustentabilidad.",
+          "p2": "La asignación de los recursos se realizará en carteras de activos y proyectos verdes o sociales elegibles, seleccionados conforme a los criterios de elegibilidad definidos en el principio de Uso de los Recursos.",
+          "p3": "Mantenemos un control específico, con reporte independiente al Comité Ejecutivo, para determinar y supervisar la cartera de proyectos elegibles y el monto de recursos asignados a los Bonos Sustentables.",
+          "p4": "En cualquier situación en la que parte de los recursos aún no haya sido asignada, Stock Capital se compromete a:",
+          "ol1": "Mantener el saldo no asignado en caja o en títulos públicos de alta liquidez y bajo riesgo; y",
+          "ol2": "Reasignar los recursos lo antes posible a proyectos elegibles, conforme a los criterios de elegibilidad establecidos."
+        },
+        "reporting": {
+          "title": "4. Informes",
+          "p1": "Como parte de nuestra práctica de transparencia y compromiso con las mejores prácticas de gobernanza, pretendemos publicar anualmente en nuestro sitio web un informe consolidado que contenga:",
+          "li1": "Información sobre los recursos captados por medio de los Bonos Sustentables;",
+          "li2": "Detalles de los proyectos elegibles financiados con dichos recursos;",
+          "li3": "Indicadores de impacto socioambiental asociados a las inversiones.",
+          "p2": "Los informes podrán incluir, entre otros:",
+          "ol1": "Montos asignados a las categorías elegibles de proyectos;",
+          "ol2": "Porcentaje de recursos netos asignados a inversiones elegibles; y",
+          "ol3": "Proporción de inversiones elegibles destinadas a refinanciamiento versus nuevas inversiones.",
+          "p3": "Estos informes estarán sujetos a revisión independiente por parte de un verificador o consultor externo, reforzando la integridad y la precisión de la información divulgada."
+        }
+      },
+      "logoAlt": "ICMA - International Capital Market Association"
     }
   },
 
@@ -164,13 +261,13 @@
     "badge": "Gobernanza",
     "heading": {
       "line1": "Creemos que el mercado de capitales",
-      "line2": "puede ser transparente, accesible y sostenible."
+      "line2": "puede ser transparente, accesible y sustentable."
     },
-    "buttonIr": "Acceder al IR Portal",
+    "buttonIr": "Acceder al RI Portal",
     "body": {
-      "p1": "Nuestra filosofía de gobernanza parte de la convicción de que la conexión entre el capital y los proyectos sostenibles debe darse con reglas claras, información confiable y procesos robustos. Por eso estructuramos nuestros flujos de decisión, compliance y gestión de riesgo para garantizar que cada operación refleje transparencia, seguridad y alineación con la economía baja en carbono.",
+      "p1": "Nuestra filosofía de gobernanza parte de la convicción de que la conexión entre capital y proyectos sustentables debe ocurrir con reglas claras, información confiable y procesos robustos. Por ello, estructuramos nuestros flujos de decisión, cumplimiento y gestión de riesgos para garantizar que cada operación refleje transparencia, seguridad y alineación con la economía de bajo carbono.",
       "p2": "Actuando en Brasil y Argentina, seguimos las mejores prácticas globales del mercado financiero y los principios ESG, alineados con la ética, la lealtad, la transparencia, la excelencia y la innovación. Nuestra gobernanza integra la actuación del consejo, de la dirección ejecutiva y de estructuras independientes de monitoreo, garantizando responsabilidad en cada etapa de la cadena de valor.",
-      "p3": "Al hacer el mercado de capitales más accesible y sostenible, ofrecemos a los inversionistas informes claros, canales dedicados de relacionamiento y un compromiso continuo con la integridad. El IR Portal es uno de los pilares de este camino, reuniendo información estratégica para apoyar decisiones confiables y de largo plazo."
+      "p3": "Al hacer que el mercado de capitales sea más accesible y sustentable, ofrecemos a los inversores informes claros, canales dedicados de relacionamiento y un compromiso continuo con la integridad. El RI Portal es uno de los pilares de este camino, reuniendo información estratégica para apoyar decisiones confiables y de largo plazo."
     }
   },
 
@@ -182,20 +279,412 @@
     },
     "coreSection": "Equipo Ejecutivo",
     "advisorySection": "Advisory Board",
-
     "core": {
       "augusto": { "role": "Chairman & CEO" },
       "axel": { "role": "COO" },
       "igorVille": { "role": "Compliance Officer" },
       "igorDudeque": { "role": "Chief Investment Officer" }
     },
-
     "advisory": {
       "celso": { "role": "Advisor" },
       "patrick": { "role": "Advisor" },
       "alberto": { "role": "Advisor" },
       "kaline": { "role": "Advisor" },
       "ortiz": { "role": "Advisor" }
+    }
+  },
+
+  "socialProjects": {
+    "eyebrow": "Proyectos Sociales",
+    "title": "Alcance para Proyectos Sociales",
+    "intro": "Stock Capital estructura un programa educativo de impacto social enfocado en la formación técnica de jóvenes en comunidades con bajo índice de desarrollo humano, conectando educación de calidad, desarrollo sustentable y capital de largo plazo.",
+    "projectType": {
+      "title": "Tipo de Proyecto",
+      "text": "El proyecto social de Stock Capital se centra en la creación de una escuela técnica educativa, basada en formación práctica y alineada con las demandas de un mundo en transición hacia la economía de bajo carbono."
+    },
+    "targetAudience": {
+      "title": "Público Objetivo",
+      "text": "Adolescentes entre 15 y 20 años, cursando la escuela secundaria y residentes en comunidades y municipios con IDH por debajo del promedio. La propuesta es abrir acceso a una educación técnica de calidad y crear nuevas perspectivas de carrera."
+    },
+    "scale": {
+      "title": "Escala y Meta",
+      "text1": "El programa tiene como objetivo capacitar a 1.000 jóvenes hasta 2030, distribuidos entre Brasil y Argentina, con cohortes progresivas y expansión estructurada a lo largo de los años.",
+      "text2": "La implementación comienza con clases piloto y escala de forma gradual, priorizando siempre la calidad académica, la infraestructura adecuada y el acompañamiento cercano de los alumnos."
+    },
+    "locations": {
+      "title": "Lugares de Implementación",
+      "text1": "La primera unidad se implantará en la Provincia de Salta, en Argentina, con expansión planificada hacia regiones de Brasil donde Stock Capital desarrolla proyectos de preservación ambiental.",
+      "text2": "De esta forma, los proyectos sociales acompañan a los proyectos ambientales, generando un impacto integrado: clima, territorio y desarrollo humano."
+    },
+    "investment": {
+      "title": "Inversión & Financiamiento",
+      "text1": "Stock Capital tiene como objetivo destinar US$ 1.000.000,00 a proyectos sociales, distribuidos equitativamente entre Brasil y Argentina.",
+      "text2": "Los recursos se viabilizan por medio de Bonos Sustentables y, después del período inicial de implementación, el proyecto pasa a ser subsidiado por los ingresos provenientes de la comercialización de créditos de carbono, alineando educación, finanzas sustentables y mercado de carbono en una misma estrategia."
+    },
+    "ods": {
+      "title": "Objetivos & ODS",
+      "description": "El proyecto integra los Objetivos de Desarrollo Sostenible (ODS) a la metodología educativa, preparando una generación consciente, comprometida y técnicamente capacitada.",
+      "listLeft": {
+        "item1": "Concientizar sobre los desafíos globales y los ODS.",
+        "item2": "Estimular el compromiso en proyectos prácticos reales.",
+        "item3": "Desarrollar pensamiento crítico y habilidades técnicas.",
+        "item4": "Empoderar a los jóvenes como agentes de transformación."
+      },
+      "listRight": {
+        "item1": "Integrar disciplinas básicas y contenidos tecnológicos.",
+        "item2": "Fomentar competencias digitales y de programación.",
+        "item3": "Acercar educación, mercado laboral e innovación.",
+        "item4": "Promover empleabilidad y emprendimiento."
+      }
+    },
+    "methodology": {
+      "title": "Metodología Educativa",
+      "text1": "La escuela adopta el Aprendizaje Basado en Proyectos (ABP / PBL), conectando desafíos reales de las comunidades, los ODS de la ONU y trayectorias de formación técnica.",
+      "text2": "Los alumnos desarrollan proyectos que integran contenidos de lenguaje, matemáticas, ciencias y tecnología —como programación, robótica y diseño digital— siempre con foco en soluciones aplicables al territorio donde viven."
+    },
+    "monitoring": {
+      "title": "Monitoreo, Métricas & Calidad",
+      "description": "Stock Capital adopta un modelo de acompañamiento que evalúa tanto el desempeño individual de los alumnos como la calidad global de la institución educativa.",
+      "studentLevel": {
+        "title": "Nivel del Alumno",
+        "item1": "Monitoreo continuo de notas y participación.",
+        "item2": "Definición de nota mínima para aprobación.",
+        "item3": "Informes periódicos de progreso."
+      },
+      "institutionLevel": {
+        "title": "Nivel Institucional",
+        "item1": "Cálculo de un promedio institucional.",
+        "item2": "Tasa global de aprobación como indicador de desempeño.",
+        "item3": "Feedback cualitativo de alumnos y profesores.",
+        "item4": "Planes de acción y mejora continua."
+      }
+    },
+    "governance": {
+      "title": "Gobernanza & Cuerpo Docente",
+      "text1": "La gobernanza corporativa de Stock Capital es responsable de estructurar, seleccionar y acompañar los proyectos sociales elegibles, garantizando alineación con el Framework de Bonos Sustentables y con las regulaciones locales.",
+      "text2": "La selección del cuerpo docente sigue criterios mínimos de formación académica, experiencia comprobada y adhesión al propósito educativo del proyecto, asegurando calidad y consistencia en la entrega de la enseñanza."
+    },
+    "downloadPDF": "Descargar alcance completo (PDF)",
+    "backHome": "Volver al Home"
+  },
+
+  "contact": {
+    "badge": "Contáctanos",
+    "title": "Stock Capital Global Holding",
+    "subtitle": "Transformando el mercado de capitales a través de soluciones sustentables e innovadoras.",
+    "email": {
+      "br": {
+        "label": "E-mail Brasil"
+      },
+      "ar": {
+        "label": "E-mail Argentina"
+      }
+    },
+    "channels": {
+      "label": "Canales institucionales",
+      "irPortal": "RI Portal",
+      "confidential": "Canal Confidencial",
+      "environmental": "Canal Ambiental"
+    },
+    "form": {
+      "badge": "Envía un mensaje",
+      "fields": {
+        "name": {
+          "label": "Nombre",
+          "placeholder": "Tu nombre completo"
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "tucorreo@empresa.com"
+        },
+        "subject": {
+          "label": "Asunto",
+          "placeholder": "Carbon Credits, ESG, GHG Protocol..."
+        },
+        "message": {
+          "label": "Mensaje",
+          "placeholder": "Cuéntanos brevemente cómo podemos apoyar a tu empresa."
+        }
+      },
+      "submit": "Enviar mensaje",
+      "disclaimer": "Al enviar el formulario, aceptas ser contactado por Stock Capital con fines institucionales."
+    }
+  },
+
+  "projectMazuay": {
+    "header": {
+      "lead": "El proyecto Stock Carbon – Mazuay REDD+ está ubicado en Silves, en el estado de Amazonas, Brasil, y tiene como objetivo evitar emisiones provenientes de la deforestación y de la degradación forestal, preservando un área de bosque nativo de alta relevancia ambiental y climática."
+    },
+    "metrics": {
+      "locationLabel": "Ubicación",
+      "areaTotal": "Superficie total",
+      "areaHelper": "Área del proyecto",
+      "nativeCover": "Cobertura de vegetación nativa",
+      "carbonPotential": "Potencial de créditos de carbono"
+    },
+    "nav": {
+      "about": "Sobre el Proyecto",
+      "nature": "Naturaleza & Créditos",
+      "monitoring": "Monitoreo",
+      "impacts": "Impactos",
+      "governance": "Gobernanza & Transparencia"
+    },
+    "ui": {
+      "sectionsLabel": "Navegación del proyecto"
+    },
+    "sectionGroups": {
+      "about": "Sobre el Proyecto",
+      "nature": "Naturaleza & Créditos",
+      "monitoring": "Monitoreo",
+      "impacts": "Impactos",
+      "governance": "Gobernanza & Transparencia"
+    },
+    "about": {
+      "titleStrong": "Sobre",
+      "titleLight": "el Proyecto",
+      "p1": "El Proyecto Stock Carbon Mazuay REDD+ busca reducir las emisiones de carbono provenientes de la deforestación y de la degradación forestal, promoviendo la conservación y la gestión sostenible de los bosques en áreas críticas de preservación.",
+      "p2": "La iniciativa contribuye al cumplimiento de las metas globales de reducción de gases de efecto invernadero (GEI), genera beneficios ambientales y sociales para las comunidades locales y preserva la biodiversidad de ecosistemas amenazados."
+    },
+    "description": {
+      "heading": "Descripción",
+      "p1": "El Proyecto Stock Carbon Mazuay REDD+ es una iniciativa de preservación ambiental y forestal implementada en la Gleba Mazuay, una propiedad rural ubicada en el municipio de Silves, en el estado de Amazonas (AM), Brasil.",
+      "p2": "El área total de la propiedad es de 989,3423 hectáreas, de las cuales 966,4202 hectáreas corresponden a Vegetación Nativa Remanente, lo que representa más del 97% de la superficie total de la propiedad.",
+      "p3": "La propiedad se destaca por sus características ecológicamente significativas, en particular por su amplia cobertura de vegetación nativa, que contribuye al mantenimiento de la biodiversidad y de los servicios ecosistémicos.",
+      "p4": "Como se detalla a continuación:",
+      "list": {
+        "app": "• Área de Preservación Permanente (APP): 134,6151 hectáreas.",
+        "arl": "• Área de Reserva Legal (ARL): 854,2886 hectáreas."
+      },
+      "p5": "El inventario forestal realizado en el área identificó 18.697 árboles, distribuidos en 76 especies distintas, lo que demuestra la alta biodiversidad y riqueza del ecosistema amazónico presente en la Gleba Mazuay.",
+      "p6": "El Proyecto Stock Carbon Mazuay REDD+ tiene como objetivo preservar y gestionar de forma sostenible la Gleba Mazuay, alineando esfuerzos para mitigar el cambio climático mediante la conservación de bosques tropicales.",
+      "p7": "A lo largo de un período de 20 años, el proyecto pretende generar 718.455,73 créditos de carbono, contribuyendo de manera significativa a la captura y al almacenamiento de gases de efecto invernadero y reforzando el papel de la Amazonia como uno de los principales reguladores climáticos del planeta."
+    },
+    "location": {
+      "heading": "Ubicación & Contexto",
+      "p1": "Amazonas (AM), Brasil.",
+      "p2": "La región se caracteriza por una alta biodiversidad y gran relevancia para el mantenimiento de servicios ecosistémicos, como la regulación climática, la protección de los recursos hídricos y la conservación de hábitats naturales."
+    },
+    "structure": {
+      "heading": "Estructura Ambiental",
+      "p1": "• Área de vegetación nativa: 966,42 ha (97% de la superficie total).\n• Área de Preservación Permanente (APP): 134,61 ha.\n• Reserva Legal: 854,28 ha.",
+      "p2": "El proyecto está estructurado para preservar la integridad del bosque nativo, asegurando el cumplimiento de la legislación ambiental brasileña y el uso sostenible del territorio."
+    },
+    "biodiversity": {
+      "heading": "Biodiversidad & Inventario Forestal",
+      "intro": "El proyecto cuenta con un inventario detallado de la vegetación, que incluye:",
+      "list": {
+        "trees": "• 18.697 árboles catalogados.",
+        "species": "• 76 especies distintas identificadas.",
+        "monitoring": "• Monitoreo continuo de la estructura forestal para garantizar la conservación de hábitats y el mantenimiento de la diversidad biológica."
+      },
+      "closing": "Estos datos son fundamentales para comprobar la integridad ecológica del área y sustentar el cálculo del carbono almacenado en la biomasa."
+    },
+    "carbonPotential": {
+      "heading": "Potencial de Créditos de Carbono",
+      "p1": "Al evitar la deforestación en un área de bosque nativo altamente amenazado, el proyecto Stock Carbon – Mazuay REDD+ posee un potencial estimado de generación de créditos de carbono a lo largo del tiempo.",
+      "highlight": "a lo largo de 20 años.",
+      "p2": "Cada crédito representa una tonelada de CO₂ equivalente que deja de emitirse a la atmósfera, contribuyendo directamente a las metas climáticas globales y a los compromisos de reducción de emisiones."
+    },
+    "monitoringGovernance": {
+      "heading": "Monitoreo, Tecnología & Gobernanza",
+      "intro": "El proyecto adopta un modelo de gobernanza robusto, basado en la transparencia, la trazabilidad y el monitoreo continuo.",
+      "items": {
+        "realtime": "• Monitoreo en tiempo real por medio de imágenes satelitales y datos geoespaciales.",
+        "traceability": "• Registro y trazabilidad de los créditos mediante tecnologías de blockchain, garantizando transparencia e integridad de la información.",
+        "audits": "• Auditorías independientes para verificar el desempeño climático, social y ambiental."
+      },
+      "closing": "Este conjunto de mecanismos fortalece la confianza de inversores, reguladores y socios, asegurando que cada crédito refleje un impacto real y medible."
+    },
+    "impacts": {
+      "heading": "Impactos Climáticos, Sociales & Ambientales",
+      "intro": "El proyecto Stock Carbon – Mazuay REDD+ fue concebido para generar impacto positivo en múltiples dimensiones:",
+      "climate": {
+        "title": "Clima",
+        "items": [
+          "• Reducción de emisiones de gases de efecto invernadero (GEI).",
+          "• Contribución a las metas de neutralidad de carbono.",
+          "• Preservación de los stocks de carbono forestal."
+        ]
+      },
+      "society": {
+        "title": "Sociedad",
+        "items": [
+          "• Generación de oportunidades económicas locales.",
+          "• Estímulo a cadenas productivas sustentables.",
+          "• Fortalecimiento de la gestión territorial."
+        ]
+      },
+      "environment": {
+        "title": "Medio Ambiente",
+        "items": [
+          "• Conservación de la biodiversidad.",
+          "• Protección de los recursos hídricos.",
+          "• Mantenimiento de servicios ecosistémicos esenciales."
+        ]
+      }
+    },
+    "blockchain": {
+      "heading": "Gobernanza Blockchain",
+      "p1": "Desarrollamos un Portal de Transparencia basado en blockchain para garantizar el máximo nivel de confianza y seguridad para nuestros stakeholders en iniciativas de compensación de gases de efecto invernadero (GEI) y adquisición de créditos de carbono.",
+      "p2": "La plataforma ofrece las siguientes funcionalidades:",
+      "items": {
+        "tracking": "• Trazabilidad inmutable: cada crédito de carbono puede ser rastreado desde su origen hasta la compensación final.",
+        "duplication": "• Prevención de doble conteo: sistema criptográfico que impide el uso repetido de créditos de carbono.",
+        "authenticity": "• Autenticidad garantizada: los datos de monitoreo, auditorías y validaciones se registran de forma transparente y verificable.",
+        "governance": "• Gobernanza avanzada: informes auditables alineados con las mejores prácticas ESG, reforzando la confianza de inversores y reguladores.",
+        "engagement": "• Compromiso transparente: los datos en blockchain permiten que inversores, consumidores y otros stakeholders acompañen, en tiempo real, las acciones de compensación de GEI y las iniciativas climáticas."
+      },
+      "ctaText": "Accede al Portal de Transparencia:",
+      "ctaLabel": "Portal de Transparencia"
+    },
+    "report": {
+      "heading": "Informe de Monitoreo",
+      "p1": "Stock Capital presentará un informe de monitoreo detallado con el objetivo de destacar los impactos climáticos, sociales y ambientales de sus proyectos certificados bajo los estándares VCS REDD+ y CCB Verra.",
+      "p2": "El informe incluirá, entre otros puntos:",
+      "items": {
+        "climate": "• Resultados Climáticos: emisiones evitadas o removidas, datos cuantitativos sobre captura y almacenamiento de carbono y metodologías utilizadas para el cálculo.",
+        "environment": "• Impactos Ambientales: información sobre conservación de la biodiversidad, recuperación de ecosistemas degradados y evaluación de la calidad ambiental.",
+        "social": "• Beneficios Sociales: indicadores de generación de ingresos, capacitación de comunidades locales y mejoras en las condiciones de vida.",
+        "compliance": "• Cumplimiento: resultados de auditorías externas, certificaciones y validaciones por partes independientes, garantizando transparencia e integridad de los resultados."
+      }
+    },
+    "sdgs": {
+      "heading": "Los Objetivos de Desarrollo Sostenible",
+      "description": "En el proyecto Carbon Mazuay REDD+, adoptamos los Objetivos de Desarrollo Sostenible (ODS) de las Naciones Unidas y prácticas de sustentabilidad alineadas con los principios ESG, contribuyendo activamente a un futuro más sustentable e inclusivo.",
+      "imageAlt": "ODS - Objetivos de Desarrollo Sostenible"
+    },
+    "satellite": {
+      "tabLabel": "Monitoreo por satélite",
+      "heading": "Monitoreo con Imágenes Satelitales",
+      "description": "Acompaña la evolución de la cobertura forestal del proyecto a lo largo de diferentes períodos.",
+      "ui": {
+        "prev": "Anterior",
+        "next": "Siguiente"
+      },
+      "images": {
+        "dec2024": {
+          "alt": "Imagen satelital - Diciembre 2024",
+          "caption": "Diciembre 2024"
+        },
+        "jan2025": {
+          "alt": "Imagen satelital - Enero 2025",
+          "caption": "Enero 2025"
+        },
+        "apr2025": {
+          "alt": "Imagen satelital - Abril 2025",
+          "caption": "Abril 2025"
+        },
+        "jul2025": {
+          "alt": "Imagen satelital - Julio 2025",
+          "caption": "Julio 2025"
+        }
+      }
+    },
+    "realtime": {
+      "tabLabel": "Monitoreo en tiempo real",
+      "heading": "Monitoreo en Tiempo Real",
+      "p1": "Stock Capital reconoce la importancia estratégica del monitoreo en tiempo real para garantizar la eficacia de las acciones de preservación ambiental y forestal. Mediante tecnologías avanzadas, realizamos análisis que permiten detectar y prevenir la deforestación ilegal, controlar el manejo forestal no autorizado, identificar incendios de forma anticipada y monitorear factores ambientales críticos.",
+      "p2": "La información se obtiene de satélites como Sentinel-1 (radar de apertura sintética) y Sentinel-2 (sensores ópticos multiespectrales), que proporcionan datos sobre uso del suelo, vegetación, calidad del agua y otros indicadores, mejorando la transparencia y acelerando la toma de decisiones."
+    },
+    "cta": {
+      "talkToTeam": "Hablar con el equipo",
+      "backHome": "← Volver al inicio"
+    }
+  },
+
+  "partners": {
+    "badge": "Nuestros Socios",
+    "heading": {
+      "line1": "Un ecosistema",
+      "line2": "de socios estratégicos."
+    },
+    "body": {
+      "p1": "Stock Capital conecta empresas, instituciones financieras, organizaciones de impacto y proveedores de tecnología para formar un ecosistema que acelera la transición hacia una economía de bajo carbono.",
+      "p2": "Nuestros socios amplifican la escala de los proyectos, fortalecen la gobernanza ESG y ayudan a transformar capital en impacto climático, social y ambiental medible."
+    },
+    "cta": {
+      "label": "Conoce el ecosistema"
+    }
+  },
+
+  "partnersPage": {
+    "badge": "Ecosistema de Socios",
+    "title": {
+      "line1": "Ecosistema de socios",
+      "line2": "de Stock Capital"
+    },
+    "intro": "Nuestro ecosistema reúne empresas, instituciones financieras, organizaciones de impacto y proveedores de tecnología que, junto a Stock Capital, impulsan proyectos de finanzas sustentables, mercado de carbono y gobernanza ESG.",
+    "backHome": "← Volver al Home",
+    "visitPartner": "Visitar el sitio de {{name}}",
+    "partners": {
+      "ctx": {
+        "name": "CTX Global",
+        "description": "Plataforma digital para la negociación de créditos de carbono voluntarios, con operación 24/7 y foco en transparencia, trazabilidad e infraestructura digital segura."
+      },
+      "cipo": {
+        "name": "Cipó Ingeniería y Tecnología de Biomasa",
+        "description": "Empresa que actúa en ingeniería forestal, biomasa y soluciones ambientales, uniendo tecnología, georreferenciación y sustentabilidad."
+      },
+      "officeK": {
+        "name": "Office K-InTech",
+        "description": "Consultora enfocada en estrategia educacional, tecnología y ESG, apoyando a emprendedores y empresas en la construcción de negocios sustentables."
+      },
+      "bub": {
+        "name": "Better Use Blockchain (BUB)",
+        "description": "Empresa especializada en soluciones basadas en blockchain para aumentar la seguridad, la transparencia y la trazabilidad en procesos corporativos."
+      },
+      "spotsat": {
+        "name": "SpotSat",
+        "description": "Agri-tech brasileña que utiliza imágenes satelitales, IA y datos geoespaciales para monitoreo ambiental, agricultura de precisión y soluciones ESG."
+      },
+      "bacx": {
+        "name": "BACX Argentina",
+        "description": "Bolsa digital argentina para créditos de carbono, con foco en transparencia, gobernanza y negociación segura en el mercado voluntario."
+      },
+      "martinelli": {
+        "name": "Martinelli & Guimarães",
+        "description": "Estudio jurídico boutique con actuación en derecho corporativo, regulatorio, relaciones gubernamentales y protección de datos."
+      },
+      "perenar": {
+        "name": "Perenar",
+        "description": "Consultora en gestión ESG y sustentabilidad, con servicios en inventarios de emisiones, economía circular, logística inversa y gestión de riesgos."
+      },
+      "grupoStudio": {
+        "name": "Grupo Studio",
+        "description": "Hub de soluciones corporativas con foco en performance financiera, compliance, gobernanza y apoyo estratégico a empresas de diferentes sectores."
+      },
+      "eptv": {
+        "name": "EPTV",
+        "description": "Emisora regional de televisión afiliada a TV Globo, con actuación en periodismo, entretenimiento y producción de contenido local."
+      },
+      "adgm": {
+        "name": "Abu Dhabi Global Market (ADGM)",
+        "description": "Centro financiero internacional y zona franca en Abu Dabi, orientado al desarrollo económico y a la innovación en servicios financieros."
+      },
+      "proph3t": {
+        "name": "proph3t capital",
+        "description": "Gestora de venture capital enfocada en blockchain y tecnologías Web3, con actuación especialmente orientada al mercado latinoamericano."
+      },
+      "b3": {
+        "name": "B3",
+        "description": "La bolsa de valores oficial de Brasil, referencia en infraestructura de mercado financiero, negociación de activos, derivados y servicios de registro."
+      },
+      "earthood": {
+        "name": "Earthood",
+        "description": "Empresa global especializada en verificación, validación y consultoría en proyectos de carbono, sustentabilidad y agricultura."
+      },
+      "bureauVeritas": {
+        "name": "Bureau Veritas",
+        "description": "Líder global en ensayos, inspecciones y certificaciones, con actuación en calidad, seguridad, medio ambiente y responsabilidad social."
+      },
+      "verra": {
+        "name": "Verra",
+        "description": "Organización responsable de estándares globales de certificación en clima y sustentabilidad, como el Verified Carbon Standard (VCS)."
+      },
+      "climateImpactX": {
+        "name": "Climate Impact X (CIX)",
+        "description": "Plataforma global de negociación de créditos de carbono, con foco en soluciones climáticas basadas en la naturaleza y alta integridad ambiental."
+      }
     }
   }
 }
