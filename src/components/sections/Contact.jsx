@@ -1,8 +1,37 @@
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import emailjs from "@emailjs/browser";
 
 export function Contact() {
   const { t } = useTranslation();
+
+  const formRef = useRef(null);
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState(null); // "success" | "error" | null
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSending(true);
+    setStatus(null);
+
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      setStatus("success");
+      formRef.current.reset();
+    } catch (err) {
+      console.error("Erro ao enviar formulário:", err);
+      setStatus("error");
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   return (
     <section
@@ -109,7 +138,6 @@ export function Contact() {
                   </a>
                 </div>
 
-                {/* 🌍 Logo Global Compact — novo caminho */}
                 <div className="mt-10 flex justify-left">
                   <img
                     src="/images/Logos/Global-Compact.webp"
@@ -133,7 +161,11 @@ export function Contact() {
               {t("contact.form.badge")}
             </p>
 
-            <form className="mt-4 space-y-4">
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="mt-4 space-y-4"
+            >
               {/* Nome */}
               <div>
                 <label className="text-xs text-white/60">
@@ -141,8 +173,10 @@ export function Contact() {
                 </label>
                 <input
                   type="text"
+                  name="user_name" // 🔹 nome usado no template EmailJS
                   className="mt-1 w-full rounded-xl border border-white/10 bg-black/60 px-3 py-2 text-sm outline-none placeholder:text-white/30 focus:border-emerald-400/70"
                   placeholder={t("contact.form.fields.name.placeholder")}
+                  required
                 />
               </div>
 
@@ -153,8 +187,10 @@ export function Contact() {
                 </label>
                 <input
                   type="email"
+                  name="user_email" // 🔹 nome usado no template EmailJS
                   className="mt-1 w-full rounded-xl border border-white/10 bg-black/60 px-3 py-2 text-sm outline-none placeholder:text-white/30 focus:border-emerald-400/70"
                   placeholder={t("contact.form.fields.email.placeholder")}
+                  required
                 />
               </div>
 
@@ -165,8 +201,10 @@ export function Contact() {
                 </label>
                 <input
                   type="text"
+                  name="subject" // 🔹 usado no template
                   className="mt-1 w-full rounded-xl border border-white/10 bg-black/60 px-3 py-2 text-sm outline-none placeholder:text-white/30 focus:border-emerald-400/70"
                   placeholder={t("contact.form.fields.subject.placeholder")}
+                  required
                 />
               </div>
 
@@ -177,18 +215,38 @@ export function Contact() {
                 </label>
                 <textarea
                   rows={4}
+                  name="message" // 🔹 usado no template
                   className="mt-1 w-full rounded-xl border border-white/10 bg-black/60 px-3 py-2 text-sm outline-none placeholder:text-white/30 focus:border-emerald-400/70"
                   placeholder={t("contact.form.fields.message.placeholder")}
+                  required
                 />
               </div>
 
               {/* Botão */}
               <button
-                type="button"
-                className="w-full rounded-full border border-emerald-400/70 px-5 py-2 text-xs font-medium uppercase tracking-[0.2em] transition hover:bg-emerald-400 hover:text-black"
+                type="submit"
+                disabled={isSending}
+                className="w-full rounded-full border border-emerald-400/70 px-5 py-2 text-xs font-medium uppercase tracking-[0.2em] transition hover:bg-emerald-400 hover:text-black disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {t("contact.form.submit")}
+                {isSending
+                  ? t("contact.form.sending") || "Enviando..."
+                  : t("contact.form.submit")}
               </button>
+
+              {/* Mensagens de status */}
+              {status === "success" && (
+                <p className="text-[0.7rem] text-emerald-300">
+                  {t("contact.form.success") ||
+                    "Mensagem enviada com sucesso. Entraremos em contato em breve."}
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className="text-[0.7rem] text-red-400">
+                  {t("contact.form.error") ||
+                    "Ocorreu um erro ao enviar. Tente novamente mais tarde."}
+                </p>
+              )}
 
               <p className="text-[0.65rem] text-white/40">
                 {t("contact.form.disclaimer")}
