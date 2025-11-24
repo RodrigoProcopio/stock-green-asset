@@ -49,7 +49,7 @@
       },
       "vision": {
         "title": "Visión",
-        "text": "Alcanzar la excelencia global en el mercado financiero hasta 2030, entregando soluciones innovadoras y sostenibles que consoliden a Stock Capital como referencia en finanzas verdes y gobernanza ESG."
+        "text": "Alcanzar la excelencia global en el mercado financiero hasta 2030, entregando soluciones innovadoras y sostenibles que consoliden a Stock Green Asset como referencia en finanzas verdes y gobernanza ESG."
       },
       "values": {
         "title": "Valores",
@@ -116,7 +116,7 @@
     "badge": "Sustentabilidad",
     "heading": {
       "line1": "Sustentabilidad",
-      "line2": "en Stock Capital"
+      "line2": "en Stock Green Asset"
     },
     "cta": {
       "kicker": "Saber más",
@@ -233,10 +233,10 @@
         },
         "management": {
           "title": "3. Gestión de los recursos",
-          "p1": "Los recursos captados por medio de los Bonos Sustentables emitidos serán gestionados por Stock Capital de acuerdo con las mejores prácticas de gobernanza y con nuestro Framework de Sustentabilidad.",
+          "p1": "Los recursos captados por medio de los Bonos Sustentables emitidos serán gestionados por Stock Green Asset de acuerdo con las mejores prácticas de gobernanza y con nuestro Framework de Sustentabilidad.",
           "p2": "La asignación de los recursos se realizará en carteras de activos y proyectos verdes o sociales elegibles, seleccionados conforme a los criterios de elegibilidad definidos en el principio de Uso de los Recursos.",
           "p3": "Mantenemos un control específico, con reporte independiente al Comité Ejecutivo, para determinar y supervisar la cartera de proyectos elegibles y el monto de recursos asignados a los Bonos Sustentables.",
-          "p4": "En cualquier situación en la que parte de los recursos aún no haya sido asignada, Stock Capital se compromete a:",
+          "p4": "En cualquier situación en la que parte de los recursos aún no haya sido asignada, Stock Green Asset se compromete a:",
           "ol1": "Mantener el saldo no asignado en caja o en títulos públicos de alta liquidez y bajo riesgo; y",
           "ol2": "Reasignar los recursos lo antes posible a proyectos elegibles, conforme a los criterios de elegibilidad establecidos."
         },
@@ -297,10 +297,10 @@
   "socialProjects": {
     "eyebrow": "Proyectos Sociales",
     "title": "Alcance para Proyectos Sociales",
-    "intro": "Stock Capital estructura un programa educativo de impacto social enfocado en la formación técnica de jóvenes en comunidades con bajo índice de desarrollo humano, conectando educación de calidad, desarrollo sustentable y capital de largo plazo.",
+    "intro": "Stock Green Asset estructura un programa educativo de impacto social enfocado en la formación técnica de jóvenes en comunidades con bajo índice de desarrollo humano, conectando educación de calidad, desarrollo sustentable y capital de largo plazo.",
     "projectType": {
       "title": "Tipo de Proyecto",
-      "text": "El proyecto social de Stock Capital se centra en la creación de una escuela técnica educativa, basada en formación práctica y alineada con las demandas de un mundo en transición hacia la economía de bajo carbono."
+      "text": "El proyecto social de Stock Green Asset se centra en la creación de una escuela técnica educativa, basada en formación práctica y alineada con las demandas de un mundo en transición hacia la economía de bajo carbono."
     },
     "targetAudience": {
       "title": "Público Objetivo",
@@ -313,12 +313,12 @@
     },
     "locations": {
       "title": "Lugares de Implementación",
-      "text1": "La primera unidad se implantará en la Provincia de Salta, en Argentina, con expansión planificada hacia regiones de Brasil donde Stock Capital desarrolla proyectos de preservación ambiental.",
+      "text1": "La primera unidad se implantará en la Provincia de Salta, en Argentina, con expansión planificada hacia regiones de Brasil donde Stock Green Asset desarrolla proyectos de preservación ambiental.",
       "text2": "De esta forma, los proyectos sociales acompañan a los proyectos ambientales, generando un impacto integrado: clima, territorio y desarrollo humano."
     },
     "investment": {
       "title": "Inversión & Financiamiento",
-      "text1": "Stock Capital tiene como objetivo destinar US$ 1.000.000,00 a proyectos sociales, distribuidos equitativamente entre Brasil y Argentina.",
+      "text1": "Stock Green Asset tiene como objetivo destinar US$ 1.000.000,00 a proyectos sociales, distribuidos equitativamente entre Brasil y Argentina.",
       "text2": "Los recursos se viabilizan por medio de Bonos Sustentables y, después del período inicial de implementación, el proyecto pasa a ser subsidiado por los ingresos provenientes de la comercialización de créditos de carbono, alineando educación, finanzas sustentables y mercado de carbono en una misma estrategia."
     },
     "ods": {
@@ -344,7 +344,7 @@
     },
     "monitoring": {
       "title": "Monitoreo, Métricas & Calidad",
-      "description": "Stock Capital adopta un modelo de acompañamiento que evalúa tanto el desempeño individual de los alumnos como la calidad global de la institución educativa.",
+      "description": "Stock Green Asset adopta un modelo de acompañamiento que evalúa tanto el desempeño individual de los alumnos como la calidad global de la institución educativa.",
       "studentLevel": {
         "title": "Nivel del Alumno",
         "item1": "Monitoreo continuo de notas y participación.",
@@ -361,7 +361,7 @@
     },
     "governance": {
       "title": "Gobernanza & Cuerpo Docente",
-      "text1": "La gobernanza corporativa de Stock Capital es responsable de estructurar, seleccionar y acompañar los proyectos sociales elegibles, garantizando alineación con el Framework de Bonos Sustentables y con las regulaciones locales.",
+      "text1": "La gobernanza corporativa de Stock Green Asset es responsable de estructurar, seleccionar y acompañar los proyectos sociales elegibles, garantizando alineación con el Framework de Bonos Sustentables y con las regulaciones locales.",
       "text2": "La selección del cuerpo docente sigue criterios mínimos de formación académica, experiencia comprobada y adhesión al propósito educativo del proyecto, asegurando calidad y consistencia en la entrega de la enseñanza."
     },
     "downloadPDF": "Descargar alcance completo (PDF)",
@@ -370,7 +370,7 @@
 
   "contact": {
     "badge": "Contáctanos",
-    "title": "Stock Capital Global Holding",
+    "title": "Stock Green Asset",
     "subtitle": "Transformando el mercado de capitales a través de soluciones sustentables e innovadoras.",
     "email": {
       "br": {
@@ -407,10 +407,10 @@
         }
       },
       "submit": "Enviar Mensaje",
-  "sending": "Enviando...",
-  "success": "¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.",
-  "error": "No fue posible enviar tu mensaje. Inténtalo de nuevo más tarde.",
-  "disclaimer": "Al enviar este formulario, aceptas ser contactado por Stock Capital con fines institucionales."
+      "sending": "Enviando...",
+      "success": "¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.",
+      "error": "No fue posible enviar tu mensaje. Inténtalo de nuevo más tarde.",
+      "disclaimer": "Al enviar este formulario, aceptas ser contactado por Stock Green Asset con fines institucionales."
     }
   },
 
@@ -542,7 +542,7 @@
     },
     "report": {
       "heading": "Informe de Monitoreo",
-      "p1": "Stock Capital presentará un informe de monitoreo detallado con el objetivo de destacar los impactos climáticos, sociales y ambientales de sus proyectos certificados bajo los estándares VCS REDD+ y CCB Verra.",
+      "p1": "Stock Green Asset presentará un informe de monitoreo detallado con el objetivo de destacar los impactos climáticos, sociales y ambientales de sus proyectos certificados bajo los estándares VCS REDD+ y CCB Verra.",
       "p2": "El informe incluirá, entre otros puntos:",
       "items": {
         "climate": "• Resultados Climáticos: emisiones evitadas o removidas, datos cuantitativos sobre captura y almacenamiento de carbono y metodologías utilizadas para el cálculo.",
@@ -586,7 +586,7 @@
     "realtime": {
       "tabLabel": "Monitoreo en tiempo real",
       "heading": "Monitoreo en Tiempo Real",
-      "p1": "Stock Capital reconoce la importancia estratégica del monitoreo en tiempo real para garantizar la eficacia de las acciones de preservación ambiental y forestal. Mediante tecnologías avanzadas, realizamos análisis que permiten detectar y prevenir la deforestación ilegal, controlar el manejo forestal no autorizado, identificar incendios de forma anticipada y monitorear factores ambientales críticos.",
+      "p1": "Stock Green Asset reconoce la importancia estratégica del monitoreo en tiempo real para garantizar la eficacia de las acciones de preservación ambiental y forestal. Mediante tecnologías avanzadas, realizamos análisis que permiten detectar y prevenir la deforestación ilegal, controlar el manejo forestal no autorizado, identificar incendios de forma anticipada y monitorear factores ambientales críticos.",
       "p2": "La información se obtiene de satélites como Sentinel-1 (radar de apertura sintética) y Sentinel-2 (sensores ópticos multiespectrales), que proporcionan datos sobre uso del suelo, vegetación, calidad del agua y otros indicadores, mejorando la transparencia y acelerando la toma de decisiones."
     },
     "cta": {
@@ -602,7 +602,7 @@
       "line2": "de socios estratégicos."
     },
     "body": {
-      "p1": "Stock Capital conecta empresas, instituciones financieras, organizaciones de impacto y proveedores de tecnología para formar un ecosistema que acelera la transición hacia una economía de bajo carbono.",
+      "p1": "Stock Green Asset conecta empresas, instituciones financieras, organizaciones de impacto y proveedores de tecnología para formar un ecosistema que acelera la transición hacia una economía de bajo carbono.",
       "p2": "Nuestros socios amplifican la escala de los proyectos, fortalecen la gobernanza ESG y ayudan a transformar capital en impacto climático, social y ambiental medible."
     },
     "cta": {
@@ -614,9 +614,9 @@
     "badge": "Ecosistema de Socios",
     "title": {
       "line1": "Ecosistema de socios",
-      "line2": "de Stock Capital"
+      "line2": "de Stock Green Asset"
     },
-    "intro": "Nuestro ecosistema reúne empresas, instituciones financieras, organizaciones de impacto y proveedores de tecnología que, junto a Stock Capital, impulsan proyectos de finanzas sustentables, mercado de carbono y gobernanza ESG.",
+    "intro": "Nuestro ecosistema reúne empresas, instituciones financieras, organizaciones de impacto y proveedores de tecnología que, junto a Stock Green Asset, impulsan proyectos de finanzas sustentables, mercado de carbono y gobernanza ESG.",
     "backHome": "← Volver al Home",
     "visitPartner": "Visitar el sitio de {{name}}",
     "partners": {
