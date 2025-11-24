@@ -406,8 +406,11 @@
           "placeholder": "Cuéntanos brevemente cómo podemos apoyar a tu empresa."
         }
       },
-      "submit": "Enviar mensaje",
-      "disclaimer": "Al enviar el formulario, aceptas ser contactado por Stock Capital con fines institucionales."
+      "submit": "Enviar Mensaje",
+  "sending": "Enviando...",
+  "success": "¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.",
+  "error": "No fue posible enviar tu mensaje. Inténtalo de nuevo más tarde.",
+  "disclaimer": "Al enviar este formulario, aceptas ser contactado por Stock Capital con fines institucionales."
     }
   },
 
