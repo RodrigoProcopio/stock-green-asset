@@ -93,20 +93,21 @@ export function Team() {
       className="relative border-t border-white/5 bg-black py-20 text-white scroll-mt-24 overflow-hidden"
     >
       {/* BACKGROUND VIDEO */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        className="absolute inset-0 h-full w-full object-cover opacity-40"
-      >
-        <source src="/videos/governance.webm" type="video/webm" />
-      </video>
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="metadata"
+  className="absolute inset-0 h-full w-full object-cover opacity-40 pointer-events-none"
+>
+  <source src="/videos/governance.webm" type="video/webm" />
+  <source src="/videos/governance.mp4" type="video/mp4" /> {/* ADICIONE Fallback */}
+</video>
 
       {/* OVERLAYS */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-black/90" />
-
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80 md:from-black/70 md:via-black/80 md:to-black/90" />
+      
       {/* CONTENT */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 md:px-6">
         {/* HEADER */}
