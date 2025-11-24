@@ -60,19 +60,20 @@ function AccordionItem({ id, title, eyebrow, children, isOpen, onToggle }) {
         onClick={onToggle}
         className="w-full flex items-center justify-between px-5 py-4 md:px-6 md:py-5 text-left"
       >
-        <div>
+        <div className="flex-1 min-w-0">
           {eyebrow && (
             <span className="text-[0.65rem] uppercase tracking-[0.25em] text-emerald-300/80">
               {eyebrow}
             </span>
           )}
-          <h3 className="mt-1 text-sm md:text-base font-semibold text-white">
+          <h3 className="mt-1 text-sm md:text-base font-semibold text-white break-words pr-3">
             {title}
           </h3>
         </div>
 
         <span
           className={`
+            flex-shrink-0
             flex h-7 w-7 items-center justify-center rounded-full border border-white/20
             text-xs font-semibold
             transition-transform
@@ -201,13 +202,13 @@ export default function ProjectMazuay() {
     <>
       <Navbar />
 
-      <section className="relative min-h-screen bg-gradient-to-b from-black via-slate-950 to-black text-white pt-28 pb-20 px-4 overflow-hidden">
+      <section className="relative min-h-screen bg-gradient-to-b from-black via-slate-950 to-black text-white pt-28 pb-20 px-3 sm:px-4 overflow-x-hidden">
         {/* ---------- BACKGROUND PREMIUM ---------- */}
 
         {/* Glows principais */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-32 top-[-8%] h-[420px] w-[420px] rounded-full bg-emerald-500/22 blur-[140px]" />
-          <div className="absolute bottom-[-18%] right-[-10%] h-[380px] w-[380px] rounded-full bg-cyan-400/18 blur-[130px]" />
+          <div className="absolute left-0 top-[-8%] h-[420px] w-[420px] rounded-full bg-emerald-500/22 blur-[140px]" />
+          <div className="absolute bottom-0 right-0 h-[380px] w-[380px] rounded-full bg-cyan-400/18 blur-[130px]" />
           <div className="absolute top-[35%] left-1/2 h-[260px] w-[420px] -translate-x-1/2 rounded-full bg-emerald-300/10 blur-[110px]" />
         </div>
 
@@ -222,7 +223,7 @@ export default function ProjectMazuay() {
 
         {/* Light sweep */}
         <motion.div
-          className="pointer-events-none absolute -inset-x-40 top-24 h-40 bg-gradient-to-r from-transparent via-emerald-300/10 to-transparent"
+          className="pointer-events-none absolute inset-x-0 top-24 h-40 bg-gradient-to-r from-transparent via-emerald-300/10 to-transparent"
           animate={{ x: ["-20%", "20%", "-20%"] }}
           transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
         />
@@ -257,7 +258,7 @@ export default function ProjectMazuay() {
           ))}
         </motion.div>
 
-        <div className="relative z-10 mx-auto max-w-6xl space-y-10 md:space-y-12">
+        <div className="relative z-10 mx-auto w-full max-w-6xl space-y-10 md:space-y-12">
           {/* HEADER / HERO */}
           <motion.header
             initial="hidden"
@@ -279,7 +280,7 @@ export default function ProjectMazuay() {
               </div>
             </div>
 
-            <p className="mt-4 max-w-2xl text-sm text-white/70 md:text-base">
+            <p className="mt-4 max-w-6xl text-sm text-white/70 md:text-base">
               {t("projectMazuay.header.lead")}
             </p>
 
@@ -337,10 +338,10 @@ export default function ProjectMazuay() {
             initial="hidden"
             animate="visible"
             variants={sectionVariant}
-            className="grid gap-8 md:grid-cols-[230px_minmax(0,1fr)]"
+            className="grid gap-8 md:grid-cols-[230px_minmax(0,1fr)] max-w-full"
           >
             {/* SIDEBAR */}
-            <aside className="md:pt-4">
+            <aside className="md:pt-4 min-w-0">
               {/* Mobile: navegação horizontal */}
               <div className="md:hidden mb-2 text-[0.65rem] uppercase tracking-[0.2em] text-white/40">
                 {t("projectMazuay.ui.sectionsLabel") || "Navegação do projeto"}
@@ -352,7 +353,7 @@ export default function ProjectMazuay() {
                       key={id}
                       onClick={() => handleNavClick(id)}
                       className={`
-                        whitespace-nowrap rounded-full border px-3 py-1.5 text-xs
+                        rounded-full border px-3 py-1.5 text-xs
                         ${
                           activeSection === id
                             ? "border-emerald-400 bg-emerald-400/10 text-emerald-100"
@@ -437,7 +438,7 @@ export default function ProjectMazuay() {
             </aside>
 
             {/* CONTEÚDO PRINCIPAL EM ACORDEÕES */}
-            <div className="space-y-5 md:space-y-6">
+            <div className="space-y-5 md:space-y-6 min-w-0">
               {/* 1. SOBRE O PROJETO */}
               <AccordionItem
                 id="about"
@@ -861,21 +862,37 @@ export default function ProjectMazuay() {
                 </div>
 
                 {/* Botões */}
-                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between w-full">
                   <button
                     onClick={() =>
                       document
                         .getElementById("contact")
                         ?.scrollIntoView({ behavior: "smooth", block: "start" })
                     }
-                    className="inline-flex items-center justify-center rounded-full border border-emerald-400/80 bg-emerald-400/10 px-8 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-100 hover:bg-emerald-400 hover:text-black transition-all"
+                    className="
+                      w-full md:w-auto
+                      inline-flex items-center justify-center
+                      rounded-full border border-emerald-400/80 bg-emerald-400/10
+                      px-6 md:px-8 py-3
+                      text-xs font-semibold uppercase tracking-[0.22em]
+                      text-emerald-100 hover:bg-emerald-400 hover:text-black
+                      transition-all text-center
+                    "
                   >
                     {t("projectMazuay.cta.talkToTeam")}
                   </button>
 
                   <a
                     href="/"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/80 hover:border-emerald-400/70 hover:bg-emerald-400/10 hover:text-white transition-all backdrop-blur-sm"
+                    className="
+                      w-full md:w-auto
+                      inline-flex items-center justify-center gap-2
+                      rounded-full border border-white/20 bg-white/5
+                      px-6 py-3
+                      text-xs font-semibold uppercase tracking-[0.22em]
+                      text-white/80 hover:border-emerald-400/70 hover:bg-emerald-400/10
+                      hover:text-white transition-all backdrop-blur-sm text-center
+                    "
                   >
                     {t("projectMazuay.cta.backHome")}
                   </a>
@@ -917,7 +934,7 @@ export default function ProjectMazuay() {
                     src={satelliteImages[lightboxIndex].src}
                     alt={t(satelliteImages[lightboxIndex].altKey)}
                     className="w-full max-h-[70vh] object-contain"
-                    loading="lazy" 
+                    loading="lazy"
                   />
                 </div>
 

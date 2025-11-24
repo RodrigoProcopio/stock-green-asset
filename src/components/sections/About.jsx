@@ -123,7 +123,7 @@ export function About() {
       {/* =============================== */}
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-16 px-4 py-20 md:px-6 md:py-28 lg:py-32">
         {/* Intro text */}
-        <div className="max-w-4xl space-y-6">
+        <div className="max-w-6xl space-y-6">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

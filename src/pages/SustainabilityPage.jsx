@@ -42,7 +42,7 @@ const odsGoals = [
     id: 8,
     titleKey: "sustainability.ods.goals.8.title",
     descriptionKey: "sustainability.ods.goals.8.description",
-    image: "/images/Logos/8_decent.wepb",
+    image: "/images/Logos/8_decent.webp",
   },
   {
     id: 13,
@@ -172,23 +172,25 @@ export default function SustainabilityPage() {
                   </span>
                 </h1>
 
-                {/* 👉 Botão Acessar Manifesto logo abaixo do título */}
-                <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                  <button
-                    className="
-                      inline-flex items-center justify-center
-                      rounded-full border border-emerald-400/80 bg-transparent
-                      px-6 py-3
-                      text-[0.7rem] font-semibold uppercase tracking-[0.25em]
-                      text-emerald-200
-                      transition-all duration-200
-                      hover:bg-emerald-400 hover:text-black
-                    "
-                  >
-                    {t("sustainability.buttons.manifesto")}
-                  </button>
-                </div>
-
+{/* 👉 Botão Acessar Manifesto logo abaixo do título */}
+<div className="flex flex-col sm:flex-row gap-3 pt-4">
+  <a
+    href="https://sdgs.un.org/partnerships/stock-capital-holding-ltda"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      inline-flex items-center justify-center
+      rounded-full border border-emerald-400/80 bg-transparent
+      px-6 py-3
+      text-[0.7rem] font-semibold uppercase tracking-[0.25em]
+      text-emerald-200
+      transition-all duration-200
+      hover:bg-emerald-400 hover:text-black
+    "
+  >
+    {t("sustainability.buttons.manifesto")}
+  </a>
+</div>
                 <p className="text-sm md:text-base text-white/75 max-w-xl leading-relaxed">
                   {t("sustainability.intro.p1")}
                 </p>
@@ -325,7 +327,7 @@ export default function SustainabilityPage() {
                 <h2 className="mt-2 text-2xl md:text-3xl font-semibold">
                   {t("sustainability.ods.heading")}
                 </h2>
-                <p className="mt-2 max-w-2xl text-sm md:text-base text-white/70">
+                <p className="mt-2 max-w-6xl text-sm md:text-base text-white/70">
                   {t("sustainability.ods.description")}
                 </p>
               </div>

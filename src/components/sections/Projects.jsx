@@ -75,18 +75,29 @@ export function Projects() {
               {t("projects.sectionEyebrow")}
             </p>
 
-            <div className="mt-4">
-              <p className="text-[0.7rem] font-medium uppercase tracking-[0.25em] text-white/40">
-                {t("projects.statusLine", { id: "5343" })}
-              </p>
+<div className="mt-4">
+  <div className="text-[0.7rem] font-medium uppercase tracking-[0.25em] text-white/40 space-y-1">
+    <p>{t("projects.status.validation")}</p>
+    <p>
+  <a
+    href="https://registry.verra.org/app/projectDetail/VCS/5343"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-emerald-300 transition-colors"
+  >
+    {t("projects.status.verraId", { id: "5343" })}
+  </a>
+</p>
+  </div>
 
-              <h2 className="mt-2 text-3xl font-bold">
-                {t("projects.projectName")}
-              </h2>
-              <h3 className="mt-1 text-2xl font-light">
-                {t("projects.projectSubtitle")}
-              </h3>
-            </div>
+  <h2 className="mt-2 text-3xl font-bold">
+    {t("projects.projectName")}
+  </h2>
+  <h3 className="mt-1 text-2xl font-light">
+    {t("projects.projectSubtitle")}
+  </h3>
+</div>
+
           </div>
         </div>
 

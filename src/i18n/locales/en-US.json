@@ -98,11 +98,14 @@
 
   "projects": {
     "sectionEyebrow": "Our Projects",
-    "statusLine": "UNDER VALIDATION    VERRA PROJECT ID: {{id}}",
+      "status": {
+    "validation": "Under Validation",
+    "verraId": "VERRA ID: {{id}}"
+  },
     "projectName": "Stock Carbon",
     "projectSubtitle": "Mazuay REDD+",
     "card": {
-      "tag": "Stock Carbon – Mazuay REDD+",
+      "tag": "Stock Carbon Mazuay REDD+",
       "title": "About the Project",
       "paragraph1": "The Stock Carbon Mazuay REDD+ Project aims to reduce carbon emissions from deforestation and forest degradation, promoting conservation and sustainable forest management in critical preservation areas.",
       "paragraph2": "The initiative contributes to global greenhouse gas (GHG) reduction targets, generates environmental and social benefits for local communities and preserves the biodiversity of threatened ecosystems."
@@ -262,14 +265,14 @@
   "governance": {
     "badge": "Governance",
     "heading": {
-      "line1": "We believe that the capital markets",
+      "line1": "We believe that the low-carbon economy",
       "line2": "can be transparent, accessible and sustainable."
     },
     "buttonIr": "Access RI Portal",
     "body": {
       "p1": "Our governance philosophy is based on the conviction that the connection between capital and sustainable projects must happen with clear rules, reliable information and robust processes. That is why we structure our decision-making flows, compliance and risk management to ensure that every transaction reflects transparency, security and alignment with the low-carbon economy.",
       "p2": "Operating in Brazil and Argentina, we follow global best practices in the financial market and ESG principles, aligned with ethics, loyalty, transparency, excellence and innovation. Our governance integrates the work of the board, executive management and independent monitoring structures, ensuring accountability at every stage of the value chain.",
-      "p3": "By making capital markets more accessible and sustainable, we offer investors clear reports, dedicated relationship channels and an ongoing commitment to integrity. The RI Portal is one of the pillars of this journey, gathering strategic information to support reliable, long-term decisions."
+      "p3": "By making the low-carbon economy more accessible and sustainable, we provide investors with clear reports, dedicated communication channels, and a continued commitment to integrity. The RI Portal is one of the pillars of this journey, bringing together strategic information to support reliable, long-term decision-making."
     }
   },
 

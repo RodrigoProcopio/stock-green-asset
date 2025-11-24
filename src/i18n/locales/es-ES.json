@@ -98,11 +98,14 @@
 
   "projects": {
     "sectionEyebrow": "Nuestros Proyectos",
-    "statusLine": "EN VALIDACIÓN    PROYECTO VERRA ID: {{id}}",
+      "status": {
+    "validation": "En Validación",
+    "verraId": "VERRA ID: {{id}}"
+  },
     "projectName": "Stock Carbon",
     "projectSubtitle": "Mazuay REDD+",
     "card": {
-      "tag": "Stock Carbon – Mazuay REDD+",
+      "tag": "Stock Carbon Mazuay REDD+",
       "title": "Sobre el Proyecto",
       "paragraph1": "El Proyecto Stock Carbon Mazuay REDD+ busca reducir las emisiones de carbono provenientes de la deforestación y la degradación forestal, promoviendo la conservación y la gestión sostenible de los bosques en áreas críticas de preservación.",
       "paragraph2": "La iniciativa contribuye al cumplimiento de las metas globales de reducción de gases de efecto invernadero (GEI), genera beneficios ambientales y sociales para las comunidades locales y preserva la biodiversidad de ecosistemas amenazados."
@@ -261,14 +264,14 @@
   "governance": {
     "badge": "Gobernanza",
     "heading": {
-      "line1": "Creemos que el mercado de capitales",
+      "line1": "Creemos que la economía de bajo carbono",
       "line2": "puede ser transparente, accesible y sustentable."
     },
     "buttonIr": "Acceder al RI Portal",
     "body": {
       "p1": "Nuestra filosofía de gobernanza parte de la convicción de que la conexión entre capital y proyectos sustentables debe ocurrir con reglas claras, información confiable y procesos robustos. Por ello, estructuramos nuestros flujos de decisión, cumplimiento y gestión de riesgos para garantizar que cada operación refleje transparencia, seguridad y alineación con la economía de bajo carbono.",
       "p2": "Actuando en Brasil y Argentina, seguimos las mejores prácticas globales del mercado financiero y los principios ESG, alineados con la ética, la lealtad, la transparencia, la excelencia y la innovación. Nuestra gobernanza integra la actuación del consejo, de la dirección ejecutiva y de estructuras independientes de monitoreo, garantizando responsabilidad en cada etapa de la cadena de valor.",
-      "p3": "Al hacer que el mercado de capitales sea más accesible y sustentable, ofrecemos a los inversores informes claros, canales dedicados de relacionamiento y un compromiso continuo con la integridad. El RI Portal es uno de los pilares de este camino, reuniendo información estratégica para apoyar decisiones confiables y de largo plazo."
+      "p3": "Al hacer que la economía de bajo carbono sea más accesible y sostenible, ofrecemos a los inversionistas informes claros, canales dedicados de comunicación y un compromiso continuo con la integridad. El Portal de RI es uno de los pilares de este camino, reuniendo información estratégica para respaldar decisiones confiables y de largo plazo."
     }
   },
 

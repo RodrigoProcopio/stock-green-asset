@@ -98,11 +98,14 @@
 
   "projects": {
     "sectionEyebrow": "Nossos Projetos",
-    "statusLine": "EM VALIDAÇÃO    PROJETO VERRA ID: {{id}}",
+    "status": {
+  "validation": "EM VALIDAÇÃO",
+  "verraId": "VERRA ID: {{id}}"
+},
     "projectName": "Stock Carbon",
     "projectSubtitle": "Mazuay REDD+",
     "card": {
-      "tag": "Stock Carbon – Mazuay REDD+",
+      "tag": "Stock Carbon Mazuay REDD+",
       "title": "Sobre o Projeto",
       "paragraph1": "O Projeto Stock Carbon Mazuay REDD+ busca reduzir as emissões de carbono provenientes do desmatamento e da degradação florestal, promovendo a conservação e a gestão sustentável das florestas em áreas críticas de preservação.",
       "paragraph2": "A iniciativa contribui para o cumprimento das metas globais de redução de gases de efeito estufa (GEE), gera benefícios ambientais e sociais para as comunidades locais e preserva a biodiversidade de ecossistemas ameaçados."
@@ -265,14 +268,14 @@
   "governance": {
     "badge": "Governança",
     "heading": {
-      "line1": "Acreditamos que o mercado de capitais",
+      "line1": "Acreditamos que a economia de baixo carbono",
       "line2": "pode ser transparente, acessível e sustentável."
     },
     "buttonIr": "Acessar RI Portal",
     "body": {
       "p1": "Nossa filosofia de governança partem da convicção de que a conexão entre capital e projetos sustentáveis precisa acontecer com regras claras, informações confiáveis e processos robustos. Por isso, estruturamos nossos fluxos de decisão, compliance e gestão de risco para garantir que cada operação reflita transparência, segurança e alinhamento com a economia de baixo carbono.",
       "p2": "Atuando no Brasil e na Argentina, seguimos as melhores práticas globais do mercado financeiro e princípios ESG, alinhados à ética, lealdade, transparência, excelência e inovação. Nossa governança integra a atuação do conselho, da diretoria executiva e de estruturas independentes de monitoramento, garantindo responsabilidade em cada etapa da cadeia de valor.",
-      "p3": "Ao tornar o mercado de capitais mais acessível e sustentável, oferecemos aos investidores relatórios claros, canais dedicados de relacionamento e compromisso contínuo com a integridade. O RI Portal é um dos pilares dessa jornada, reunindo informações estratégicas para apoiar decisões confiáveis e de longo prazo."
+      "p3": "Ao tornar  a economia de baixo carbono mais acessível e sustentável, oferecemos aos investidores relatórios claros, canais dedicados de relacionamento e compromisso contínuo com a integridade. O RI Portal é um dos pilares dessa jornada, reunindo informações estratégicas para apoiar decisões confiáveis e de longo prazo."
     }
   },
 
@@ -494,7 +497,7 @@
     },
     "carbonPotential": {
       "heading": "Potencial em Créditos de Carbono",
-      "p1": "Ao evitar o desmatamento em uma área de floresta nativa altamente ameaçada, o projeto Stock Carbon – Mazuay REDD+ possui um potencial estimado de geração de créditos de carbono ao longo do tempo.",
+      "p1": "Ao evitar o desmatamento em uma área de floresta nativa altamente ameaçada, o projeto Stock Carbon Mazuay REDD+ possui um potencial estimado de geração de créditos de carbono ao longo do tempo.",
       "highlight": "ao longo de 20 anos.",
       "p2": "Cada crédito representa uma tonelada de CO₂ equivalente que deixa de ser emitida na atmosfera, contribuindo diretamente para metas climáticas globais e compromissos de redução de emissões."
     },
@@ -510,7 +513,7 @@
     },
     "impacts": {
       "heading": "Impactos Climáticos, Sociais & Ambientais",
-      "intro": "O projeto Stock Carbon – Mazuay REDD+ foi concebido para gerar impacto positivo em múltiplas dimensões:",
+      "intro": "O projeto Stock Carbon Mazuay REDD+ foi concebido para gerar impacto positivo em múltiplas dimensões:",
       "climate": {
         "title": "Clima",
         "items": [
