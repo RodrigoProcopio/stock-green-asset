@@ -90,7 +90,7 @@ export function Team() {
   return (
     <section
       id="team"
-      className="relative border-t border-white/5 bg-black py-20 text-white scroll-mt-24 overflow-hidden"
+      className="relative border-t border-white/5 bg-black py-20 text-white scroll-mt-24"
     >
       {/* ===== DESKTOP: VÍDEO ===== */}
       <div className="absolute inset-0 hidden md:block">
@@ -113,6 +113,7 @@ export function Team() {
       <div
         className="absolute inset-0 bg-cover bg-center md:hidden"
         style={{ backgroundImage: "url('/images/Team.webp')" }}
+        aria-hidden="true"
       >
         <div className="absolute inset-0 bg-black/60" />
       </div>
@@ -127,7 +128,7 @@ export function Team() {
           className="max-w-3xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.5 }}
         >
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300">
@@ -150,7 +151,7 @@ export function Team() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0 }}
         >
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
             {t("team.coreSection")}
@@ -209,7 +210,7 @@ export function Team() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0 }}
         >
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200/80">
             {t("team.advisorySection")}
