@@ -1,0 +1,8 @@
+# robots.txt para Stock Capital
+# Permite que mecanismos de busca indexem o site inteiro.
+
+User-agent: *
+Allow: /
+
+# Quando tiver um sitemap em produção, aponte pra ele:
+# Sitemap: https://www.seu-dominio.com/sitemap.xml

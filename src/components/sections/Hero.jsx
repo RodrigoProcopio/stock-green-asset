@@ -56,8 +56,8 @@ export function Hero() {
       id="home"
       className="relative min-h-screen overflow-hidden text-white scroll-mt-24"
     >
-      {/* Vídeo otimizado (.webm) */}
-      <div className="absolute inset-0">
+      {/* ===== BACKGROUND DESKTOP (VÍDEO) – md+ ===== */}
+      <div className="absolute inset-0 hidden md:block">
         <video
           autoPlay
           loop
@@ -65,11 +65,10 @@ export function Hero() {
           playsInline
           preload="auto"
           className="h-full w-full object-cover"
+          aria-hidden="true"
+          tabIndex={-1}
         >
-          <source
-            src="/videos/hero-forest.webm"
-            type="video/webm"
-          />
+          <source src="/videos/hero-forest.webm" type="video/webm" />
         </video>
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
@@ -77,6 +76,24 @@ export function Hero() {
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-[-10%] top-[10%] h-72 w-72 rounded-full bg-emerald-400/12 blur-3xl" />
           <div className="absolute right-[-5%] bottom-[5%] h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
+        </div>
+      </div>
+
+      {/* ===== BACKGROUND MOBILE (IMAGEM ESTÁTICA) – até md ===== */}
+      <div className="absolute inset-0 md:hidden" aria-hidden="true">
+        <img
+          src="/images/Hero.webp"
+          alt=""
+          loading="eager"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
+
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-[-10%] top-[10%] h-56 w-56 rounded-full bg-emerald-400/12 blur-[60px]" />
+          <div className="absolute right-[-5%] bottom-[5%] h-56 w-56 rounded-full bg-cyan-400/10 blur-[60px]" />
         </div>
       </div>
 
@@ -169,12 +186,10 @@ export function Hero() {
               "
               onClick={() => navigate('/projects/mazuay-redd')}
             >
-              {/* Texto do botão */}
               <span className="relative z-10">
-                {t('hero.ctaCarbonCredit')}
+                {t("hero.ctaCarbonCredit")}
               </span>
 
-              {/* Luz deslizando */}
               <motion.span
                 aria-hidden="true"
                 className="
@@ -186,14 +201,14 @@ export function Hero() {
                   opacity-0
                 "
                 animate={{
-                  x: ['-120%', '120%'],
+                  x: ["-120%", "120%"],
                   opacity: [0, 1, 0],
                 }}
                 transition={{
                   duration: 1.4,
                   repeat: Infinity,
                   repeatDelay: 2.0,
-                  ease: 'easeInOut',
+                  ease: "easeInOut",
                 }}
               />
             </motion.button>
@@ -219,7 +234,7 @@ export function Hero() {
               "
               onClick={() => scrollTo('#solutions')}
             >
-              {t('hero.ctaSolutions')}
+              {t("hero.ctaSolutions")}
             </motion.button>
 
             {/* Botão Sustentabilidade */}
@@ -243,34 +258,32 @@ export function Hero() {
               "
               onClick={() => scrollTo('#sustainability')}
             >
-              {t('hero.ctaSustainability')}
+              {t("hero.ctaSustainability")}
             </motion.button>
 
             {/* Botão Projetos Sociais */}
-<motion.button
-  whileHover={{
-    scale: 1.03,
-    boxShadow: "0 0 18px rgba(16,185,129,0.45)",
-    borderColor: "rgba(16,185,129,0.85)",
-  }}
-  whileTap={{ scale: 0.97 }}
-  className="
-    inline-flex items-center justify-center
-    rounded-full border border-white/25
-    bg-black/30
-    px-8 py-3
-    text-xs font-semibold uppercase tracking-[0.22em]
-    text-white/85
-    hover:border-emerald-400/80 hover:bg-white/5 hover:text-white
-    transition-all backdrop-blur-sm
-    whitespace-nowrap
-  "
-  onClick={() => navigate('/social-projects')}
->
-  {t('hero.ctaProjects')}
-</motion.button>
-
-
+            <motion.button
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 0 18px rgba(16,185,129,0.45)",
+                borderColor: "rgba(16,185,129,0.85)",
+              }}
+              whileTap={{ scale: 0.97 }}
+              className="
+                inline-flex items-center justify-center
+                rounded-full border border-white/25
+                bg-black/30
+                px-8 py-3
+                text-xs font-semibold uppercase tracking-[0.22em]
+                text-white/85
+                hover:border-emerald-400/80 hover:bg-white/5 hover:text-white
+                transition-all backdrop-blur-sm
+                whitespace-nowrap
+              "
+              onClick={() => navigate('/social-projects')}
+            >
+              {t("hero.ctaProjects")}
+            </motion.button>
           </motion.div>
         </div>
       </div>

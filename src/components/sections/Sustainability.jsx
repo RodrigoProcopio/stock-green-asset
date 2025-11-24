@@ -23,55 +23,60 @@ export function Sustainability() {
       </div>
 
       {/* Watermarks ONU múltiplas */}
-      <div className="pointer-events-none absolute inset-0 hidden md:block z-0">
-        {/* Logo 1 */}
-        <motion.img
-          src="/images/Logos/ungc-logo.webp"
-          alt="UN Global Compact"
-          className="absolute left-1/2 top-1/2 w-[520px] -translate-x-1/2 -translate-y-1/2 opacity-[0.16]"
-          initial={{ scale: 0.6, opacity: 0, x: 300, y: 0 }}
-          animate={{
-            opacity: [0.3, 0.2, 0.1],
-            scale: [0.6, 1.9, 2.4],
-            x: [300, 60, -380, 0],
-            y: [-40, 60, -80, 0],
-            filter: ["blur(0px)", "blur(3px)", "blur(6px)", "blur(2px)"],
-          }}
-          transition={{ duration: 26, ease: "easeInOut", repeat: Infinity }}
-        />
+<div className="pointer-events-none absolute inset-0 hidden md:block z-0">
+  
+  {/* Logo 1 */}
+  <motion.img
+    src="/images/Logos/ungc-logo.webp"
+    alt="UN Global Compact"
+    loading="lazy"   // ✅ ADICIONADO
+    className="absolute left-1/2 top-1/2 w-[520px] -translate-x-1/2 -translate-y-1/2 opacity-[0.16]"
+    initial={{ scale: 0.6, opacity: 0, x: 300, y: 0 }}
+    animate={{
+      opacity: [0.3, 0.2, 0.1],
+      scale: [0.6, 1.9, 2.4],
+      x: [300, 60, -380, 0],
+      y: [-40, 60, -80, 0],
+      filter: ["blur(0px)", "blur(3px)", "blur(6px)", "blur(2px)"],
+    }}
+    transition={{ duration: 26, ease: "easeInOut", repeat: Infinity }}
+  />
 
-        {/* Logo 2 */}
-        <motion.img
-          src="/images/Logos/ungc-logo.webp"
-          alt="UN Global Compact"
-          className="absolute left-1/2 top-1/2 w-[420px] -translate-x-1/2 -translate-y-1/2 opacity-[0.12]"
-          initial={{ scale: 0.5, opacity: 0, x: 0, y: -140 }}
-          animate={{
-            opacity: [0.3, 0.2, 0.1],
-            scale: [0.5, 1.6, 2.1],
-            x: [0, -180, 220, -140],
-            y: [-140, 40, -20, 80],
-            filter: ["blur(0px)", "blur(2px)", "blur(5px)", "blur(2px)"],
-          }}
-          transition={{ duration: 22, ease: "easeInOut", repeat: Infinity }}
-        />
+  {/* Logo 2 */}
+  <motion.img
+    src="/images/Logos/ungc-logo.webp"
+    alt="UN Global Compact"
+    loading="lazy"   // ✅ ADICIONADO
+    className="absolute left-1/2 top-1/2 w-[420px] -translate-x-1/2 -translate-y-1/2 opacity-[0.12]"
+    initial={{ scale: 0.5, opacity: 0, x: 0, y: -140 }}
+    animate={{
+      opacity: [0.3, 0.2, 0.1],
+      scale: [0.5, 1.6, 2.1],
+      x: [0, -180, 220, -140],
+      y: [-140, 40, -20, 80],
+      filter: ["blur(0px)", "blur(2px)", "blur(5px)", "blur(2px)"],
+    }}
+    transition={{ duration: 22, ease: "easeInOut", repeat: Infinity }}
+  />
 
-        {/* Logo 3 */}
-        <motion.img
-          src="/images/Logos/ungc-logo.webp"
-          alt="UN Global Compact"
-          className="absolute left-1/2 top-1/2 w-[340px] -translate-x-1/2 -translate-y-1/2 opacity-[0.1]"
-          initial={{ scale: 0.45, opacity: 0, x: -320, y: 120 }}
-          animate={{
-            opacity: [0.2, 0.4, 0.3],
-            scale: [0.45, 1.5, 2.0],
-            x: [-320, -40, 260, 80],
-            y: [120, -40, -120, 40],
-            filter: ["blur(0px)", "blur(2px)", "blur(4px)", "blur(2px)"],
-          }}
-          transition={{ duration: 28, ease: "easeInOut", repeat: Infinity }}
-        />
-      </div>
+  {/* Logo 3 */}
+  <motion.img
+    src="/images/Logos/ungc-logo.webp"
+    alt="UN Global Compact"
+    loading="lazy"   // ✅ ADICIONADO
+    className="absolute left-1/2 top-1/2 w-[340px] -translate-x-1/2 -translate-y-1/2 opacity-[0.1]"
+    initial={{ scale: 0.45, opacity: 0, x: -320, y: 120 }}
+    animate={{
+      opacity: [0.2, 0.4, 0.3],
+      scale: [0.45, 1.5, 2.0],
+      x: [-320, -40, 260, 80],
+      y: [120, -40, -120, 40],
+      filter: ["blur(0px)", "blur(2px)", "blur(4px)", "blur(2px)"],
+    }}
+    transition={{ duration: 28, ease: "easeInOut", repeat: Infinity }}
+  />
+
+</div>
 
       {/* Conteúdo principal */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 md:px-6">

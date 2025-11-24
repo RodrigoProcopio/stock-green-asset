@@ -375,7 +375,7 @@ export default function SustainabilityPage() {
             {/* Logo + botão embaixo do texto */}
             <div className="flex flex-col items-center justify-center gap-4 text-center mt-10">
               <img
-                src="/images/Logos/goals_logo.png"
+                src="/images/Logos/goals_logo.webp"
                 alt={t("sustainability.ods.logoAlt")}
                 className="h-10 md:h-12 w-auto opacity-90"
                 loading="lazy"
@@ -667,7 +667,7 @@ export default function SustainabilityPage() {
           >
             <div className="flex items-center gap-8">
               <img
-                src="/images/Logos/icma_logo.png"
+                src="/images/Logos/icma_logo.webp"
                 alt={t("sustainability.icma.logoAlt")}
                 className="h-10 md:h-24 w-auto opacity-90"
                 loading="lazy"

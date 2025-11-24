@@ -23,24 +23,24 @@ const baseCard =
 const accentCard =
   "rounded-2xl border border-emerald-400/40 bg-emerald-400/12 backdrop-blur-xl shadow-[0_0_30px_rgba(16,185,129,0.22)] hover:shadow-[0_0_48px_rgba(16,185,129,0.35)] hover:bg-emerald-400/18 transition-all duration-300";
 
-  const satelliteImages = [
+const satelliteImages = [
   {
-    src: "/images/Monitoramento/DEZEMBRO 2024.png",
+    src: "/images/Monitoramento/DEZEMBRO 2024.webp",
     altKey: "projectMazuay.satellite.images.dec2024.alt",
     captionKey: "projectMazuay.satellite.images.dec2024.caption",
   },
   {
-    src: "/images/Monitoramento/JANEIRO 2025.png",
+    src: "/images/Monitoramento/JANEIRO 2025.webp",
     altKey: "projectMazuay.satellite.images.jan2025.alt",
     captionKey: "projectMazuay.satellite.images.jan2025.caption",
   },
   {
-    src: "/images/Monitoramento/ABRIL 2025.png",
+    src: "/images/Monitoramento/ABRIL 2025.webp",
     altKey: "projectMazuay.satellite.images.apr2025.alt",
     captionKey: "projectMazuay.satellite.images.apr2025.caption",
   },
   {
-    src: "/images/Monitoramento/JULHO 2025.png",
+    src: "/images/Monitoramento/JULHO 2025.webp",
     altKey: "projectMazuay.satellite.images.jul2025.alt",
     captionKey: "projectMazuay.satellite.images.jul2025.caption",
   },
@@ -168,7 +168,7 @@ export default function ProjectMazuay() {
     });
   };
 
-    const [monitoringTab, setMonitoringTab] = useState("realtime");
+  const [monitoringTab, setMonitoringTab] = useState("realtime");
 
   // 👉 estados do lightbox
   const [lightboxIndex, setLightboxIndex] = useState(null);
@@ -204,64 +204,58 @@ export default function ProjectMazuay() {
       <section className="relative min-h-screen bg-gradient-to-b from-black via-slate-950 to-black text-white pt-28 pb-20 px-4 overflow-hidden">
         {/* ---------- BACKGROUND PREMIUM ---------- */}
 
-{/* Glows principais */}
-<div className="pointer-events-none absolute inset-0">
-  {/* Glow esmeralda lateral */}
-  <div className="absolute -left-32 top-[-8%] h-[420px] w-[420px] rounded-full bg-emerald-500/22 blur-[140px]" />
+        {/* Glows principais */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-32 top-[-8%] h-[420px] w-[420px] rounded-full bg-emerald-500/22 blur-[140px]" />
+          <div className="absolute bottom-[-18%] right-[-10%] h-[380px] w-[380px] rounded-full bg-cyan-400/18 blur-[130px]" />
+          <div className="absolute top-[35%] left-1/2 h-[260px] w-[420px] -translate-x-1/2 rounded-full bg-emerald-300/10 blur-[110px]" />
+        </div>
 
-  {/* Glow cyan no rodapé */}
-  <div className="absolute bottom-[-18%] right-[-10%] h-[380px] w-[380px] rounded-full bg-cyan-400/18 blur-[130px]" />
+        {/* Grid técnico sutil */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.11] mix-blend-screen">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.24)_1px,transparent_1px)] bg-[length:80px_80px]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(148,163,184,0.24)_1px,transparent_1px)] bg-[length:80px_80px]" />
+        </div>
 
-  {/* Glow suave centralizado atrás do conteúdo */}
-  <div className="absolute top-[35%] left-1/2 h-[260px] w-[420px] -translate-x-1/2 rounded-full bg-emerald-300/10 blur-[110px]" />
-</div>
+        {/* Vinheta */}
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0,_transparent_40%,_rgba(0,0,0,0.9)_80%)]" />
 
-{/* Grid técnico sutil */}
-<div className="pointer-events-none absolute inset-0 opacity-[0.11] mix-blend-screen">
-  <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.24)_1px,transparent_1px)] bg-[length:80px_80px]" />
-  <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(148,163,184,0.24)_1px,transparent_1px)] bg-[length:80px_80px]" />
-</div>
+        {/* Light sweep */}
+        <motion.div
+          className="pointer-events-none absolute -inset-x-40 top-24 h-40 bg-gradient-to-r from-transparent via-emerald-300/10 to-transparent"
+          animate={{ x: ["-20%", "20%", "-20%"] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+        />
 
-{/* Vinheta para foco central */}
-<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0,_transparent_40%,_rgba(0,0,0,0.9)_80%)]" />
-
-{/* Light sweep passando atrás das métricas */}
-<motion.div
-  className="pointer-events-none absolute -inset-x-40 top-24 h-40 bg-gradient-to-r from-transparent via-emerald-300/10 to-transparent"
-  animate={{ x: ["-20%", "20%", "-20%"] }}
-  transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-/>
-
-{/* Partículas suaves em movimento */}
-<motion.div
-  className="pointer-events-none absolute inset-0"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 0.35 }}
-  transition={{ duration: 2.8 }}
->
-  {Array.from({ length: 14 }).map((_, i) => (
-    <motion.div
-      key={i}
-      className="absolute w-1.5 h-1.5 rounded-full bg-emerald-300/35 blur-[2px]"
-      style={{
-        top: `${(i * 37) % 100}%`,
-        left: `${(i * 61) % 100}%`,
-      }}
-      animate={{
-        y: [0, -18, 10, -8, 0],
-        x: [0, 12, -14, 6, 0],
-        opacity: [0.2, 0.6, 0.4, 0.7, 0.3],
-        scale: [0.7, 1.2, 0.9, 1.3, 0.8],
-      }}
-      transition={{
-        duration: 18 + i,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    />
-  ))}
-</motion.div>
-
+        {/* Partículas */}
+        <motion.div
+          className="pointer-events-none absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.35 }}
+          transition={{ duration: 2.8 }}
+        >
+          {Array.from({ length: 14 }).map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1.5 h-1.5 rounded-full bg-emerald-300/35 blur-[2px]"
+              style={{
+                top: `${(i * 37) % 100}%`,
+                left: `${(i * 61) % 100}%`,
+              }}
+              animate={{
+                y: [0, -18, 10, -8, 0],
+                x: [0, 12, -14, 6, 0],
+                opacity: [0.2, 0.6, 0.4, 0.7, 0.3],
+                scale: [0.7, 1.2, 0.9, 1.3, 0.8],
+              }}
+              transition={{
+                duration: 18 + i,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+        </motion.div>
 
         <div className="relative z-10 mx-auto max-w-6xl space-y-10 md:space-y-12">
           {/* HEADER / HERO */}
@@ -672,26 +666,25 @@ export default function ProjectMazuay() {
                             </div>
 
                             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-  {satelliteImages.map((img, index) => (
-    <button
-      key={img.src}
-      type="button"
-      onClick={() => openLightbox(index)}
-      className="group overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] focus:outline-none focus:ring-2 focus:ring-emerald-400/70"
-    >
-      <img
-        src={img.src}
-        alt={t(img.altKey)}
-        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-        loading="lazy"
-      />
-      <figcaption className="px-3 py-2 text-xs text-white/70 text-left">
-        {t(img.captionKey)}
-      </figcaption>
-    </button>
-  ))}
-</div>
-
+                              {satelliteImages.map((img, index) => (
+                                <button
+                                  key={img.src}
+                                  type="button"
+                                  onClick={() => openLightbox(index)}
+                                  className="group overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] focus:outline-none focus:ring-2 focus:ring-emerald-400/70"
+                                >
+                                  <img
+                                    src={img.src}
+                                    alt={t(img.altKey)}
+                                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                                    loading="lazy"
+                                  />
+                                  <figcaption className="px-3 py-2 text-xs text-white/70 text-left">
+                                    {t(img.captionKey)}
+                                  </figcaption>
+                                </button>
+                              ))}
+                            </div>
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -830,7 +823,7 @@ export default function ProjectMazuay() {
 
                     <div className="mt-4 flex justify-center">
                       <img
-                        src="/images/Logos/goals_logo.png"
+                        src="/images/Logos/goals_logo.webp"
                         alt="Sustainable Development Goals Logo"
                         className="w-full max-w-xs md:max-w-sm"
                         loading="lazy"
@@ -839,7 +832,7 @@ export default function ProjectMazuay() {
 
                     <div className="mt-3 flex justify-center">
                       <img
-                        src="/images/Logos/ods.png"
+                        src="/images/Logos/ods.webp"
                         alt={t("projectMazuay.sdgs.imageAlt")}
                         className="w-full max-w-3xl"
                         loading="lazy"
@@ -857,17 +850,17 @@ export default function ProjectMazuay() {
                 variants={sectionVariant}
                 className="pt-4 flex flex-col gap-4"
               >
-                {/* Logo CCB acima dos botões */}
+                {/* Logo CCB */}
                 <div className="flex justify-center mb-8">
                   <img
-                    src="/images/Logos/ccb.png"
+                    src="/images/Logos/ccb.webp"
                     alt="Certificação CCB"
                     className="w-64 md:w-[28rem] opacity-90"
                     loading="lazy"
                   />
                 </div>
 
-                {/* Linha dos botões */}
+                {/* Botões */}
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                   <button
                     onClick={() =>
@@ -892,7 +885,7 @@ export default function ProjectMazuay() {
           </motion.div>
         </div>
 
-                {/* LIGHTBOX DE IMAGENS DE SATÉLITE */}
+        {/* LIGHTBOX DE IMAGENS DE SATÉLITE */}
         <AnimatePresence>
           {lightboxIndex !== null && (
             <motion.div
@@ -924,6 +917,7 @@ export default function ProjectMazuay() {
                     src={satelliteImages[lightboxIndex].src}
                     alt={t(satelliteImages[lightboxIndex].altKey)}
                     className="w-full max-h-[70vh] object-contain"
+                    loading="lazy" 
                   />
                 </div>
 
@@ -952,7 +946,6 @@ export default function ProjectMazuay() {
             </motion.div>
           )}
         </AnimatePresence>
-
       </section>
     </>
   );

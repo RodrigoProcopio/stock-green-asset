@@ -6,103 +6,105 @@ import { Navbar } from "../components/layout/Navbar";
 const partners = [
   {
     id: "ctx",
-    logo: "/images/Logos/CTX.png",
+    logo: "/images/Logos/CTX.webp",
     website: "https://ctxglobal.com/",
     scale: 3.0,
   },
   {
     id: "cipo",
-    logo: "/images/Logos/CIPÓ ENGENHARIA.png",
+    logo: "/images/Logos/CIPÓ ENGENHARIA.webp",
     website: "https://www.xn--ciposoluesambientais-b1b22a.com.br/",
     scale: 1.1,
   },
   {
     id: "officeK",
-    logo: "/images/Logos/Office K-InTech.png",
-    website: "https://www.linkedin.com/in/albertomjunior/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    logo: "/images/Logos/Office K-InTech.webp",
+    website:
+      "https://www.linkedin.com/in/albertomjunior/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     scale: 2.0,
   },
   {
     id: "bub",
-    logo: "/images/Logos/BUB preto.png",
+    logo: "/images/Logos/BUB preto.webp",
     website: "https://betteruseblockchain.com/",
     scale: 1.0,
   },
   {
     id: "spotsat",
-    logo: "/images/Logos/spotsat.png",
+    logo: "/images/Logos/spotsat.webp",
     website: "https://spotsat.com.br/",
     scale: 1.8,
   },
   {
     id: "bacx",
-    logo: "/images/Logos/BACX Argentina.png",
+    logo: "/images/Logos/BACX Argentina.webp",
     website: "https://www.bacx.com.ar/en/",
     scale: 1.1,
   },
   {
     id: "martinelli",
-    logo: "/images/Logos/Martinelli.png",
+    logo: "/images/Logos/Martinelli.webp",
     website: "https://martinelliguimaraes.com.br/",
     scale: 1.8,
   },
   {
     id: "perenar",
-    logo: "/images/Logos/Perenar.png",
-    website: "https://www.linkedin.com/in/eduardo-eugenio-assmann-2a597b239/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    logo: "/images/Logos/Perenar.webp",
+    website:
+      "https://www.linkedin.com/in/eduardo-eugenio-assmann-2a597b239/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     scale: 1.5,
   },
   {
     id: "grupoStudio",
-    logo: "/images/Logos/studio.png",
+    logo: "/images/Logos/studio.webp",
     website: "https://grupostudio.com.br/",
     scale: 1.1,
   },
   {
     id: "eptv",
-    logo: "/images/Logos/EPTV.png",
+    logo: "/images/Logos/EPTV.webp",
     website: "https://institucional.eptv.com.br/televisao/aeptv.aspx",
     scale: 1.05,
   },
   {
     id: "adgm",
-    logo: "/images/Logos/Abu Dhabi Global Market.png",
+    logo: "/images/Logos/Abu Dhabi Global Market.webp",
     website: "https://www.adgm.com/",
     scale: 1.0,
   },
   {
     id: "proph3t",
-    logo: "/images/Logos/proph3t capital.png",
+    logo: "/images/Logos/proph3t capital.webp",
     website: "https://www.proph3t.xyz/lander",
     scale: 2.0,
   },
   {
     id: "b3",
-    logo: "/images/Logos/B3.png",
+    logo: "/images/Logos/B3.webp",
     website: "https://www.b3.com.br/pt_br/para-voce",
     scale: 1.0,
   },
   {
     id: "earthood",
-    logo: "/images/Logos/Earthood.png",
+    logo: "/images/Logos/Earthood.webp",
     website: "https://www.earthood.com/",
     scale: 1.8,
   },
   {
     id: "bureauVeritas",
-    logo: "/images/Logos/Bureau Veritas.png",
+    logo: "/images/Logos/Bureau Veritas.webp",
     website: "https://group.bureauveritas.com/",
     scale: 1.2,
   },
   {
     id: "verra",
-    logo: "/images/Logos/Verra.png",
+    logo: "/images/Logos/Verra.webp",
     website: "https://verra.org/",
     scale: 1.0,
   },
   {
     id: "climateImpactX",
-    logo: "/images/Logos/Climate Impact.png",
+    logo: "/images/Logos/Climate Impact.webp",
     website: "https://climateimpactx.com/",
     scale: 1.0,
   },
@@ -221,6 +223,7 @@ export function PartnersEcosystem() {
                         <img
                           src={partner.logo}
                           alt={t(nameKey)}
+                          loading="lazy"
                           className="max-h-full max-w-full object-contain"
                           style={{ transform: `scale(${partner.scale || 1})` }}
                         />

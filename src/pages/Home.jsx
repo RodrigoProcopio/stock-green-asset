@@ -1,17 +1,59 @@
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
 import { useLocation } from "react-router-dom";
 
 import { Navbar } from "../components/layout/Navbar";
-import { Hero } from "../components/sections/Hero";
-import { About } from "../components/sections/About";
-import { Solutions } from "../components/sections/Solutions";
-import { Projects } from "../components/sections/Projects";
-import { Sustainability } from "../components/sections/Sustainability";
-import { Governance } from "../components/sections/Governance";
-import { Team } from "../components/sections/Team";
-import Partners from "../components/sections/Partners";
-import { Contact } from "../components/sections/Contact";
 import { Footer } from "../components/layout/Footer";
+
+// 🔹 Lazy-load das seções (code splitting por seção)
+const Hero = lazy(() =>
+  import("../components/sections/Hero").then((m) => ({ default: m.Hero }))
+);
+
+const About = lazy(() =>
+  import("../components/sections/About").then((m) => ({ default: m.About }))
+);
+
+const Solutions = lazy(() =>
+  import("../components/sections/Solutions").then((m) => ({
+    default: m.Solutions,
+  }))
+);
+
+const Projects = lazy(() =>
+  import("../components/sections/Projects").then((m) => ({
+    default: m.Projects,
+  }))
+);
+
+const Sustainability = lazy(() =>
+  import("../components/sections/Sustainability").then((m) => ({
+    default: m.Sustainability,
+  }))
+);
+
+const Governance = lazy(() =>
+  import("../components/sections/Governance").then((m) => ({
+    default: m.Governance,
+  }))
+);
+
+const Team = lazy(() =>
+  import("../components/sections/Team").then((m) => ({ default: m.Team }))
+);
+
+// Partners tem `export function Partners` *e* `export default Partners`, então
+// tanto m.Partners quanto m.default funcionam. Vou usar o default:
+const Partners = lazy(() =>
+  import("../components/sections/Partners").then((m) => ({
+    default: m.default || m.Partners,
+  }))
+);
+
+const Contact = lazy(() =>
+  import("../components/sections/Contact").then((m) => ({
+    default: m.Contact,
+  }))
+);
 
 export function Home() {
   const location = useLocation();
@@ -22,10 +64,10 @@ export function Home() {
 
     const el = document.querySelector(location.hash);
     if (el) {
-      // pequeno delay garante que tudo já renderizou
+      // delay um pouco maior pra garantir que os lazy já renderizaram
       setTimeout(() => {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 150);
+      }, 300);
     }
   }, [location]);
 
@@ -34,18 +76,27 @@ export function Home() {
       <Navbar />
 
       <main>
-        <Hero />
-        <About />
-        <Solutions />
-        <Projects />
-        <Sustainability />
-        <Governance />
-        <Team />
-        <Partners />
-        <Contact />
+        {/* Hero: principal para LCP, com fallback que mantém a altura */}
+        <Suspense fallback={<div className="min-h-[70vh] w-full bg-black" />}>
+          <Hero />
+        </Suspense>
+
+        {/* Demais seções podem carregar em paralelo, fallback simples */}
+        <Suspense fallback={null}>
+          <About />
+          <Solutions />
+          <Projects />
+          <Sustainability />
+          <Governance />
+          <Team />
+          <Partners />
+          <Contact />
+        </Suspense>
       </main>
 
       <Footer />
     </div>
   );
 }
+
+export default Home;

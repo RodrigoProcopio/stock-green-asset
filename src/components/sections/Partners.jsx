@@ -119,23 +119,23 @@ export function Partners() {
  */
 function LogosMarquee() {
   const logos = [
-    { file: "Abu Dhabi Global Market.png", name: "Abu Dhabi Global Market" },
-    { file: "B3.png", name: "B3" },
-    { file: "BACX Argentina.png", name: "BACX Argentina" },
-    { file: "BUB preto.png", name: "BUB" },
-    { file: "Bureau Veritas.png", name: "Bureau Veritas" },
-    { file: "CIPÓ ENGENHARIA.png", name: "CIPÓ Engenharia" },
-    { file: "Climate Impact.png", name: "Climate Impact X" },
-    { file: "CTX.png", name: "CTX" },
-    { file: "Earthood.png", name: "Earthood" },
-    { file: "EPTV.png", name: "EPTV" },
-    { file: "Martinelli.png", name: "Martinelli" },
-    { file: "Office K-InTech.png", name: "Office K-InTech" },
-    { file: "Perenar.png", name: "Perenar" },
-    { file: "proph3t capital.png", name: "proph3t capital" },
-    { file: "spotsat.png", name: "Spotsat" },
-    { file: "studio.png", name: "Grupo Studio" },
-    { file: "Verra.png", name: "Verra" },
+    { file: "Abu Dhabi Global Market.webp", name: "Abu Dhabi Global Market" },
+    { file: "B3.webp", name: "B3" },
+    { file: "BACX Argentina.webp", name: "BACX Argentina" },
+    { file: "BUB preto.webp", name: "BUB" },
+    { file: "Bureau Veritas.webp", name: "Bureau Veritas" },
+    { file: "CIPÓ ENGENHARIA.webp", name: "CIPÓ Engenharia" },
+    { file: "Climate Impact.webp", name: "Climate Impact X" },
+    { file: "CTX.webp", name: "CTX" },
+    { file: "Earthood.webp", name: "Earthood" },
+    { file: "EPTV.webp", name: "EPTV" },
+    { file: "Martinelli.webp", name: "Martinelli" },
+    { file: "Office K-InTech.webp", name: "Office K-InTech" },
+    { file: "Perenar.webp", name: "Perenar" },
+    { file: "proph3t capital.webp", name: "proph3t capital" },
+    { file: "spotsat.webp", name: "Spotsat" },
+    { file: "studio.webp", name: "Grupo Studio" },
+    { file: "Verra.webp", name: "Verra" },
   ];
 
   return (
@@ -155,6 +155,7 @@ function LogosMarquee() {
             key={`${logo.name}-${index}`}
             src={`/images/Logos/${logo.file}`}
             alt={logo.name}
+            loading="lazy"
             className="h-20 w-auto md:h-24 object-contain grayscale"
           />
         ))}
