@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import logoStock from "../../assets/logo-stock-capital.svg";
+import logoStock from "../../assets/logo-stock.png";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -128,7 +128,7 @@ export function Navbar() {
               <motion.img
                 src={logoStock}
                 alt="Stock Capital"
-                className="absolute left-0 top-1 h-8 w-auto"
+                className="absolute left-0 h-50 w-54"
                 initial={{ y: "0%" }}
                 animate={logoTopControls}
                 style={{ willChange: "transform" }}
@@ -137,7 +137,7 @@ export function Navbar() {
               <motion.img
                 src={logoStock}
                 alt="Stock Capital"
-                className="absolute left-0 top-0 h-8 w-auto"
+                className="absolute left-0 h-50 w-54"
                 initial={{ y: "-100%" }}
                 animate={logoBottomControls}
                 style={{ willChange: "transform" }}
