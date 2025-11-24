@@ -353,7 +353,7 @@ export default function ProjectMazuay() {
                       key={id}
                       onClick={() => handleNavClick(id)}
                       className={`
-                        rounded-full border px-3 py-1.5 text-xs
+                        whitespace-nowrap rounded-full border px-3 py-1.5 text-xs
                         ${
                           activeSection === id
                             ? "border-emerald-400 bg-emerald-400/10 text-emerald-100"
