@@ -30,31 +30,31 @@ const odsGoals = [
     id: 5,
     titleKey: "sustainability.ods.goals.5.title",
     descriptionKey: "sustainability.ods.goals.5.description",
-    image: "/images/Logos/5_gender.jpeg",
+    image: "/images/Logos/5_gender.webp",
   },
   {
     id: 6,
     titleKey: "sustainability.ods.goals.6.title",
     descriptionKey: "sustainability.ods.goals.6.description",
-    image: "/images/Logos/6_clean.jpeg",
+    image: "/images/Logos/6_clean.webp",
   },
   {
     id: 8,
     titleKey: "sustainability.ods.goals.8.title",
     descriptionKey: "sustainability.ods.goals.8.description",
-    image: "/images/Logos/8_decent.jpeg",
+    image: "/images/Logos/8_decent.wepb",
   },
   {
     id: 13,
     titleKey: "sustainability.ods.goals.13.title",
     descriptionKey: "sustainability.ods.goals.13.description",
-    image: "/images/Logos/13_climate.jpeg",
+    image: "/images/Logos/13_climate.webp",
   },
   {
     id: 17,
     titleKey: "sustainability.ods.goals.17.title",
     descriptionKey: "sustainability.ods.goals.17.description",
-    image: "/images/Logos/17_partner.jpeg",
+    image: "/images/Logos/17_partner.webp",
   },
 ];
 
