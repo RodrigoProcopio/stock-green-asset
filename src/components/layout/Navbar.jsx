@@ -45,7 +45,7 @@ export function Navbar() {
   const logoTopControls = useAnimation();
   const logoBottomControls = useAnimation();
   const navigate = useNavigate();
-  const location = useLocation(); 
+  const location = useLocation();
 
   const { t } = useTranslation();
 
@@ -100,7 +100,7 @@ export function Navbar() {
     <>
       {/* Botão pill no topo direito (menu fechado) */}
       {!isOpen && (
-        <div className="fixed right-4 top-4 z-40 md:right-8 md:top-8">
+        <div className="fixed right-4 top-5 z-40 md:right-8 md:top-8">
           <motion.button
             onClick={() => setIsOpen(true)}
             onMouseEnter={handleLogoSpin}
@@ -145,7 +145,7 @@ export function Navbar() {
             </div>
 
             {/* Divisor vertical */}
-            <div className="mx-3 h-10 w-[1px] bg-black/15 group-hover:bg-black/25 transition-colors" />
+            <div className="mx-3 h-10 w-[1px] bg-black/15 transition-colors group-hover:bg-black/25" />
 
             {/* Ícone Hamburguer */}
             <div className="flex flex-col justify-center gap-1.5">
@@ -167,24 +167,24 @@ export function Navbar() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
           >
-            {/* Seletor de idioma */}
-            <div className="absolute right-16 top-4 md:right-24 md:top-9">
-              <LanguageSwitcher />
-            </div>
+            {/* Topo do menu: idiomas + botão fechar */}
+            <div className="absolute left-0 right-0 top-4 flex items-center justify-between px-6 md:top-8 md:px-8">
+              <div className="flex-shrink-0">
+                <LanguageSwitcher />
+              </div>
 
-            {/* Botão fechar */}
-            <div className="absolute right-16 top-4 md:right-8 md:top-8">
               <button
+                type="button"
                 onClick={() => setIsOpen(false)}
                 aria-label="Fechar navegação"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/20 bg-black/70 hover:bg-white/10"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-black/70 hover:bg-white/10"
               >
-                <span className="relative block h-4 w-4">
+                <span className="relative block h-5 w-5">
                   {/* traço 1 */}
                   <span
                     className="
                       absolute left-1/2 top-1/2
-                      h-[1.5px] w-full
+                      h-[2px] w-full
                       -translate-x-1/2 -translate-y-1/2
                       rotate-45
                       bg-white
@@ -194,7 +194,7 @@ export function Navbar() {
                   <span
                     className="
                       absolute left-1/2 top-1/2
-                      h-[1.5px] w-full
+                      h-[2px] w-full
                       -translate-x-1/2 -translate-y-1/2
                       -rotate-45
                       bg-white
@@ -205,7 +205,7 @@ export function Navbar() {
             </div>
 
             {/* Conteúdo do overlay */}
-            <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-10 pt-16 md:flex-row md:items-stretch md:gap-12 md:pt-24">
+            <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-10 pt-20 md:flex-row md:items-stretch md:gap-12 md:pt-28">
               {/* Navegação principal */}
               <div className="flex-1 border-b border-white/10 pb-8 md:border-b-0 md:border-r md:pb-0 md:pr-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
@@ -216,6 +216,7 @@ export function Navbar() {
                   {navItems.map((item) => (
                     <button
                       key={item.href}
+                      type="button"
                       onClick={() => handleNavClick(item.href)}
                       className="group relative block w-fit text-left font-medium text-white/80"
                     >
@@ -225,8 +226,8 @@ export function Navbar() {
                           inline-block
                           transition-all
                           duration-300
-                          group-hover:text-white
                           group-hover:translate-x-1
+                          group-hover:text-white
                           group-hover:drop-shadow-[0_0_18px_rgba(16,185,129,0.7)]
                         "
                       >
@@ -237,7 +238,8 @@ export function Navbar() {
                       <span
                         className="
                           pointer-events-none
-                          absolute -bottom-1 left-0 h-[2px] w-0
+                          absolute -bottom-1 left-0
+                          h-[2px] w-0
                           bg-emerald-400
                           transition-all duration-300 
                           group-hover:w-full
@@ -267,13 +269,13 @@ export function Navbar() {
                       rel="noopener noreferrer"
                       className="
                         block 
+                        transform
                         text-white/45 
                         transition-all 
                         duration-200 
-                        hover:text-emerald-400 
-                        hover:font-semibold
-                        transform
                         hover:translate-x-1
+                        hover:font-semibold
+                        hover:text-emerald-400 
                       "
                     >
                       {item.label}
@@ -292,11 +294,12 @@ export function Navbar() {
                   {sectionHighlights.map((item, index) => (
                     <motion.button
                       key={item.key}
+                      type="button"
                       onClick={() => handleHighlightClick(item.target)}
                       className="
                         group
-                        flex flex-col items-start
-                        w-full text-left
+                        flex w-full flex-col items-start
+                        text-left
                         transition-all
                       "
                       initial={{ opacity: 0, y: 12 }}
@@ -304,7 +307,7 @@ export function Navbar() {
                       transition={{ duration: 0.3, delay: 0.08 * index }}
                     >
                       {/* Linha superior: título + seta */}
-                      <div className="flex w-full items-center justify-between">
+                      <div className="flex w-full items-center justify-between gap-4">
                         <div>
                           <p
                             className="
@@ -318,7 +321,7 @@ export function Navbar() {
                             {t(item.key)}
                           </p>
 
-                          <p className="mt-1 text-sm text-white/65 max-w-xs leading-relaxed">
+                          <p className="mt-1 max-w-xs text-sm leading-relaxed text-white/65">
                             {t(item.descriptionKey)}
                           </p>
                         </div>
@@ -338,11 +341,11 @@ export function Navbar() {
                       </div>
 
                       {/* Linha animada tipo CTA */}
-                      <div className="mt-4 w-full h-[2px] bg-white/15 overflow-hidden">
+                      <div className="mt-4 h-[2px] w-full overflow-hidden bg-white/15">
                         <div
                           className="
-                            h-full bg-emerald-400
-                            w-[25%]
+                            h-full w-[25%]
+                            bg-emerald-400
                             transition-all
                             duration-500
                             ease-out
