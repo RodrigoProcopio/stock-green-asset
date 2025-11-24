@@ -168,8 +168,10 @@ export function Navbar() {
             transition={{ duration: 0.25 }}
           >
             {/* Topo do menu: idiomas + botão fechar */}
-            <div className="absolute left-0 right-0 top-4 flex items-center justify-between px-6 md:top-8 md:px-8">
-              <div className="flex-shrink-0">
+            <div className="flex flex-col flex-shrink-0">
+              <span className="text-[10px] uppercase tracking-wide text-white/40 mb-1">
+                {t("navbar.language")}
+              </span>
                 <LanguageSwitcher />
               </div>
 
