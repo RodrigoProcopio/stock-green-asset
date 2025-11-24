@@ -62,9 +62,9 @@ const advisory = [
     linkedin: "https://www.linkedin.com/",
   },
   {
-    name: "Ronaldo Ortiz",
+    name: "Artêmio Picanço",
     roleKey: "team.advisory.ortiz.role",
-    image: "Ortiz.webp",
+    image: "Artemio.webp",
     path: "Advisory",
     linkedin: "https://www.linkedin.com/",
   },
