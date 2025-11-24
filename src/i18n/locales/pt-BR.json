@@ -13,6 +13,7 @@
     "navigation": "Menu",
     "ourFocus": "Nosso Foco",
     "close": "Fechar Navegação",
+    "language": "Idioma",
     "links": {
       "home": "Home",
       "about": "Sobre",
@@ -24,8 +25,7 @@
       "team": "Equipe",
       "advisoryBoard": "Advisory Board",
       "partners": "Nossos Parceiros",
-      "contact": "Contato",
-      "language": "Idioma"
+      "contact": "Contato"
     },
     "focus": {
       "solutions": {

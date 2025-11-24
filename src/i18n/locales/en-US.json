@@ -13,6 +13,7 @@
     "navigation": "Menu",
     "ourFocus": "Our Focus",
     "close": "Close Navigation",
+    "language": "Language",   
     "links": {
       "home": "Home",
       "about": "About",
@@ -24,8 +25,7 @@
       "team": "Team",
       "advisoryBoard": "Advisory Board",
       "partners": "Our Partners",
-      "contact": "Contact",
-      "language": "Language"      
+      "contact": "Contact"   
     },
     "focus": {
       "solutions": {
