@@ -168,54 +168,53 @@ export function Navbar() {
       transition={{ duration: 0.25 }}
     >
       {/* Topo do menu: label + idiomas + botão fechar */}
-      <motion.div
-        className="absolute left-0 right-0 top-4 flex items-center justify-between px-6 md:top-8 md:px-8"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        transition={{ duration: 0.2 }}
-      >
-        <div className="flex flex-col flex-shrink-0">
-          <span className="mb-1 text-[10px] uppercase tracking-wide text-white/40">
-            {t("navbar.language")}
-          </span>
-          <LanguageSwitcher />
-        </div>
+      {/* MOBILE — idioma + botão fechar */}
+<div className="absolute left-0 right-0 top-4 flex items-center justify-between px-6 md:hidden">
+  <div className="flex flex-col flex-shrink-0">
+    <span className="mb-1 text-[10px] uppercase tracking-wide text-white/40">
+      {t("navbar.language")}
+    </span>
+    <LanguageSwitcher />
+  </div>
 
-        <button
-          type="button"
-          onClick={() => setIsOpen(false)}
-          aria-label="Fechar navegação"
-          className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-black/70 hover:bg-white/10"
-        >
-          <span className="relative block h-5 w-5">
-            <span
-              className="
-                absolute left-1/2 top-1/2
-                h-[2px] w-full
-                -translate-x-1/2 -translate-y-1/2
-                rotate-45
-                bg-white
-              "
-            />
-            <span
-              className="
-                absolute left-1/2 top-1/2
-                h-[2px] w-full
-                -translate-x-1/2 -translate-y-1/2
-                -rotate-45
-                bg-white
-              "
-            />
-          </span>
-        </button>
-      </motion.div>
+  <button
+    type="button"
+    onClick={() => setIsOpen(false)}
+    aria-label="Fechar navegação"
+    className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-black/70 hover:bg-white/10"
+  >
+    <span className="relative block h-5 w-5">
+      <span className="absolute left-1/2 top-1/2 h-[2px] w-full -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white" />
+      <span className="absolute left-1/2 top-1/2 h-[2px] w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-white" />
+    </span>
+  </button>
+</div>
 
+{/* DESKTOP — somente o botão fechar no canto */}
+<button
+  type="button"
+  onClick={() => setIsOpen(false)}
+  aria-label="Fechar navegação"
+  className="hidden md:flex absolute right-8 top-8 h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-black/70 hover:bg-white/10"
+>
+  <span className="relative block h-5 w-5">
+    <span className="absolute left-1/2 top-1/2 h-[2px] w-full -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white" />
+    <span className="absolute left-1/2 top-1/2 h-[2px] w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-white" />
+  </span>
+</button>
 
             {/* Conteúdo do overlay */}
             <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-10 pt-20 md:flex-row md:items-stretch md:gap-12 md:pt-28">
               {/* Navegação principal */}
               <div className="flex-1 border-b border-white/10 pb-8 md:border-b-0 md:border-r md:pb-0 md:pr-10">
+              
+              {/* DESKTOP — seletor de idioma alinhado ao menu */}
+<div className="hidden md:flex flex-col mb-8">
+  <span className="mb-1 text-[10px] uppercase tracking-wide text-white/40">
+    {t("navbar.language")}
+  </span>
+  <LanguageSwitcher />
+</div>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
                   {t("navbar.navigation")}
                 </p>
