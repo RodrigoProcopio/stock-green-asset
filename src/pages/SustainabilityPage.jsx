@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "../components/layout/Navbar";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const sectionVariant = {
@@ -53,7 +53,20 @@ const odsGoals = [
 
 export default function SustainabilityPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   const { t } = useTranslation();
+
+  // scroll para o hash (#sustainabilitybonds, etc.)
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   // Acordeões ONU
   const [openUN, setOpenUN] = useState(null);
@@ -365,12 +378,13 @@ export default function SustainabilityPage() {
           </motion.section>
 
           {/* ICMA */}
-          <motion.section
-            variants={sectionVariant}
-            initial="hidden"
-            animate="visible"
-            custom={2}
-          >
+<motion.section
+  id="sustainabilitybonds"
+  variants={sectionVariant}
+  initial="hidden"
+  animate="visible"
+  custom={2}
+>
             <div className="grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-start">
               {/* Texto ICMA */}
               <div className="space-y-5">
