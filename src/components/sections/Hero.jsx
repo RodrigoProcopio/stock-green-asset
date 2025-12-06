@@ -42,7 +42,13 @@ export function Hero() {
     return () => {
       isCancelled = true;
     };
-  }, [titleControls]);
+  }, [titleControls]);<div
+  className="
+    absolute inset-0
+    bg-gradient-to-b from-white/40 via-white/20 to-white/10
+  "
+/>
+
 
   const scrollTo = (selector) => {
     const el = document.querySelector(selector);
@@ -54,9 +60,13 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden text-white scroll-mt-24"
+      className="
+        relative min-h-screen overflow-hidden scroll-mt-24
+        bg-white text-[#333846]
+        transition-colors duration-300
+      "
     >
-      {/* ===== BACKGROUND DESKTOP (VÍDEO) – md+ ===== */}
+      {/* BACKGROUND DESKTOP (VÍDEO) */}
       <div className="absolute inset-0 hidden md:block">
         <video
           autoPlay
@@ -71,15 +81,23 @@ export function Hero() {
           <source src="/videos/hero-forest.webm" type="video/webm" />
         </video>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
+        {/* overlay claro com leve tom institucional */}
+        <div
+          className="
+            absolute inset-0
+            bg-gradient-to-b bg-gradient-to-b from-[#1c2846]/90 via-[#1c2846]/60 to-[#1c2846]/90
+          "
+        />
 
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[-10%] top-[10%] h-72 w-72 rounded-full bg-emerald-400/12 blur-3xl" />
-          <div className="absolute right-[-5%] bottom-[5%] h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
-        </div>
+        <div
+          className="
+            absolute inset-0
+            bg-[radial-gradient(circle_at_top_left,rgba(28,40,70,0.20),transparent_60%),radial-gradient(circle_at_bottom_right,rgba(51,56,70,0.16),transparent_60%)]
+          "
+        />
       </div>
 
-      {/* ===== BACKGROUND MOBILE (IMAGEM ESTÁTICA) – até md ===== */}
+      {/* BACKGROUND MOBILE (IMAGEM) */}
       <div className="absolute inset-0 md:hidden" aria-hidden="true">
         <img
           src="/images/Hero.webp"
@@ -89,102 +107,122 @@ export function Hero() {
           className="h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
+        <div
+          className="
+            absolute inset-0 
+            bg-gradient-to-b bg-gradient-to-b from-[#1c2846]/90 via-[#1c2846]/60 to-[#1c2846]/90
+          "
+        />
 
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[-10%] top-[10%] h-56 w-56 rounded-full bg-emerald-400/12 blur-[60px]" />
-          <div className="absolute right-[-5%] bottom-[5%] h-56 w-56 rounded-full bg-cyan-400/10 blur-[60px]" />
-        </div>
+        <div
+          className="
+            absolute inset-0
+            bg-[radial-gradient(circle_at_top_left,rgba(28,40,70,0.20),transparent_60%),radial-gradient(circle_at_bottom_right,rgba(51,56,70,0.16),transparent_60%)]
+          "
+        />
       </div>
 
-      {/* Conteúdo */}
+      {/* CONTEÚDO */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl items-center px-4 pb-16 pt-28 md:px-6 md:pt-32">
         <div className="relative max-w-6xl space-y-8">
           {/* Glow atrás do texto */}
           <div className="absolute inset-0 -z-10">
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.35 }}
+              animate={{ opacity: 0.25 }}
               transition={{ duration: 1.5 }}
-              className="absolute left-[-80px] top-[-60px] h-64 w-64 rounded-full bg-emerald-400/40 blur-3xl"
+              className="
+                absolute left-[-80px] top-[-60px] h-64 w-64 rounded-full
+                bg-white/22 blur-3xl
+              "
             />
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.25 }}
+              animate={{ opacity: 0.18 }}
               transition={{ duration: 1.5, delay: 0.2 }}
-              className="absolute right-[-60px] bottom-[-40px] h-64 w-64 rounded-full bg-cyan-400/40 blur-3xl"
-            />
-            <motion.div
-              animate={{ x: [0, 15, 0], y: [0, -15, 0] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute left-10 top-10 h-40 w-40 rounded-full bg-emerald-300/25 blur-2xl"
+              className="
+                absolute right-[-60px] bottom-[-40px] h-64 w-64 rounded-full
+                bg-white/18 blur-3xl
+              "
             />
           </div>
 
-          {/* Título com animação */}
-          <h1 className="text-4xl font-semibold leading-tight md:text-7xl md:leading-[1.15]">
-            <motion.span
-              className="block text-white"
-              custom={0}
-              initial={{ opacity: 0, y: 30 }}
-              animate={titleControls}
-            >
-              {t("hero.line1")}
-            </motion.span>
+          {/* TÍTULO */}
+          <h1 className="text-4xl font-semibold leading-tight md:text-7xl md:leading-[1.15] select-none">
+  {/* Linha 1 */}
+  <motion.span
+    className="
+      block 
+      text-[#e6e6e6]
+      drop-shadow-[0_4px_14px_rgba(255,255,255,0.25)]
+    "
+    custom={0}
+    initial={{ opacity: 0, y: 30 }}
+    animate={titleControls}
+    transition={{ duration: 1.1, ease: "easeOut" }}
+  >
+    {t("hero.line1")}
+  </motion.span>
 
-            <motion.span
-              className="
-                block 
-                bg-gradient-to-r from-emerald-300 via-cyan-300 to-sky-400 
-                bg-clip-text text-transparent
-              "
-              custom={1}
-              initial={{ opacity: 0, y: 30 }}
-              animate={titleControls}
-            >
-              {t("hero.line2")}
-            </motion.span>
+  {/* Linha 2 */}
+  <motion.span
+    className="
+      block
+      bg-gradient-to-r from-[#e6e6e6] via-[#b6b9c4] to-[#8d93a8]
+      bg-clip-text text-transparent
+      drop-shadow-[0_6px_22px_rgba(180,190,210,0.35)]
+    "
+    custom={1}
+    initial={{ opacity: 0, y: 30 }}
+    animate={titleControls}
+    transition={{ duration: 1.1, ease: "easeOut" }}
+  >
+    {t("hero.line2")}
+  </motion.span>
 
-            <motion.span
-              className="
-                block 
-                bg-gradient-to-r from-emerald-300 via-cyan-300 to-sky-400 
-                bg-clip-text text-transparent
-              "
-              custom={2}
-              initial={{ opacity: 0, y: 30 }}
-              animate={titleControls}
-            >
-              {t("hero.line3")}
-            </motion.span>
-          </h1>
+  {/* Linha 3 */}
+  <motion.span
+    className="
+      block
+      bg-gradient-to-r from-[#b6bcc7] via-[#e6e6e6] to-[#b6bcc7]
+      bg-clip-text text-transparent
+      drop-shadow-[0_5px_18px_rgba(200,200,200,0.28)]
+    "
+    custom={2}
+    initial={{ opacity: 0, y: 30 }}
+    animate={titleControls}
+    transition={{ duration: 1.1, ease: "easeOut" }}
+  >
+    {t("hero.line3")}
+  </motion.span>
+</h1>
 
-          {/* Botões */}
+          {/* BOTÕES */}
           <motion.div
             className="mt-16 flex flex-wrap items-center gap-4 md:flex-nowrap"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            {/* Botão Crédito de Carbono com brilho */}
+            {/* CTA principal */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               className="
-                relative
-                inline-flex items-center justify-center
+                relative inline-flex items-center justify-center
                 overflow-hidden
-                rounded-full border border-emerald-400/80
-                bg-emerald-400/10
+                rounded-full border
+                border-[#d6d6d6]
+                bg-[#1c2846]/75 hover:bg-[#1c2846]
                 px-8 py-3
                 text-xs font-semibold uppercase tracking-[0.22em]
-                text-emerald-100
-                hover:bg-emerald-400 hover:text-black
+                text-white
+                hover:bg-[#333846]
                 transition-all
-                shadow-[0_0_22px_rgba(16,185,129,0.6)]
+                shadow-[0_0_22px_rgba(28,40,70,0.35)]
                 whitespace-nowrap
               "
-              onClick={() => navigate('/projects/mazuay-redd')}
+              onClick={() => navigate("/projects/mazuay-redd")}
             >
               <span className="relative z-10">
                 {t("hero.ctaCarbonCredit")}
@@ -194,10 +232,9 @@ export function Hero() {
                 aria-hidden="true"
                 className="
                   pointer-events-none
-                  absolute inset-y-0
-                  left-[-20%]
+                  absolute inset-y-0 left-[-20%]
                   w-1/2
-                  bg-gradient-to-r from-transparent via-emerald-200/70 to-transparent
+                  bg-gradient-to-r from-transparent via-white/40 to-transparent
                   opacity-0
                 "
                 animate={{
@@ -213,77 +250,45 @@ export function Hero() {
               />
             </motion.button>
 
-            {/* Botão Nossas Soluções */}
-            <motion.button
-              whileHover={{
-                scale: 1.03,
-                boxShadow: "0 0 18px rgba(16,185,129,0.45)",
-                borderColor: "rgba(16,185,129,0.85)",
-              }}
-              whileTap={{ scale: 0.97 }}
-              className="
-                inline-flex items-center justify-center
-                rounded-full border border-white/25
-                bg-black/30
-                px-8 py-3
-                text-xs font-semibold uppercase tracking-[0.22em]
-                text-white/85
-                hover:border-emerald-400/80 hover:bg-white/5 hover:text-white
-                transition-all backdrop-blur-sm
-                whitespace-nowrap
-              "
-              onClick={() => scrollTo('#solutions')}
-            >
-              {t("hero.ctaSolutions")}
-            </motion.button>
-
-            {/* Botão Sustentabilidade */}
-            <motion.button
-              whileHover={{
-                scale: 1.03,
-                boxShadow: "0 0 18px rgba(16,185,129,0.45)",
-                borderColor: "rgba(16,185,129,0.85)",
-              }}
-              whileTap={{ scale: 0.97 }}
-              className="
-                inline-flex items-center justify-center
-                rounded-full border border-white/25
-                bg-black/30
-                px-8 py-3
-                text-xs font-semibold uppercase tracking-[0.22em]
-                text-white/85
-                hover:border-emerald-400/80 hover:bg-white/5 hover:text-white
-                transition-all backdrop-blur-sm
-                whitespace-nowrap
-              "
-              onClick={() => scrollTo('#sustainability')}
-            >
-              {t("hero.ctaSustainability")}
-            </motion.button>
-
-            {/* Botão Projetos Sociais */}
-            <motion.button
-              whileHover={{
-                scale: 1.03,
-                boxShadow: "0 0 18px rgba(16,185,129,0.45)",
-                borderColor: "rgba(16,185,129,0.85)",
-              }}
-              whileTap={{ scale: 0.97 }}
-              className="
-                inline-flex items-center justify-center
-                rounded-full border border-white/25
-                bg-black/30
-                px-8 py-3
-                text-xs font-semibold uppercase tracking-[0.22em]
-                text-white/85
-                hover:border-emerald-400/80 hover:bg-white/5 hover:text-white
-                transition-all backdrop-blur-sm
-                whitespace-nowrap
-              "
-              onClick={() => navigate('/social-projects')}
-            >
-              {t("hero.ctaProjects")}
-            </motion.button>
+            {/* Botões secundários */}
+            {[
+              {
+                label: t("hero.ctaSolutions"),
+                onClick: () => scrollTo("#solutions"),
+              },
+              {
+                label: t("hero.ctaSustainability"),
+                onClick: () => scrollTo("#sustainability"),
+              },
+              {
+                label: t("hero.ctaProjects"),
+                onClick: () => navigate("/social-projects"),
+              },
+            ].map((btn) => (
+              <motion.button
+                key={btn.label}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="
+                  inline-flex items-center justify-center
+                  rounded-full border
+                  bg-white/35
+                  backdrop-blur-md
+                  border-white/50
+                  hover:bg-white/80
+                  px-8 py-3
+                  text-xs font-semibold uppercase tracking-[0.22em]
+                  text-[#d6d6d6]
+                  hover:border-[#1c2846] hover:bg-[#f5f5f7]
+                  hover:text-[#1c2846]
+                  transition-all backdrop-blur-sm
+                  whitespace-nowrap
+                "
+                onClick={btn.onClick}
+              >
+                {btn.label}
+              </motion.button>
+            ))}
           </motion.div>
         </div>
       </div>

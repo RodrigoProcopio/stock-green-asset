@@ -14,7 +14,7 @@ const coreTeam = [
     roleKey: "team.core.axel.role",
     image: "Axel.webp",
     path: "Team",
-    linkedin:"https://www.linkedin.com/in/axel-barrionuevo-3654b855/",
+    linkedin: "https://www.linkedin.com/in/axel-barrionuevo-3654b855/",
   },
   {
     name: "Igor Ville",
@@ -66,7 +66,8 @@ const advisory = [
     roleKey: "team.advisory.ortiz.role",
     image: "Artemio.webp",
     path: "Advisory",
-    linkedin: "https://www.linkedin.com/in/art%C3%AAmio-pican%C3%A7o-25a842115/",
+    linkedin:
+      "https://www.linkedin.com/in/art%C3%AAmio-pican%C3%A7o-25a842115/",
   },
 ];
 
@@ -90,7 +91,12 @@ export function Team() {
   return (
     <section
       id="team"
-      className="relative border-t border-white/5 bg-black py-20 text-white scroll-mt-24"
+      className="
+        relative scroll-mt-24
+        border-t border-[#d6d6d6]
+        bg-white py-20
+        text-[#333846]
+      "
     >
       {/* ===== DESKTOP: VÍDEO ===== */}
       <div className="absolute inset-0 hidden md:block">
@@ -100,7 +106,7 @@ export function Team() {
           loop
           playsInline
           preload="metadata"
-          className="h-full w-full object-cover opacity-40 pointer-events-none"
+          className="pointer-events-none h-full w-full object-cover opacity-35"
           aria-hidden="true"
           tabIndex={-1}
         >
@@ -115,11 +121,13 @@ export function Team() {
         style={{ backgroundImage: "url('/images/Team.webp')" }}
         aria-hidden="true"
       >
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/70 to-white/50" />
       </div>
 
-      {/* ===== OVERLAYS ===== */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80 md:from-black/70 md:via-black/80 md:to-black/90" />
+      {/* ===== OVERLAY / GRADIENT GLOBAL ===== */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="h-full w-full bg-gradient-to-b from-[#f5f5f7]/50 via-white/60 to-[#f5f5f7]" />
+      </div>
 
       {/* ===== CONTENT ===== */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 md:px-6">
@@ -131,15 +139,15 @@ export function Team() {
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1c2846]">
             {t("team.badge")}
           </p>
 
           <h2 className="mt-3 text-3xl md:text-4xl">
-            <span className="font-semibold text-white">
+            <span className="font-semibold text-[#1c2846]">
               {t("team.heading.strong")}
             </span>{" "}
-            <span className="font-light text-white/80">
+            <span className="font-light text-[#333846]">
               {t("team.heading.light")}
             </span>
           </h2>
@@ -153,7 +161,7 @@ export function Team() {
           whileInView="visible"
           viewport={{ once: true, amount: 0 }}
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1c2846]">
             {t("team.coreSection")}
           </p>
 
@@ -169,9 +177,15 @@ export function Team() {
                 <motion.div
                   key={member.name}
                   variants={cardVariants}
-                  className="overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 via-black to-black"
+                  className="
+                    overflow-hidden rounded-3xl
+                    border border-[#d6d6d6]
+                    bg-white/90
+                    backdrop-blur-sm
+                    shadow-[0_18px_40px_rgba(0,0,0,0.04)]
+                  "
                 >
-                  <div className="aspect-[3/4] bg-black">
+                  <div className="aspect-[3/4]">
                     <img
                       src={`/images/Team/${member.image}`}
                       alt={member.name}
@@ -188,13 +202,13 @@ export function Team() {
                       whileTap={{ scale: 0.97 }}
                       className="group block w-full text-left"
                     >
-                      <p className="text-sm font-medium transition-colors group-hover:text-emerald-300">
+                      <p className="text-sm font-medium text-[#1c2846] transition-colors group-hover:text-[#333846]">
                         {member.name}
                       </p>
-                      <p className="mt-1 text-xs text-white/60 group-hover:text-white/80">
+                      <p className="mt-1 text-xs text-[#333846]/80 group-hover:text-[#1c2846]">
                         {t(member.roleKey)}
                       </p>
-                      <div className="mt-2 h-px w-0 bg-emerald-400/80 transition-all duration-300 group-hover:w-full" />
+                      <div className="mt-2 h-px w-0 bg-[#1c2846] transition-all duration-300 group-hover:w-full" />
                     </motion.button>
                   </div>
                 </motion.div>
@@ -212,7 +226,7 @@ export function Team() {
           whileInView="visible"
           viewport={{ once: true, amount: 0 }}
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200/80">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1c2846]">
             {t("team.advisorySection")}
           </p>
 
@@ -228,7 +242,13 @@ export function Team() {
                 <motion.div
                   key={member.name}
                   variants={cardVariants}
-                  className="overflow-hidden rounded-3xl border border-emerald-400/30 bg-gradient-to-b from-emerald-500/10 via-black to-black"
+                  className="
+                    overflow-hidden rounded-3xl
+                    border border-[#d6d6d6]
+                    bg-white/90
+                    backdrop-blur-sm
+                    shadow-[0_18px_40px_rgba(0,0,0,0.04)]
+                  "
                 >
                   <div className="aspect-[3/4]">
                     <img
@@ -247,13 +267,13 @@ export function Team() {
                       whileTap={{ scale: 0.97 }}
                       className="group block w-full text-left"
                     >
-                      <p className="text-sm font-medium transition-colors group-hover:text-emerald-300">
+                      <p className="text-sm font-medium text-[#1c2846] transition-colors group-hover:text-[#333846]">
                         {member.name}
                       </p>
-                      <p className="mt-1 text-xs text-emerald-200/80 group-hover:text-emerald-50">
+                      <p className="mt-1 text-xs text-[#333846]/80 group-hover:text-[#1c2846]">
                         {t(member.roleKey)}
                       </p>
-                      <div className="mt-2 h-px w-0 bg-emerald-400/80 transition-all duration-300 group-hover:w-full" />
+                      <div className="mt-2 h-px w-0 bg-[#1c2846] transition-all duration-300 group-hover:w-full" />
                     </motion.button>
                   </div>
                 </motion.div>

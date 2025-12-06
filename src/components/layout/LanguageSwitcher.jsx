@@ -26,7 +26,7 @@ export default function LanguageSwitcher() {
             transition-all
             ${
               i18n.resolvedLanguage === lng.code
-                ? "bg-emerald-400 text-black shadow-[0_0_14px_rgba(16,185,129,0.7)]"
+                ? "bg-white text-black shadow-[0_0_14px_rgba(16,185,129,0.7)]"
                 : "text-white/55 hover:text-white hover:bg-white/10"
             }
           `}

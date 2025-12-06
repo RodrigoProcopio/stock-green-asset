@@ -5,7 +5,7 @@ import logoStock from "../../assets/logo-stock.webp";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useNavigate, useLocation } from "react-router-dom";
 
-// Agora guardamos só as KEYS, e não o texto direto
+// KEYS das seções
 const navItems = [
   { key: "navbar.links.home", href: "#home" },
   { key: "navbar.links.about", href: "#about" },
@@ -20,7 +20,6 @@ const navItems = [
   { key: "navbar.links.contact", href: "#contact" },
 ];
 
-// Destaques da direita também em keys
 const sectionHighlights = [
   {
     key: "navbar.focus.solutions.title",
@@ -46,7 +45,6 @@ export function Navbar() {
   const logoBottomControls = useAnimation();
   const navigate = useNavigate();
   const location = useLocation();
-
   const { t } = useTranslation();
 
   const handleLogoSpin = async () => {
@@ -68,37 +66,29 @@ export function Navbar() {
   const handleNavClick = (href) => {
     setIsOpen(false);
 
-    // Âncoras (#home, #about, etc.)
     if (href.startsWith("#")) {
-      // Se NÃO estiver na home, navega para "/" com hash
       if (location.pathname !== "/") {
-        navigate({
-          pathname: "/",
-          hash: href,
-        });
+        navigate({ pathname: "/", hash: href });
       } else {
-        // Já está na home: apenas faz scroll suave
         const el = document.querySelector(href);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
       return;
     }
 
-    // Rotas normais (ex: /social-projects)
     navigate(href);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Destaques da direita usam a mesma navegação
   const handleHighlightClick = (target) => {
     handleNavClick(target);
   };
 
   return (
     <>
-      {/* Botão pill no topo direito (menu fechado) */}
+      {/* ---------------------- */}
+      {/* BOTÃO PILL             */}
+      {/* ---------------------- */}
       {!isOpen && (
         <div className="fixed right-4 top-5 z-40 md:right-8 md:top-8">
           <motion.button
@@ -107,23 +97,16 @@ export function Navbar() {
             whileHover={{
               scale: 1.03,
               y: -2,
-              boxShadow: "0 18px 40px rgba(0,0,0,0.35)",
+              boxShadow: "0 18px 40px rgba(0,0,0,0.25)",
             }}
             whileTap={{ scale: 0.98, y: 0 }}
             transition={{ type: "spring", stiffness: 260, damping: 18 }}
             className="
-              group
-              flex items-center
-              h-14
-              rounded-2xl 
-              border border-white/15 
-              bg-white/95 
-              px-4
-              shadow-xl 
-              backdrop-blur-xl
+              group flex h-14 items-center rounded-2xl 
+              border border-[#d6d6d6] bg-white/95
+              px-4 shadow-xl backdrop-blur-xl
             "
           >
-            {/* LOGO com efeito caça-níquel */}
             <div className="relative flex h-10 w-44 items-center overflow-hidden px-2">
               <motion.img
                 src={logoStock}
@@ -131,7 +114,6 @@ export function Navbar() {
                 className="absolute left-0 h-10 w-auto"
                 initial={{ y: "0%" }}
                 animate={logoTopControls}
-                style={{ willChange: "transform" }}
               />
 
               <motion.img
@@ -140,82 +122,78 @@ export function Navbar() {
                 className="absolute left-0 h-10 w-auto"
                 initial={{ y: "-100%" }}
                 animate={logoBottomControls}
-                style={{ willChange: "transform" }}
               />
             </div>
 
-            {/* Divisor vertical */}
-            <div className="mx-3 h-10 w-[1px] bg-black/15 transition-colors group-hover:bg-black/25" />
+            <div className="mx-3 h-10 w-[1px] bg-[#333846]/20 group-hover:bg-[#333846]/40" />
 
-            {/* Ícone Hamburguer */}
             <div className="flex flex-col justify-center gap-1.5">
-              <span className="h-[2px] w-6 rounded-full bg-black transition-all group-hover:w-7" />
-              <span className="h-[2px] w-6 rounded-full bg-black transition-all group-hover:w-7" />
-              <span className="h-[2px] w-6 rounded-full bg-black transition-all group-hover:w-7" />
+              <span className="h-[2px] w-6 rounded-full bg-[#333846] group-hover:w-7 group-hover:bg-[#1c2846]" />
+              <span className="h-[2px] w-6 rounded-full bg-[#333846] group-hover:w-7 group-hover:bg-[#1c2846]" />
+              <span className="h-[2px] w-6 rounded-full bg-[#333846] group-hover:w-7 group-hover:bg-[#1c2846]" />
             </div>
           </motion.button>
         </div>
       )}
 
-{/* Overlay de navegação fullscreen */}
-<AnimatePresence>
-  {isOpen && (
-    <motion.div
-      className="fixed inset-0 z-50 bg-black/95 text-white"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.25 }}
-    >
-      {/* Topo do menu: label + idiomas + botão fechar */}
-      {/* MOBILE — idioma + botão fechar */}
-<div className="absolute left-0 right-0 top-4 flex items-center justify-between px-6 md:hidden">
-  <div className="flex flex-col flex-shrink-0">
-    <span className="mb-1 text-[10px] uppercase tracking-wide text-white/40">
-      {t("navbar.language")}
-    </span>
-    <LanguageSwitcher />
-  </div>
+      {/* ---------------------- */}
+      {/* MENU FULLSCREEN NAVY   */}
+      {/* ---------------------- */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-[#1c2846] text-white"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            {/* TOP MOBILE */}
+            <div className="absolute left-0 right-0 top-4 flex items-center justify-between px-6 md:hidden">
+              <div className="flex flex-shrink-0 flex-col">
+                <span className="mb-1 text-[10px] uppercase tracking-wide text-white/60">
+                  {t("navbar.language")}
+                </span>
+                <LanguageSwitcher />
+              </div>
 
-  <button
-    type="button"
-    onClick={() => setIsOpen(false)}
-    aria-label="Fechar navegação"
-    className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-black/70 hover:bg-white/10"
-  >
-    <span className="relative block h-5 w-5">
-      <span className="absolute left-1/2 top-1/2 h-[2px] w-full -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white" />
-      <span className="absolute left-1/2 top-1/2 h-[2px] w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-white" />
-    </span>
-  </button>
-</div>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/40 bg-white/5 hover:bg-white/10"
+              >
+                <span className="relative block h-5 w-5">
+                  <span className="absolute left-1/2 top-1/2 h-[2px] w-full rotate-45 -translate-x-1/2 -translate-y-1/2 bg-white" />
+                  <span className="absolute left-1/2 top-1/2 h-[2px] w-full -rotate-45 -translate-x-1/2 -translate-y-1/2 bg-white" />
+                </span>
+              </button>
+            </div>
 
-{/* DESKTOP — somente o botão fechar no canto */}
-<button
-  type="button"
-  onClick={() => setIsOpen(false)}
-  aria-label="Fechar navegação"
-  className="hidden md:flex absolute right-8 top-8 h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-black/70 hover:bg-white/10"
->
-  <span className="relative block h-5 w-5">
-    <span className="absolute left-1/2 top-1/2 h-[2px] w-full -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white" />
-    <span className="absolute left-1/2 top-1/2 h-[2px] w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-white" />
-  </span>
-</button>
+            {/* BOTÃO FECHAR DESKTOP */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute right-8 top-8 hidden h-10 w-10 items-center justify-center rounded-xl border border-white/40 bg-white/5 hover:bg-white/10 md:flex"
+            >
+              <span className="relative block h-5 w-5">
+                <span className="absolute left-1/2 top-1/2 h-[2px] w-full rotate-45 -translate-x-1/2 -translate-y-1/2 bg-white" />
+                <span className="absolute left-1/2 top-1/2 h-[2px] w-full -rotate-45 -translate-x-1/2 -translate-y-1/2 bg-white" />
+              </span>
+            </button>
 
-            {/* Conteúdo do overlay */}
-            <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-10 pt-20 md:flex-row md:items-stretch md:gap-12 md:pt-28">
-              {/* Navegação principal */}
-              <div className="flex-1 border-b border-white/10 pb-8 md:border-b-0 md:border-r md:pb-0 md:pr-10">
-              
-              {/* DESKTOP — seletor de idioma alinhado ao menu */}
-<div className="hidden md:flex flex-col mb-8">
-  <span className="mb-1 text-[10px] uppercase tracking-wide text-white/40">
-    {t("navbar.language")}
-  </span>
-  <LanguageSwitcher />
-</div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
+            {/* ---------------------- */}
+            {/* CONTEÚDO DO MENU      */}
+            {/* ---------------------- */}
+            <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-10 pt-20 md:flex-row md:gap-12 md:pt-28">
+              {/* Coluna esquerda */}
+              <div className="flex-1 border-b border-white/30 pb-8 md:border-b-0 md:border-r md:pr-10">
+                {/* IDIOMA DESKTOP */}
+                <div className="mb-8 hidden flex-col md:flex">
+                  <span className="mb-1 text-[10px] uppercase tracking-wide text-white/60">
+                    {t("navbar.language")}
+                  </span>
+                  <LanguageSwitcher />
+                </div>
+
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">
                   {t("navbar.navigation")}
                 </p>
 
@@ -223,40 +201,18 @@ export function Navbar() {
                   {navItems.map((item) => (
                     <button
                       key={item.href}
-                      type="button"
                       onClick={() => handleNavClick(item.href)}
-                      className="group relative block w-fit text-left font-medium text-white/80"
+                      className="group relative block w-fit text-left font-medium text-white/85"
                     >
-                      {/* Texto com glow + leve movimento */}
-                      <span
-                        className="
-                          inline-block
-                          transition-all
-                          duration-300
-                          group-hover:translate-x-1
-                          group-hover:text-white
-                          group-hover:drop-shadow-[0_0_18px_rgba(16,185,129,0.7)]
-                        "
-                      >
+                      <span className="transition-all group-hover:translate-x-1 group-hover:text-white group-hover:drop-shadow-[0_0_18px_rgba(255,255,255,0.7)]">
                         {t(item.key)}
                       </span>
-
-                      {/* Linha verde animada embaixo */}
-                      <span
-                        className="
-                          pointer-events-none
-                          absolute -bottom-1 left-0
-                          h-[2px] w-0
-                          bg-emerald-400
-                          transition-all duration-300 
-                          group-hover:w-full
-                        "
-                      />
+                      <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-white transition-all group-hover:w-full" />
                     </button>
                   ))}
                 </nav>
 
-                {/* Links inferiores */}
+                {/* LINKS INFERIORES */}
                 <div className="mt-10 space-y-2 text-sm">
                   {[
                     { label: "RI Portal", url: "https://ri-portal.super.site/" },
@@ -273,17 +229,8 @@ export function Navbar() {
                       key={item.label}
                       href={item.url}
                       target="_blank"
-                      rel="noopener noreferrer"
-                      className="
-                        block 
-                        transform
-                        text-white/45 
-                        transition-all 
-                        duration-200 
-                        hover:translate-x-1
-                        hover:font-semibold
-                        hover:text-emerald-400 
-                      "
+                      rel="noreferrer"
+                      className="block text-white/70 transition-all hover:translate-x-1 hover:text-white"
                     >
                       {item.label}
                     </a>
@@ -291,9 +238,9 @@ export function Navbar() {
                 </div>
               </div>
 
-              {/* Destaques da direita – Our Focus */}
+              {/* Coluna direita – Destaques */}
               <div className="mt-8 flex-1 md:mt-0">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">
                   {t("navbar.ourFocus")}
                 </p>
 
@@ -301,64 +248,29 @@ export function Navbar() {
                   {sectionHighlights.map((item, index) => (
                     <motion.button
                       key={item.key}
-                      type="button"
                       onClick={() => handleHighlightClick(item.target)}
-                      className="
-                        group
-                        flex w-full flex-col items-start
-                        text-left
-                        transition-all
-                      "
+                      className="group flex w-full flex-col items-start text-left"
                       initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: 0.08 * index }}
                     >
-                      {/* Linha superior: título + seta */}
-                      <div className="flex w-full items-center justify-between gap-4">
+                      <div className="flex w-full items-center justify-between">
                         <div>
-                          <p
-                            className="
-                              text-base 
-                              font-semibold 
-                              text-white
-                              transition-all
-                              group-hover:text-emerald-300
-                            "
-                          >
+                          <p className="text-base font-semibold text-white group-hover:text-white">
                             {t(item.key)}
                           </p>
-
-                          <p className="mt-1 max-w-xs text-sm leading-relaxed text-white/65">
+                          <p className="mt-1 max-w-xs text-sm text-white/85">
                             {t(item.descriptionKey)}
                           </p>
                         </div>
 
-                        <span
-                          className="
-                            text-lg
-                            text-white/80
-                            transition-transform
-                            duration-300
-                            group-hover:translate-x-1
-                            group-hover:text-emerald-300
-                          "
-                        >
+                        <span className="text-lg text-white/80 transition-all group-hover:translate-x-1 group-hover:text-white">
                           →
                         </span>
                       </div>
 
-                      {/* Linha animada tipo CTA */}
-                      <div className="mt-4 h-[2px] w-full overflow-hidden bg-white/15">
-                        <div
-                          className="
-                            h-full w-[25%]
-                            bg-emerald-400
-                            transition-all
-                            duration-500
-                            ease-out
-                            group-hover:w-full
-                          "
-                        />
+                      <div className="mt-4 h-[2px] w-full overflow-hidden bg-white/25">
+                        <div className="h-full w-[25%] bg-white transition-all group-hover:w-full" />
                       </div>
                     </motion.button>
                   ))}
@@ -371,4 +283,3 @@ export function Navbar() {
     </>
   );
 }
-

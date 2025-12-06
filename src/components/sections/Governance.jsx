@@ -15,9 +15,14 @@ export function Governance() {
   return (
     <section
       id="governance"
-      className="relative overflow-hidden border-t border-white/5 bg-black py-24 text-white scroll-mt-24"
+      className="
+        relative overflow-hidden scroll-mt-24
+        border-t border-[#d6d6d6]
+        bg-white py-24
+        text-[#333846]
+      "
     >
-      {/* 🌌 BACKGROUND AURORA (trocado do Team) */}
+      {/* 🌌 BACKGROUND AURORA INSTITUCIONAL */}
       <motion.div
         className="pointer-events-none absolute inset-0 overflow-hidden"
         initial={{ opacity: 0.9 }}
@@ -29,9 +34,12 @@ export function Governance() {
           repeatType: "reverse",
         }}
       >
-        {/* Blob emerald */}
+        {/* Base clara com gradiente suave */}
+        <div className="h-full w-full bg-gradient-to-b from-[#f5f5f7] via-white to-[#f5f5f7]" />
+
+        {/* Blob navy */}
         <motion.div
-          className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-emerald-500/40 blur-3xl"
+          className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-[#1c2846]/30 blur-3xl"
           initial={{ x: -120, y: 40, scale: 1 }}
           animate={{ x: 40, y: -40, scale: 1.2 }}
           transition={{
@@ -42,9 +50,9 @@ export function Governance() {
           }}
         />
 
-        {/* Blob cyan */}
+        {/* Blob slate */}
         <motion.div
-          className="absolute right-[-8rem] bottom-[-6rem] h-96 w-96 rounded-full bg-cyan-400/30 blur-3xl"
+          className="absolute right-[-8rem] bottom-[-6rem] h-96 w-96 rounded-full bg-[#333846]/28 blur-3xl"
           initial={{ x: 120, y: 40, scale: 1 }}
           animate={{ x: -40, y: -10, scale: 1.25 }}
           transition={{
@@ -58,7 +66,7 @@ export function Governance() {
 
       {/* --- MAIN CONTENT --- */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 md:px-6">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-14">
+        <div className="flex flex-col gap-14 md:flex-row md:items-start md:justify-between">
           {/* COLUNA ESQUERDA */}
           <motion.div
             className="md:w-2/5"
@@ -67,28 +75,43 @@ export function Governance() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300/80">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1c2846]">
               {t("governance.badge")}
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
-              {t("governance.heading.line1")}
+              <span className="text-[#1c2846]">
+                {t("governance.heading.line1")}
+              </span>
               <br />
-              <span className="text-white/90">
+              <span className="text-[#333846]">
                 {t("governance.heading.line2")}
               </span>
             </h2>
 
-<button
-  type="button"
-  onClick={() =>
-    window.open("https://ri-portal.super.site/", "_blank", "noopener,noreferrer")
-  }
-  className="mt-8 inline-flex items-center justify-center rounded-full border border-emerald-400/60 px-7 py-2.5 text-xs font-medium uppercase tracking-[0.22em] text-white/90 ring-1 ring-emerald-500/40 shadow-[0_0_18px_rgba(16,185,129,0.45)] transition-all duration-300 hover:bg-emerald-400 hover:text-black hover:shadow-[0_0_28px_rgba(16,185,129,0.85)]"
->
-  {t("governance.buttonIr")}
-</button>
-
+            <button
+              type="button"
+              onClick={() =>
+                window.open(
+                  "https://ri-portal.super.site/",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+              className="
+                mt-8 inline-flex items-center justify-center
+                rounded-full border border-[#1c2846]
+                px-7 py-2.5 text-xs font-medium uppercase tracking-[0.22em]
+                text-[#1c2846]
+                ring-1 ring-[#1c2846]/35
+                shadow-[0_0_18px_rgba(28,40,70,0.25)]
+                transition-all duration-300
+                hover:bg-[#1c2846] hover:text-white
+                hover:shadow-[0_0_26px_rgba(28,40,70,0.45)]
+              "
+            >
+              {t("governance.buttonIr")}
+            </button>
           </motion.div>
 
           {/* COLUNA DIREITA – TEXTO INSTITUCIONAL */}
@@ -99,15 +122,15 @@ export function Governance() {
             viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.1 }}
           >
-            <p className="text-sm text-white/80 md:text-base">
+            <p className="text-sm md:text-base text-[#333846]">
               {t("governance.body.p1")}
             </p>
 
-            <p className="mt-4 text-sm text-white/80 md:text-base">
+            <p className="mt-4 text-sm md:text-base text-[#333846]">
               {t("governance.body.p2")}
             </p>
 
-            <p className="mt-4 text-sm text-white/80 md:text-base">
+            <p className="mt-4 text-sm md:text-base text-[#333846]">
               {t("governance.body.p3")}
             </p>
           </motion.div>

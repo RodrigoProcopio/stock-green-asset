@@ -114,16 +114,16 @@ export function PartnersEcosystem() {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#f5f5f7] text-[#333846]">
       {/* NAVBAR FIXO NO TOPO (MESMO DA HOME) */}
       <Navbar />
 
       <main>
         <section className="relative overflow-hidden py-24 md:py-28">
-          {/* Aurora leve no fundo */}
+          {/* Aurora / background institucional claro */}
           <motion.div
-            className="pointer-events-none absolute inset-0 opacity-60"
-            initial={{ opacity: 0.7 }}
+            className="pointer-events-none absolute inset-0"
+            initial={{ opacity: 0.9 }}
             animate={{ opacity: 1 }}
             transition={{
               duration: 10,
@@ -132,8 +132,12 @@ export function PartnersEcosystem() {
               repeatType: "reverse",
             }}
           >
+            {/* Base em gradiente suave */}
+            <div className="h-full w-full bg-gradient-to-b from-[#f5f5f7] via-white to-[#f5f5f7]" />
+
+            {/* Blob navy */}
             <motion.div
-              className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-emerald-500/30 blur-3xl"
+              className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-[#1c2846]/26 blur-3xl"
               initial={{ x: -60, y: 0, scale: 1 }}
               animate={{ x: 40, y: -20, scale: 1.1 }}
               transition={{
@@ -143,8 +147,10 @@ export function PartnersEcosystem() {
                 repeatType: "mirror",
               }}
             />
+
+            {/* Blob slate */}
             <motion.div
-              className="absolute right-[-8rem] bottom-[-4rem] h-96 w-96 rounded-full bg-cyan-400/25 blur-3xl"
+              className="absolute right-[-8rem] bottom-[-4rem] h-96 w-96 rounded-full bg-[#333846]/22 blur-3xl"
               initial={{ x: 40, y: 40, scale: 1 }}
               animate={{ x: -40, y: -10, scale: 1.15 }}
               transition={{
@@ -164,19 +170,19 @@ export function PartnersEcosystem() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300/80">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1c2846]">
                 {t("partnersPage.badge")}
               </p>
 
-              <h1 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
+              <h1 className="mt-4 text-3xl font-semibold leading-tight text-[#1c2846] md:text-4xl">
                 {t("partnersPage.title.line1")}
                 <br />
-                <span className="text-white/90">
+                <span className="text-[#333846]">
                   {t("partnersPage.title.line2")}
                 </span>
               </h1>
 
-              <p className="mt-4 text-sm text-white/80 md:text-base">
+              <p className="mt-4 text-sm text-[#333846] md:text-base">
                 {t("partnersPage.intro")}
               </p>
             </motion.div>
@@ -196,7 +202,7 @@ export function PartnersEcosystem() {
                     transition={{ duration: 0.5, delay: index * 0.05 }}
                     className="grid gap-6 md:grid-cols-[minmax(0,0.9fr)_minmax(0,2fr)] md:items-center"
                   >
-                    {/* Logo clicável — card branco translúcido com hover premium */}
+                    {/* Logo clicável — card institucional claro */}
                     <a
                       href={partner.website}
                       target="_blank"
@@ -208,16 +214,13 @@ export function PartnersEcosystem() {
                     >
                       <div
                         className="
-                          flex items-center justify-center
-                          h-28 w-52
-                          rounded-2xl
-                          p-4
-                          bg-white/40
-                          border border-emerald-400/40
-                          shadow-[0_0_15px_rgba(16,185,129,0.35)]
+                          flex h-28 w-52 items-center justify-center
+                          rounded-2xl border border-[#d6d6d6]
+                          bg-white/95 p-4
+                          shadow-[0_12px_30px_rgba(0,0,0,0.06)]
                           backdrop-blur-md
                           transition-transform transition-shadow duration-300
-                          hover:-translate-y-1 hover:shadow-[0_0_28px_rgba(16,185,129,0.55)]
+                          hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)]
                         "
                       >
                         <img
@@ -231,8 +234,8 @@ export function PartnersEcosystem() {
                     </a>
 
                     {/* Texto */}
-                    <div className="text-sm text-white/80 md:text-base">
-                      <h2 className="text-base font-semibold text-emerald-400 md:text-lg">
+                    <div className="text-sm text-[#333846] md:text-base">
+                      <h2 className="text-base font-semibold text-[#1c2846] md:text-lg">
                         {t(nameKey)}
                       </h2>
                       <p className="mt-2 leading-relaxed">
@@ -243,21 +246,20 @@ export function PartnersEcosystem() {
                 );
               })}
 
-              {/* Botão voltar para Home — ANCORADO no final, alinhado à direita */}
-              <div className="pt-8 border-t border-white/10 mt-8 flex justify-end">
+              {/* Botão voltar para Home — institucional */}
+              <div className="mt-8 border-t border-[#d6d6d6] pt-8 flex justify-end">
                 <Link
                   to="/"
                   className="
                     inline-flex items-center justify-center
-                    rounded-full border border-emerald-300/40 
-                    px-6 py-3 
+                    rounded-full border border-[#1c2846]
+                    px-6 py-3
                     text-xs font-medium uppercase tracking-[0.22em]
-                    text-emerald-200 
-                    bg-emerald-500/10 
+                    text-[#1c2846]
+                    bg-transparent
                     backdrop-blur-md
-                    shadow-[0_0_20px_rgba(16,185,129,0.25)]
-                    hover:bg-emerald-400 hover:text-black 
-                    hover:border-emerald-300 
+                    shadow-[0_0_16px_rgba(0,0,0,0.08)]
+                    hover:bg-[#1c2846] hover:text-white
                     transition-all
                   "
                 >

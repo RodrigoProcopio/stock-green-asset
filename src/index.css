@@ -1,14 +1,79 @@
 @import "tailwindcss";
 
-/* ajustes globais opcionais */
+/* ----------------------------- */
+/*  RESET E BASE                 */
+/* ----------------------------- */
+
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tema CLARO oficial Stock Capital */
+:root {
+  --bg-page: #ffffff;
+  --bg-section: #ffffff;
+
+  --text-main: #333846;   /* cinza/azul escuro */
+  --text-heading: #1c2846; /* azul marinho institucional */
+  --text-muted: #1a1a1a;  /* preto grafite em baixa opacidade */
+
+  --card-bg: #ffffff;
+  --card-border: #d6d6d6;
+
+  --subtle-bg: #f7f7f7;
+}
+
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  background: #000;
-  color: #fff;
+
+  background: var(--bg-page);
+  color: var(--text-main);
+}
+
+/* ----------------------------- */
+/*  SEÇÃO ABOUT – ALINHADA AO TEMA */
+/* ----------------------------- */
+
+#about {
+  background-color: var(--bg-section);
+  color: var(--text-main);
+}
+
+#about h2,
+#about h3 {
+  color: var(--text-heading);
+}
+
+#about p {
+  color: var(--text-main);
+}
+
+#about .about-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+}
+
+#about .about-card h3 {
+  color: var(--text-heading);
+}
+
+#about .about-card p {
+  color: var(--text-main);
+}
+
+/* Badge */
+#about [class*="tracking"] {
+  color: var(--text-heading);
+}
+
+/* Subtle backgrounds globais */
+.bg-subtle {
+  background-color: var(--subtle-bg);
 }

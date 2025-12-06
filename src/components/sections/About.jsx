@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 //
 // FLOAT ANIMATIONS — OPÇÃO 2 (MÉDIA)
+// (mantida igual, reaproveitando o movimento)
 //
 const mediumFloat = {
   shape1: {
@@ -13,7 +14,7 @@ const mediumFloat = {
       x: [-40, -70, 20, -40],
       rotate: [-12, -9, -15, -12],
     },
-    transition: { duration: 45, repeat: Infinity, ease: "easeInOut" }
+    transition: { duration: 45, repeat: Infinity, ease: "easeInOut" },
   },
   shape2: {
     initial: { y: 40, x: 60, rotate: -12 },
@@ -22,7 +23,7 @@ const mediumFloat = {
       x: [60, 20, 100, 60],
       rotate: [-12, -8, -16, -12],
     },
-    transition: { duration: 40, repeat: Infinity, ease: "easeInOut" }
+    transition: { duration: 40, repeat: Infinity, ease: "easeInOut" },
   },
   shape3: {
     initial: { y: 30, x: -20, rotate: -12 },
@@ -31,8 +32,8 @@ const mediumFloat = {
       x: [-20, 30, -60, -20],
       rotate: [-12, -14, -10, -12],
     },
-    transition: { duration: 50, repeat: Infinity, ease: "easeInOut" }
-  }
+    transition: { duration: 50, repeat: Infinity, ease: "easeInOut" },
+  },
 };
 
 export function About() {
@@ -42,15 +43,16 @@ export function About() {
     <section
       id="about"
       aria-labelledby="about-title"
-      className="relative overflow-hidden bg-black text-white"
+      className="relative overflow-hidden bg-white text-[#333846]"
     >
       {/* =============================== */}
       {/*           BACKGROUND            */}
       {/* =============================== */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-neutral-900" />
+      <div className="pointer-events-none absolute inset-0">
+        {/* Base clara suave */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f5f5f7] via-white to-[#f5f5f7]" />
 
-        {/* Shape diagonal 1 */}
+        {/* Shape diagonal 1 (navy suave) */}
         <motion.div
           initial={mediumFloat.shape1.initial}
           animate={mediumFloat.shape1.animate}
@@ -58,13 +60,14 @@ export function About() {
           className="
             absolute -left-1/4 top-[-30%]
             h-[150%] w-[150%]
-            bg-gradient-to-br from-neutral-800 via-neutral-900 to-black
-            opacity-40
+            bg-gradient-to-br from-[#1c2846]/18 via-white/30 to-transparent
+            opacity-70
             -rotate-12
+            mix-blend-multiply
           "
         />
 
-        {/* Shape diagonal 2 */}
+        {/* Shape diagonal 2 (slate translúcido) */}
         <motion.div
           initial={mediumFloat.shape2.initial}
           animate={mediumFloat.shape2.animate}
@@ -72,13 +75,14 @@ export function About() {
           className="
             absolute -right-1/3 top-[10%]
             h-[140%] w-[120%]
-            bg-gradient-to-tl from-black/70 via-neutral-900/60 to-black/70
-            opacity-35
+            bg-gradient-to-tl from-[#333846]/18 via-white/20 to-transparent
+            opacity-65
             -rotate-12
+            mix-blend-multiply
           "
         />
 
-        {/* Shape diagonal 3 */}
+        {/* Shape diagonal 3 (mancha de luz no rodapé) */}
         <motion.div
           initial={mediumFloat.shape3.initial}
           animate={mediumFloat.shape3.animate}
@@ -86,34 +90,34 @@ export function About() {
           className="
             absolute left-1/4 bottom-[-20%]
             h-[120%] w-[80%]
-            bg-gradient-to-br from-neutral-800/30 via-black/20 to-neutral-900/40
-            opacity-25
+            bg-gradient-to-br from-white/40 via-[#f5f5f7]/60 to-[#1c2846]/12
+            opacity-55
             -rotate-12
+            mix-blend-multiply
           "
         />
 
-        {/* Soft wave glow animado */}
+        {/* Soft wave glow animado (halo institucional) */}
         <motion.div
-          initial={{ opacity: 0.15, scale: 1, x: 0, y: 0 }}
+          initial={{ opacity: 0.22, scale: 1, x: 0, y: 0 }}
           animate={{
-            opacity: [0.15, 0.25, 0.15],
-            scale: [1, 1.15, 1],
-            x: [0, 30, -20, 0],
-            y: [0, -20, 30, 0],
+            opacity: [0.2, 0.3, 0.2],
+            scale: [1, 1.08, 1],
+            x: [0, 26, -18, 0],
+            y: [0, -14, 20, 0],
           }}
           transition={{
-            duration: 18,
+            duration: 22,
             repeat: Infinity,
             ease: "easeInOut",
           }}
           className="
             absolute left-1/2 top-1/2
-            w-[120vw] h-[120vw]
+            h-[110vw] w-[110vw]
             -translate-x-1/2 -translate-y-1/2
             rounded-full
-            bg-emerald-300/10
-            blur-[180px]
-            pointer-events-none
+            bg-[#1c2846]/16
+            blur-[160px]
           "
         />
       </div>
@@ -129,7 +133,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300/85"
+            className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1c2846]"
           >
             {t("navbar.about.badge")}
           </motion.p>
@@ -140,7 +144,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-2xl leading-snug text-white/90 md:text-4xl md:leading-snug"
+            className="text-2xl leading-snug text-[#1c2846] md:text-4xl md:leading-snug"
           >
             {t("navbar.about.headline")}
           </motion.p>
@@ -155,41 +159,41 @@ export function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
           className="
-            rounded-3xl border border-white/10 
-            bg-gradient-to-r from-neutral-900/95 via-black/95 to-neutral-900/95 
-            px-4 py-10 
-            shadow-[0_18px_60px_rgba(0,0,0,0.65)]
+            rounded-3xl border border-[#d6d6d6]
+            bg-white/85
+            px-4 py-10
+            shadow-[0_18px_40px_rgba(0,0,0,0.06)]
             backdrop-blur-xl
             md:px-8
           "
         >
           <div className="grid gap-8 md:grid-cols-3 md:gap-10">
             {/* Mission */}
-            <div className="border-b border-white/10 pb-6 md:border-b-0 md:border-r md:pb-0 md:pr-8">
-              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-white">
+            <div className="border-b border-[#d6d6d6]/60 pb-6 md:border-b-0 md:border-r md:pb-0 md:pr-8">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1c2846]">
                 {t("navbar.about.mission.title")}
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-white/75">
+              <p className="mt-4 text-sm leading-relaxed text-[#333846]">
                 {t("navbar.about.mission.text")}
               </p>
             </div>
 
             {/* Vision */}
-            <div className="border-b border-white/10 pb-6 md:border-b-0 md:border-r md:pb-0 md:px-8">
-              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-white">
+            <div className="border-b border-[#d6d6d6]/60 pb-6 md:border-b-0 md:border-r md:pb-0 md:px-8">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1c2846]">
                 {t("navbar.about.vision.title")}
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-white/75">
+              <p className="mt-4 text-sm leading-relaxed text-[#333846]">
                 {t("navbar.about.vision.text")}
               </p>
             </div>
 
             {/* Values */}
             <div className="md:pl-8">
-              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-white">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1c2846]">
                 {t("navbar.about.values.title")}
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-white/75">
+              <p className="mt-4 text-sm leading-relaxed text-[#333846]">
                 {t("navbar.about.values.text")}
               </p>
             </div>

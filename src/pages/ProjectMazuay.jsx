@@ -17,11 +17,12 @@ const sectionVariant = {
   }),
 };
 
-// Cards com look premium / glass
+// Cards em estilo institucional claro
 const baseCard =
-  "rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_18px_45px_rgba(0,0,0,0.7)] hover:bg-white/[0.06] hover:border-white/20 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_22px_60px_rgba(0,0,0,0.8)] transition-all duration-300";
+  "rounded-2xl border border-[#d6d6d6] bg-white/95 backdrop-blur-md shadow-[0_18px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_22px_50px_rgba(0,0,0,0.08)] transition-all duration-300";
+
 const accentCard =
-  "rounded-2xl border border-emerald-400/40 bg-emerald-400/12 backdrop-blur-xl shadow-[0_0_30px_rgba(16,185,129,0.22)] hover:shadow-[0_0_48px_rgba(16,185,129,0.35)] hover:bg-emerald-400/18 transition-all duration-300";
+  "rounded-2xl border border-[#1c2846]/35 bg-[#1c2846]/4 backdrop-blur-xl shadow-[0_18px_45px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_22px_60px_rgba(0,0,0,0.12)]";
 
 const satelliteImages = [
   {
@@ -58,24 +59,23 @@ function AccordionItem({ id, title, eyebrow, children, isOpen, onToggle }) {
     >
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between px-5 py-4 md:px-6 md:py-5 text-left"
+        className="flex w-full items-center justify-between px-5 py-4 text-left md:px-6 md:py-5"
       >
-        <div className="flex-1 min-w-0">
+        <div className="min-w-0 flex-1">
           {eyebrow && (
-            <span className="text-[0.65rem] uppercase tracking-[0.25em] text-emerald-300/80">
+            <span className="text-[0.65rem] uppercase tracking-[0.25em] text-[#1c2846]">
               {eyebrow}
             </span>
           )}
-          <h3 className="mt-1 text-sm md:text-base font-semibold text-white break-words pr-3">
+          <h3 className="mt-1 pr-3 text-sm font-semibold text-[#1c2846] md:text-base break-words">
             {title}
           </h3>
         </div>
 
         <span
           className={`
-            flex-shrink-0
-            flex h-7 w-7 items-center justify-center rounded-full border border-white/20
-            text-xs font-semibold
+            flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border
+            border-[#d6d6d6] text-xs font-semibold
             transition-transform
             ${isOpen ? "rotate-45" : ""}
           `}
@@ -93,7 +93,7 @@ function AccordionItem({ id, title, eyebrow, children, isOpen, onToggle }) {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
           >
-            <div className="px-5 pb-5 md:px-6 md:pb-6 text-sm md:text-base text-white/75 space-y-4">
+            <div className="space-y-4 px-5 pb-5 text-sm text-[#333846] md:px-6 md:pb-6 md:text-base">
               {children}
             </div>
           </motion.div>
@@ -105,17 +105,17 @@ function AccordionItem({ id, title, eyebrow, children, isOpen, onToggle }) {
 
 function Tabs({ tabs, active, onChange }) {
   return (
-    <div className="inline-flex rounded-full bg-white/5 border border-white/10 p-1 text-xs md:text-sm">
+    <div className="inline-flex rounded-full border border-[#d6d6d6] bg-white/80 p-1 text-xs md:text-sm">
       {tabs.map((tab) => (
         <button
           key={tab.id}
           onClick={() => onChange(tab.id)}
           className={`
-            px-3 md:px-4 py-1.5 rounded-full font-medium transition-all
+            rounded-full px-3 py-1.5 font-medium transition-all md:px-4
             ${
               active === tab.id
-                ? "bg-emerald-400 text-black shadow-[0_0_0_1px_rgba(16,185,129,0.7)]"
-                : "text-white/70 hover:text-white"
+                ? "bg-[#1c2846] text-white shadow-[0_0_0_1px_rgba(28,40,70,0.7)]"
+                : "text-[#333846]/80 hover:text-[#1c2846]"
             }
           `}
         >
@@ -171,7 +171,7 @@ export default function ProjectMazuay() {
 
   const [monitoringTab, setMonitoringTab] = useState("realtime");
 
-  // 👉 estados do lightbox
+  // estados do lightbox
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
   const openLightbox = (index) => setLightboxIndex(index);
@@ -202,61 +202,39 @@ export default function ProjectMazuay() {
     <>
       <Navbar />
 
-      <section className="relative min-h-screen bg-gradient-to-b from-black via-slate-950 to-black text-white pt-28 pb-20 px-3 sm:px-4 overflow-x-hidden">
-        {/* ---------- BACKGROUND PREMIUM ---------- */}
-
-        {/* Glows principais */}
+      <section className="relative min-h-screen overflow-x-hidden bg-[#f5f5f7] px-3 pt-28 pb-20 text-[#333846] sm:px-4">
+        {/* ---------- BACKGROUND INSTITUCIONAL ---------- */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-0 top-[-8%] h-[420px] w-[420px] rounded-full bg-emerald-500/22 blur-[140px]" />
-          <div className="absolute bottom-0 right-0 h-[380px] w-[380px] rounded-full bg-cyan-400/18 blur-[130px]" />
-          <div className="absolute top-[35%] left-1/2 h-[260px] w-[420px] -translate-x-1/2 rounded-full bg-emerald-300/10 blur-[110px]" />
+          {/* gradiente base */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f5f5f7] via-white to-[#f5f5f7]" />
+
+          {/* glows navy/slate */}
+          <motion.div
+            className="absolute left-[-10%] top-[-12%] h-[420px] w-[420px] rounded-full bg-[#1c2846]/20 blur-[140px]"
+            animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute right-[-8%] bottom-[-10%] h-[380px] w-[380px] rounded-full bg-[#333846]/18 blur-[130px]"
+            animate={{ x: [0, -25, 0], y: [0, 15, 0] }}
+            transition={{
+              duration: 22,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <div className="absolute left-1/2 top-[35%] h-[260px] w-[420px] -translate-x-1/2 rounded-full bg-[#1c2846]/10 blur-[110px] opacity-60" />
         </div>
 
-        {/* Grid técnico sutil */}
-        <div className="pointer-events-none absolute inset-0 opacity-[0.11] mix-blend-screen">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.24)_1px,transparent_1px)] bg-[length:80px_80px]" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(148,163,184,0.24)_1px,transparent_1px)] bg-[length:80px_80px]" />
+        {/* grid técnico bem sutil */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-multiply">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.5)_1px,transparent_1px)] bg-[length:80px_80px]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(148,163,184,0.45)_1px,transparent_1px)] bg-[length:80px_80px]" />
         </div>
-
-        {/* Vinheta */}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0,_transparent_40%,_rgba(0,0,0,0.9)_80%)]" />
-
-        {/* Light sweep */}
-        <motion.div
-          className="pointer-events-none absolute inset-x-0 top-24 h-40 bg-gradient-to-r from-transparent via-emerald-300/10 to-transparent"
-          animate={{ x: ["-20%", "20%", "-20%"] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-        />
-
-        {/* Partículas */}
-        <motion.div
-          className="pointer-events-none absolute inset-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.35 }}
-          transition={{ duration: 2.8 }}
-        >
-          {Array.from({ length: 14 }).map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1.5 h-1.5 rounded-full bg-emerald-300/35 blur-[2px]"
-              style={{
-                top: `${(i * 37) % 100}%`,
-                left: `${(i * 61) % 100}%`,
-              }}
-              animate={{
-                y: [0, -18, 10, -8, 0],
-                x: [0, 12, -14, 6, 0],
-                opacity: [0.2, 0.6, 0.4, 0.7, 0.3],
-                scale: [0.7, 1.2, 0.9, 1.3, 0.8],
-              }}
-              transition={{
-                duration: 18 + i,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          ))}
-        </motion.div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl space-y-10 md:space-y-12">
           {/* HEADER / HERO */}
@@ -265,22 +243,22 @@ export default function ProjectMazuay() {
             animate="visible"
             variants={sectionVariant}
           >
-            <span className="text-xs uppercase tracking-[0.35em] text-emerald-300/80">
+            <span className="text-xs uppercase tracking-[0.35em] text-[#1c2846]">
               {t("projects.sectionEyebrow")}
             </span>
 
             <div className="mt-4 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
-                <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">
+                <h1 className="text-3xl font-semibold tracking-tight text-[#1c2846] md:text-5xl">
                   {t("projects.projectName")}
                 </h1>
-                <h2 className="mt-1 text-2xl font-light text-white/85">
+                <h2 className="mt-1 text-2xl font-light text-[#333846]">
                   {t("projects.projectSubtitle")}
                 </h2>
               </div>
             </div>
 
-            <p className="mt-4 max-w-6xl text-sm text-white/70 md:text-base">
+            <p className="mt-4 max-w-6xl text-sm text-[#333846] md:text-base">
               {t("projectMazuay.header.lead")}
             </p>
 
@@ -338,15 +316,15 @@ export default function ProjectMazuay() {
             initial="hidden"
             animate="visible"
             variants={sectionVariant}
-            className="grid gap-8 md:grid-cols-[230px_minmax(0,1fr)] max-w-full"
+            className="grid max-w-full gap-8 md:grid-cols-[230px_minmax(0,1fr)]"
           >
             {/* SIDEBAR */}
-            <aside className="md:pt-4 min-w-0">
+            <aside className="min-w-0 md:pt-4">
               {/* Mobile: navegação horizontal */}
-              <div className="md:hidden mb-2 text-[0.65rem] uppercase tracking-[0.2em] text-white/40">
+              <div className="mb-2 text-[0.65rem] uppercase tracking-[0.2em] text-[#333846]/60 md:hidden">
                 {t("projectMazuay.ui.sectionsLabel") || "Navegação do projeto"}
               </div>
-              <div className="md:hidden mb-2 overflow-x-auto no-scrollbar">
+              <div className="no-scrollbar mb-2 overflow-x-auto md:hidden">
                 <div className="inline-flex gap-2">
                   {sectionIds.map((id) => (
                     <button
@@ -356,8 +334,8 @@ export default function ProjectMazuay() {
                         whitespace-nowrap rounded-full border px-3 py-1.5 text-xs
                         ${
                           activeSection === id
-                            ? "border-emerald-400 bg-emerald-400/10 text-emerald-100"
-                            : "border-white/15 bg-white/[0.02] text-white/60 hover:text-white"
+                            ? "border-[#1c2846] bg-[#1c2846] text-white"
+                            : "border-[#d6d6d6] bg-white/80 text-[#333846]/70 hover:text-[#1c2846]"
                         }
                       `}
                     >
@@ -382,8 +360,8 @@ export default function ProjectMazuay() {
               </div>
 
               {/* Desktop: lista vertical */}
-              <div className="hidden md:block sticky top-28 space-y-3 text-sm">
-                <p className="text-[0.65rem] uppercase tracking-[0.22em] text-emerald-300">
+              <div className="sticky top-28 hidden space-y-3 text-sm md:block">
+                <p className="text-[0.65rem] uppercase tracking-[0.22em] text-[#1c2846]">
                   {t("projectMazuay.ui.sectionsLabel") ||
                     "Navegação do projeto"}
                 </p>
@@ -394,13 +372,13 @@ export default function ProjectMazuay() {
                       key={id}
                       onClick={() => handleNavClick(id)}
                       className={`
-                        w-full flex items-center justify-between rounded-xl px-3 py-2
+                        flex w-full items-center justify-between rounded-xl border px-3 py-2
                         text-xs font-medium uppercase tracking-[0.18em]
-                        transition-all border
+                        transition-all
                         ${
                           activeSection === id
-                            ? "border-emerald-400 bg-emerald-400/10 text-emerald-100 shadow-[0_0_0_1px_rgba(16,185,129,0.45)]"
-                            : "border-white/10 bg-white/[0.02] text-white/55 hover:border-white/25 hover:bg-white/[0.04] hover:text-white"
+                            ? "border-[#1c2846] bg-[#1c2846] text-white shadow-[0_0_0_1px_rgba(28,40,70,0.6)]"
+                            : "border-[#d6d6d6] bg-white/90 text-[#333846]/75 hover:bg-white"
                         }
                       `}
                     >
@@ -426,8 +404,8 @@ export default function ProjectMazuay() {
                           h-1.5 w-1.5 rounded-full
                           ${
                             activeSection === id
-                              ? "bg-emerald-400"
-                              : "bg-white/25"
+                              ? "bg-white"
+                              : "bg-[#333846]/40"
                           }
                         `}
                       />
@@ -438,7 +416,7 @@ export default function ProjectMazuay() {
             </aside>
 
             {/* CONTEÚDO PRINCIPAL EM ACORDEÕES */}
-            <div className="space-y-5 md:space-y-6 min-w-0">
+            <div className="min-w-0 space-y-5 md:space-y-6">
               {/* 1. SOBRE O PROJETO */}
               <AccordionItem
                 id="about"
@@ -460,24 +438,24 @@ export default function ProjectMazuay() {
                   <p>{t("projectMazuay.about.p1")}</p>
                   <p>{t("projectMazuay.about.p2")}</p>
 
-                  <div className="grid gap-4 md:grid-cols-2 pt-2">
+                  <div className="grid gap-4 pt-2 md:grid-cols-2">
                     <div>
-                      <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                      <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#1c2846]">
                         {t("projectMazuay.description.heading")}
                       </h4>
-                      <p className="mt-2 text-sm text-white/75">
+                      <p className="mt-2 text-sm text-[#333846]">
                         {t("projectMazuay.description.p1")}
                       </p>
-                      <p className="mt-2 text-sm text-white/75">
+                      <p className="mt-2 text-sm text-[#333846]">
                         {t("projectMazuay.description.p2")}
                       </p>
-                      <p className="mt-2 text-sm text-white/75">
+                      <p className="mt-2 text-sm text-[#333846]">
                         {t("projectMazuay.description.p3")}
                       </p>
-                      <p className="mt-2 text-sm text-white/75">
+                      <p className="mt-2 text-sm text-[#333846]">
                         {t("projectMazuay.description.p4")}
                       </p>
-                      <ul className="mt-2 space-y-1 text-sm text-white/75">
+                      <ul className="mt-2 space-y-1 text-sm text-[#333846]">
                         <li>{t("projectMazuay.description.list.app")}</li>
                         <li>{t("projectMazuay.description.list.arl")}</li>
                       </ul>
@@ -485,25 +463,25 @@ export default function ProjectMazuay() {
 
                     <div className="space-y-4">
                       <div>
-                        <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                        <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#1c2846]">
                           {t("projectMazuay.location.heading")}
                         </h4>
-                        <p className="mt-2 text-sm text-white/75">
+                        <p className="mt-2 text-sm text-[#333846]">
                           {t("projectMazuay.location.p1")}
                         </p>
-                        <p className="mt-2 text-sm text-white/70">
+                        <p className="mt-2 text-sm text-[#4b5563]">
                           {t("projectMazuay.location.p2")}
                         </p>
                       </div>
 
                       <div>
-                        <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                        <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#1c2846]">
                           {t("projectMazuay.structure.heading")}
                         </h4>
-                        <p className="mt-2 text-sm text-white/75">
+                        <p className="mt-2 text-sm text-[#333846]">
                           {t("projectMazuay.structure.p1")}
                         </p>
-                        <p className="mt-2 text-sm text-white/70">
+                        <p className="mt-2 text-sm text-[#4b5563]">
                           {t("projectMazuay.structure.p2")}
                         </p>
                       </div>
@@ -531,38 +509,38 @@ export default function ProjectMazuay() {
                 <div className="space-y-6">
                   {/* Biodiversidade */}
                   <div>
-                    <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                    <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#1c2846]">
                       {t("projectMazuay.biodiversity.heading")}
                     </h4>
-                    <p className="mt-2 text-sm text-white/75">
+                    <p className="mt-2 text-sm text-[#333846]">
                       {t("projectMazuay.biodiversity.intro")}
                     </p>
-                    <ul className="mt-3 space-y-2 text-sm text-white/75">
+                    <ul className="mt-3 space-y-2 text-sm text-[#333846]">
                       <li>{t("projectMazuay.biodiversity.list.trees")}</li>
                       <li>{t("projectMazuay.biodiversity.list.species")}</li>
                       <li>
                         {t("projectMazuay.biodiversity.list.monitoring")}
                       </li>
                     </ul>
-                    <p className="mt-3 text-sm text-white/70">
+                    <p className="mt-3 text-sm text-[#4b5563]">
                       {t("projectMazuay.biodiversity.closing")}
                     </p>
                   </div>
 
                   {/* Potencial de créditos – card destacado */}
                   <div className={`${accentCard} p-5 md:p-6`}>
-                    <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200">
+                    <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#1c2846]">
                       {t("projectMazuay.carbonPotential.heading")}
                     </h4>
-                    <p className="mt-3 text-sm text-emerald-50">
+                    <p className="mt-3 text-sm text-[#1f2937]">
                       {t("projectMazuay.carbonPotential.p1")}
                     </p>
-                    <p className="mt-3 text-sm">
-                      <span className="font-semibold text-emerald-100">
+                    <p className="mt-3 text-sm text-[#111827]">
+                      <span className="font-semibold">
                         {t("projectMazuay.carbonPotential.highlight")}
                       </span>
                     </p>
-                    <p className="mt-3 text-sm text-emerald-50/90">
+                    <p className="mt-3 text-sm text-[#1f2937]">
                       {t("projectMazuay.carbonPotential.p2")}
                     </p>
                   </div>
@@ -587,10 +565,10 @@ export default function ProjectMazuay() {
                 <div className="space-y-6">
                   {/* Texto geral de monitoramento & governança tecnológica */}
                   <div>
-                    <p className="text-sm text-white/75">
+                    <p className="text-sm text-[#333846]">
                       {t("projectMazuay.monitoringGovernance.intro")}
                     </p>
-                    <ul className="mt-3 space-y-2 text-sm text-white/75">
+                    <ul className="mt-3 space-y-2 text-sm text-[#333846]">
                       <li>
                         {t("projectMazuay.monitoringGovernance.items.realtime")}
                       </li>
@@ -603,7 +581,7 @@ export default function ProjectMazuay() {
                         {t("projectMazuay.monitoringGovernance.items.audits")}
                       </li>
                     </ul>
-                    <p className="mt-3 text-sm text-white/70">
+                    <p className="mt-3 text-sm text-[#4b5563]">
                       {t("projectMazuay.monitoringGovernance.closing")}
                     </p>
                   </div>
@@ -638,9 +616,9 @@ export default function ProjectMazuay() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
-                            className="space-y-4 text-sm md:text-base text-white/75"
+                            className="space-y-4 text-sm text-[#333846] md:text-base"
                           >
-                            <h4 className="text-sm md:text-base font-semibold text-white">
+                            <h4 className="text-sm font-semibold text-[#1c2846] md:text-base">
                               {t("projectMazuay.realtime.heading")}
                             </h4>
                             <p>{t("projectMazuay.realtime.p1")}</p>
@@ -657,11 +635,11 @@ export default function ProjectMazuay() {
                             transition={{ duration: 0.2 }}
                             className="space-y-5"
                           >
-                            <div className="text-sm md:text-base text-white/75 text-center md:text-left">
-                              <h4 className="font-semibold">
+                            <div className="text-center text-sm text-[#333846] md:text-left md:text-base">
+                              <h4 className="font-semibold text-[#1c2846]">
                                 {t("projectMazuay.satellite.heading")}
                               </h4>
-                              <p className="mt-2 text-white/70">
+                              <p className="mt-2 text-[#4b5563]">
                                 {t("projectMazuay.satellite.description")}
                               </p>
                             </div>
@@ -672,7 +650,7 @@ export default function ProjectMazuay() {
                                   key={img.src}
                                   type="button"
                                   onClick={() => openLightbox(index)}
-                                  className="group overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] focus:outline-none focus:ring-2 focus:ring-emerald-400/70"
+                                  className="group overflow-hidden rounded-xl border border-[#d6d6d6] bg-white/95 focus:outline-none focus:ring-2 focus:ring-[#1c2846]/60"
                                 >
                                   <img
                                     src={img.src}
@@ -680,7 +658,7 @@ export default function ProjectMazuay() {
                                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                                     loading="lazy"
                                   />
-                                  <figcaption className="px-3 py-2 text-xs text-white/70 text-left">
+                                  <figcaption className="px-3 py-2 text-left text-xs text-[#4b5563]">
                                     {t(img.captionKey)}
                                   </figcaption>
                                 </button>
@@ -713,33 +691,33 @@ export default function ProjectMazuay() {
                   <p>{t("projectMazuay.impacts.intro")}</p>
 
                   <div className="grid gap-4 md:grid-cols-3">
-                    <div className="rounded-xl bg-white/[0.02] border border-white/10 p-4">
-                      <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">
+                    <div className="rounded-xl border border-[#d6d6d6] bg-white/95 p-4">
+                      <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1c2846]">
                         {t("projectMazuay.impacts.climate.title")}
                       </h4>
-                      <ul className="mt-2 space-y-1 text-white/75 text-sm">
+                      <ul className="mt-2 space-y-1 text-sm text-[#333846]">
                         <li>{t("projectMazuay.impacts.climate.items.0")}</li>
                         <li>{t("projectMazuay.impacts.climate.items.1")}</li>
                         <li>{t("projectMazuay.impacts.climate.items.2")}</li>
                       </ul>
                     </div>
 
-                    <div className="rounded-xl bg-white/[0.02] border border-white/10 p-4">
-                      <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">
+                    <div className="rounded-xl border border-[#d6d6d6] bg-white/95 p-4">
+                      <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1c2846]">
                         {t("projectMazuay.impacts.society.title")}
                       </h4>
-                      <ul className="mt-2 space-y-1 text-white/75 text-sm">
+                      <ul className="mt-2 space-y-1 text-sm text-[#333846]">
                         <li>{t("projectMazuay.impacts.society.items.0")}</li>
                         <li>{t("projectMazuay.impacts.society.items.1")}</li>
                         <li>{t("projectMazuay.impacts.society.items.2")}</li>
                       </ul>
                     </div>
 
-                    <div className="rounded-xl bg-white/[0.02] border border-white/10 p-4">
-                      <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">
+                    <div className="rounded-xl border border-[#d6d6d6] bg-white/95 p-4">
+                      <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1c2846]">
                         {t("projectMazuay.impacts.environment.title")}
                       </h4>
-                      <ul className="mt-2 space-y-1 text-white/75 text-sm">
+                      <ul className="mt-2 space-y-1 text-sm text-[#333846]">
                         <li>{t("projectMazuay.impacts.environment.items.0")}</li>
                         <li>{t("projectMazuay.impacts.environment.items.1")}</li>
                         <li>{t("projectMazuay.impacts.environment.items.2")}</li>
@@ -768,44 +746,46 @@ export default function ProjectMazuay() {
                 <div className="space-y-6">
                   {/* Blockchain */}
                   <div>
-                    <p className="text-sm text-white/75">
+                    <p className="text-sm text-[#333846]">
                       {t("projectMazuay.blockchain.p1")}
                     </p>
-                    <p className="mt-3 text-sm text-white/75">
+                    <p className="mt-3 text-sm text-[#333846]">
                       {t("projectMazuay.blockchain.p2")}
                     </p>
-                    <ul className="mt-3 space-y-2 text-sm text-white/75">
+                    <ul className="mt-3 space-y-2 text-sm text-[#333846]">
                       <li>{t("projectMazuay.blockchain.items.tracking")}</li>
                       <li>{t("projectMazuay.blockchain.items.duplication")}</li>
-                      <li>{t("projectMazuay.blockchain.items.authenticity")}</li>
+                      <li>
+                        {t("projectMazuay.blockchain.items.authenticity")}
+                      </li>
                       <li>{t("projectMazuay.blockchain.items.governance")}</li>
                       <li>{t("projectMazuay.blockchain.items.engagement")}</li>
                     </ul>
-                    <p className="mt-4 text-sm text-white/75">
+                    <p className="mt-4 text-sm text-[#4b5563]">
                       {t("projectMazuay.blockchain.ctaText")}
                     </p>
                     <a
                       href="https://dash.betteruseblockchain.com/transparency-portal/9e826be8-4b83-45db-a11a-4cc10ba04677"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-2 inline-block text-sm font-semibold text-emerald-300 hover:text-emerald-200 underline underline-offset-4"
+                      className="mt-2 inline-block text-sm font-semibold text-[#1c2846] underline underline-offset-4 hover:text-[#111827]"
                     >
                       {t("projectMazuay.blockchain.ctaLabel")}
                     </a>
                   </div>
 
                   {/* Relatório */}
-                  <div className="border-t border-white/10 pt-5">
-                    <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                  <div className="border-t border-[#d6d6d6] pt-5">
+                    <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#1c2846]">
                       {t("projectMazuay.report.heading")}
                     </h4>
-                    <p className="mt-3 text-sm text-white/75">
+                    <p className="mt-3 text-sm text-[#333846]">
                       {t("projectMazuay.report.p1")}
                     </p>
-                    <p className="mt-3 text-sm text-white/75">
+                    <p className="mt-3 text-sm text-[#333846]">
                       {t("projectMazuay.report.p2")}
                     </p>
-                    <ul className="mt-3 space-y-2 text-sm text-white/75">
+                    <ul className="mt-3 space-y-2 text-sm text-[#333846]">
                       <li>{t("projectMazuay.report.items.climate")}</li>
                       <li>{t("projectMazuay.report.items.environment")}</li>
                       <li>{t("projectMazuay.report.items.social")}</li>
@@ -814,11 +794,11 @@ export default function ProjectMazuay() {
                   </div>
 
                   {/* ODS */}
-                  <div className="border-t border-white/10 pt-5">
-                    <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                  <div className="border-t border-[#d6d6d6] pt-5">
+                    <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#1c2846]">
                       {t("projectMazuay.sdgs.heading")}
                     </h4>
-                    <p className="mt-3 text-sm text-white/70 max-w-3xl">
+                    <p className="mt-3 max-w-3xl text-sm text-[#4b5563]">
                       {t("projectMazuay.sdgs.description")}
                     </p>
 
@@ -849,49 +829,38 @@ export default function ProjectMazuay() {
                 initial="hidden"
                 animate="visible"
                 variants={sectionVariant}
-                className="pt-4 flex flex-col gap-4"
+                className="flex flex-col gap-4 pt-4"
               >
                 {/* Logo CCB */}
-                <div className="flex justify-center mb-8">
+                <div className="mb-8 flex justify-center">
                   <img
                     src="/images/Logos/ccb.webp"
                     alt="Certificação CCB"
-                    className="w-64 md:w-[28rem] opacity-90"
+                    className="w-64 opacity-90 md:w-[28rem]"
                     loading="lazy"
                   />
                 </div>
 
                 {/* Botões */}
-                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between w-full">
+                <div className="flex w-full flex-col gap-4 md:flex-row md:items-center md:justify-between">
                   <button
-                    onClick={() =>
-                      document
-                        .getElementById("contact")
-                        ?.scrollIntoView({ behavior: "smooth", block: "start" })
-                    }
-                    className="
-                      w-full md:w-auto
-                      inline-flex items-center justify-center
-                      rounded-full border border-emerald-400/80 bg-emerald-400/10
-                      px-6 md:px-8 py-3
-                      text-xs font-semibold uppercase tracking-[0.22em]
-                      text-emerald-100 hover:bg-emerald-400 hover:text-black
-                      transition-all text-center
-                    "
-                  >
-                    {t("projectMazuay.cta.talkToTeam")}
-                  </button>
-
+  onClick={() => {
+    window.location.href = "/?scroll=contact";
+  }}
+  className="inline-flex w-full items-center justify-center rounded-full border border-[#1c2846] bg-[#1c2846] px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white transition-all hover:bg-[#111827] md:w-auto md:px-8"
+>
+  {t("projectMazuay.cta.talkToTeam")}
+</button>
                   <a
                     href="/"
                     className="
-                      w-full md:w-auto
-                      inline-flex items-center justify-center gap-2
-                      rounded-full border border-white/20 bg-white/5
-                      px-6 py-3
-                      text-xs font-semibold uppercase tracking-[0.22em]
-                      text-white/80 hover:border-emerald-400/70 hover:bg-emerald-400/10
-                      hover:text-white transition-all backdrop-blur-sm text-center
+                      inline-flex w-full items-center justify-center gap-2
+                      rounded-full border border-[#d6d6d6]
+                      bg-white/90 px-6 py-3 text-xs
+                      font-semibold uppercase tracking-[0.22em]
+                      text-[#333846] transition-all
+                      hover:border-[#1c2846] hover:bg-[#f5f5f7]
+                      md:w-auto
                     "
                   >
                     {t("projectMazuay.cta.backHome")}
@@ -906,14 +875,14 @@ export default function ProjectMazuay() {
         <AnimatePresence>
           {lightboxIndex !== null && (
             <motion.div
-              className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4"
+              className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 px-4 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={closeLightbox}
             >
               <motion.div
-                className="relative max-w-5xl w-full"
+                className="relative w-full max-w-5xl"
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.92, opacity: 0 }}
@@ -933,7 +902,7 @@ export default function ProjectMazuay() {
                   <img
                     src={satelliteImages[lightboxIndex].src}
                     alt={t(satelliteImages[lightboxIndex].altKey)}
-                    className="w-full max-h-[70vh] object-contain"
+                    className="max-h-[70vh] w-full object-contain"
                     loading="lazy"
                   />
                 </div>
@@ -947,13 +916,13 @@ export default function ProjectMazuay() {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={showPrev}
-                      className="rounded-full border border-white/30 bg-white/5 px-3 py-1 hover:bg-white/10 text-[0.7rem] uppercase tracking-[0.18em]"
+                      className="rounded-full border border-white/30 bg-white/5 px-3 py-1 text-[0.7rem] uppercase tracking-[0.18em] hover:bg-white/10"
                     >
                       ← {t("projectMazuay.satellite.ui.prev") || "Anterior"}
                     </button>
                     <button
                       onClick={showNext}
-                      className="rounded-full border border-emerald-400/70 bg-emerald-400/10 px-3 py-1 hover:bg-emerald-400/20 text-[0.7rem] uppercase tracking-[0.18em]"
+                      className="rounded-full border border-[#1c2846] bg-[#1c2846]/40 px-3 py-1 text-[0.7rem] uppercase tracking-[0.18em] hover:bg-[#1c2846]"
                     >
                       {t("projectMazuay.satellite.ui.next") || "Próxima"} →
                     </button>

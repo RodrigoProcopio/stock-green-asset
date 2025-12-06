@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import { useEffect } from "react";
 
 // Lazy-loaded pages (code splitting por rota)
 const Home = lazy(() => import("./pages/Home"));
@@ -9,6 +10,11 @@ const SustainabilityPage = lazy(() => import("./pages/SustainabilityPage"));
 const PartnersEcosystem = lazy(() => import("./pages/PartnersEcosystem"));
 
 function App() {
+  // 🌞 Força o tema claro assim que o app monta
+  useEffect(() => {
+    document.documentElement.classList.add("light");
+  }, []);
+
   return (
     <BrowserRouter>
       {/* Suspense exibe um fallback leve enquanto cada chunk é carregado */}

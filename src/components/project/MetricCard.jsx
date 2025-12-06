@@ -1,56 +1,5 @@
+// src/components/project/MetricCard.jsx
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-
-function useCountUp(target, duration = 1.6, resetKey = 0) {
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    const end = Number(target);
-    if (Number.isNaN(end)) return;
-
-    const startTime = performance.now();
-    const durationMs = duration * 1000;
-    let frameId;
-
-    const tick = (now) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / durationMs, 1);
-      setValue(end * progress);
-
-      if (progress < 1) {
-        frameId = requestAnimationFrame(tick);
-      }
-    };
-
-    frameId = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frameId);
-  }, [target, duration, resetKey]);
-
-  return value;
-}
-
-function Typewriter({ text, speed = 35, resetKey = 0 }) {
-  const [out, setOut] = useState("");
-
-  useEffect(() => {
-    setOut("");
-    let i = 0;
-    const id = setInterval(() => {
-      setOut(text.slice(0, i + 1));
-      i++;
-      if (i >= text.length) clearInterval(id);
-    }, speed);
-
-    return () => clearInterval(id);
-  }, [text, speed, resetKey]);
-
-  return <>{out}</>;
-}
-
-const formatNumber = (num, locale = "pt-BR") =>
-  new Intl.NumberFormat(locale, {
-    maximumFractionDigits: 2,
-  }).format(num);
 
 export function MetricCard({
   label,
@@ -59,45 +8,63 @@ export function MetricCard({
   isNumber = false,
   isTyped = false,
   locale = "pt-BR",
-  resetKey = 0,
+  resetKey,
 }) {
-  const count = isNumber ? useCountUp(value, 1.6, resetKey) : null;
-  const displayValue = isNumber ? formatNumber(count, locale) : value;
+  const [displayValue, setDisplayValue] = useState(isNumber ? 0 : value);
+
+  useEffect(() => {
+    if (!isNumber || typeof value !== "number") {
+      setDisplayValue(value);
+      return;
+    }
+
+    let frame;
+    const duration = 900;
+    const start = performance.now();
+
+    const animate = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const current = value * progress;
+      setDisplayValue(current);
+
+      if (progress < 1) {
+        frame = requestAnimationFrame(animate);
+      }
+    };
+
+    frame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frame);
+  }, [value, isNumber, resetKey]);
+
+  const formattedValue = isNumber
+    ? new Intl.NumberFormat(locale, {
+        maximumFractionDigits: 2,
+      }).format(displayValue)
+    : displayValue;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+    <div
       className="
-        rounded-2xl
-        border border-emerald-400/20
-        bg-white/[0.02]
-        backdrop-blur-sm
-        shadow-[0_0_15px_rgba(16,185,129,0.15)]
-        hover:shadow-[0_0_25px_rgba(16,185,129,0.25)]
-        transition-all
-        p-6
+        rounded-2xl border border-[#d6d6d6]
+        bg-white/95
+        shadow-[0_14px_30px_rgba(0,0,0,0.04)]
+        px-4 py-4 md:px-5 md:py-5
+        flex flex-col gap-2
       "
     >
-      <div className="text-xs uppercase tracking-[0.25em] text-emerald-300 mb-3">
+      <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-[#1c2846]/80">
         {label}
-      </div>
+      </p>
 
-      <div className="text-2xl md:text-3xl font-semibold text-white">
-        {isTyped ? (
-          <Typewriter text={String(value)} resetKey={resetKey} />
-        ) : (
-          displayValue
-        )}
+      <div className="text-2xl font-semibold text-[#1c2846] md:text-3xl">
+        {formattedValue}
       </div>
 
       {helper && (
-        <div className="mt-1 text-sm text-white/60">
+        <p className="text-[0.75rem] text-[#4b5563] leading-relaxed">
           {helper}
-        </div>
+        </p>
       )}
-    </motion.div>
+    </div>
   );
 }
