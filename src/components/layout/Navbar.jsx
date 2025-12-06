@@ -13,9 +13,9 @@ const navItems = [
   { key: "navbar.links.projects", href: "#projects" },
   { key: "navbar.links.socialProjects", href: "/social-projects" },
   { key: "navbar.links.sustainability", href: "#sustainability" },
+  { key: "navbar.links.sustainabilitybonds", href: "#sustainabilitybonds" },
   { key: "navbar.links.governance", href: "#governance" },
   { key: "navbar.links.team", href: "#team" },
-  { key: "navbar.links.advisoryBoard", href: "#advisory" },
   { key: "navbar.links.partners", href: "#partners" },
   { key: "navbar.links.contact", href: "#contact" },
 ];
