@@ -4,6 +4,9 @@ import { Navbar } from "../components/layout/Navbar";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+/**
+ * Variante padrão de animação de entrada das seções.
+ */
 const sectionVariant = {
   hidden: { opacity: 0, y: 20 },
   visible: (i = 0) => ({
@@ -17,7 +20,9 @@ const sectionVariant = {
   }),
 };
 
-// ODS
+/**
+ * Metadados dos ODS exibidos na seção de Objetivos de Desenvolvimento Sustentável.
+ */
 const odsGoals = [
   {
     id: 5,
@@ -56,7 +61,10 @@ export default function SustainabilityPage() {
   const location = useLocation();
   const { t } = useTranslation();
 
-  // scroll para o hash (#sustainabilitybonds, etc.)
+  /**
+   * Faz scroll suave para âncoras da página quando há hash na URL
+   * (ex.: #sustainabilitybonds).
+   */
   useEffect(() => {
     if (location.hash) {
       const el = document.querySelector(location.hash);
@@ -68,12 +76,17 @@ export default function SustainabilityPage() {
     }
   }, [location]);
 
-  // Acordeões ONU
+  /**
+   * Controle de estado dos acordeões:
+   * - openUN: acordeões da ONU Global Compact.
+   * - openICMA: acordeões dos princípios ICMA.
+   */
   const [openUN, setOpenUN] = useState(null);
-  // Acordeões ICMA
   const [openICMA, setOpenICMA] = useState(null);
 
-  // Listas de princípios (arrays vindos do i18n)
+  /**
+   * Listas de princípios carregadas do i18n.
+   */
   const humanRightsItems =
     t("sustainability.principles.humanRights.items", {
       returnObjects: true,
@@ -98,15 +111,24 @@ export default function SustainabilityPage() {
     <>
       <Navbar />
 
-      <section className="relative min-h-screen overflow-x-hidden bg-[#f5f5f7] text-[#333846] pt-28 pb-24 px-4">
-        {/* ---------- BACKGROUND INSTITUCIONAL ---------- */}
+      <section className="relative min-h-[100dvh] overflow-hidden bg-[#020617] text-[#e5e7eb] pt-28 pb-12 px-4 sm:px-6">
+        {/* Camada de fundo: vídeo, gradiente e glows */}
         <div className="pointer-events-none absolute inset-0">
-          {/* gradiente base */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f5f5f7] via-white to-[#f5f5f7]" />
+          <div className="absolute inset-0 overflow-hidden">
+            <video
+              className="h-full w-full object-cover opacity-60"
+              src="/videos/ProjectMazuay.webm"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          </div>
 
-          {/* glows navy/slate suaves */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/65 via-white/50 to-white/70" />
+
           <motion.div
-            className="absolute left-[-10%] top-[-12%] h-[420px] w-[420px] rounded-full bg-[#1c2846]/18 blur-[140px]"
+            className="absolute left-[-10%] top-[-12%] h-[420px] w-[420px] rounded-full bg-[#1c2846]/30 blur-[150px]"
             animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
             transition={{
               duration: 20,
@@ -115,7 +137,7 @@ export default function SustainabilityPage() {
             }}
           />
           <motion.div
-            className="absolute right-[-8%] bottom-[-10%] h-[380px] w-[380px] rounded-full bg-[#333846]/16 blur-[130px]"
+            className="absolute right-[-8%] bottom-[-10%] h-[380px] w-[380px] rounded-full bg-[#0f172a]/30 blur-[140px]"
             animate={{ x: [0, -25, 0], y: [0, 15, 0] }}
             transition={{
               duration: 22,
@@ -123,38 +145,33 @@ export default function SustainabilityPage() {
               ease: "easeInOut",
             }}
           />
-          <div className="absolute left-1/2 top-[35%] h-[260px] w-[420px] -translate-x-1/2 rounded-full bg-[#1c2846]/10 blur-[110px] opacity-60" />
+          <div className="absolute left-1/2 top-[35%] h-[260px] w-[420px] -translate-x-1/2 rounded-full bg-[#0f172a]/25 blur-[120px] opacity-70" />
         </div>
 
-        {/* grid técnico bem sutil */}
+        {/* Grid técnico sutil sobreposto ao fundo */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.05] mix-blend-multiply">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.4)_1px,transparent_1px)] bg-[length:80px_80px]" />
           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(148,163,184,0.35)_1px,transparent_1px)] bg-[length:80px_80px]" />
         </div>
 
-        {/* ---------- CONTEÚDO ---------- */}
+        {/* Conteúdo principal */}
         <div className="relative z-10 mx-auto max-w-6xl space-y-16 md:space-y-20">
-          {/* HERO / ONU GLOBAL COMPACT */}
+          {/* Seção: Pacto Global da ONU e princípios */}
           <motion.section
             variants={sectionVariant}
             initial="hidden"
             animate="visible"
           >
             <div className="grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-start">
-              {/* Coluna esquerda: texto principal */}
+              {/* Coluna esquerda: título e introdução */}
               <div className="space-y-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#1c2846]">
-                  {t("sustainability.badge")}
-                </p>
-
-                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#1c2846]">
+                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#1F6F5C] drop-shadow-[0_0_18px_rgba(0,0,0,0.55)]">
                   {t("sustainability.heading.line1")}{" "}
-                  <span className="text-[#333846]">
+                  <span className="bg-gradient-to-r from-[#1c2846] via-[#333846] to-[#1c2846] bg-clip-text text-transparent">
                     {t("sustainability.heading.line2")}
                   </span>
                 </h1>
 
-                {/* Botão Manifesto */}
                 <div className="flex flex-col gap-3 pt-4 sm:flex-row">
                   <a
                     href="https://sdgs.un.org/partnerships/stock-capital-holding-ltda"
@@ -162,13 +179,14 @@ export default function SustainabilityPage() {
                     rel="noopener noreferrer"
                     className="
                       inline-flex items-center justify-center
-                      rounded-full border border-[#1c2846]
-                      bg-transparent
+                      rounded-full border border-[#1F6F5C]
+                      bg-white/95
                       px-6 py-3
                       text-[0.7rem] font-semibold uppercase tracking-[0.25em]
-                      text-[#1c2846]
+                      text-[#1F6F5C]
                       transition-all duration-200
-                      hover:bg-[#1c2846] hover:text-white
+                      hover:bg-[#1F6F5C] hover:text-white
+                      hover:shadow-[0_18px_40px_rgba(31,111,92,0.45)]
                     "
                   >
                     {t("sustainability.buttons.manifesto")}
@@ -183,7 +201,6 @@ export default function SustainabilityPage() {
                   {t("sustainability.intro.p2")}
                 </p>
 
-                {/* Botão Veja mais */}
                 <div className="flex flex-col gap-3 pt-2 sm:flex-row">
                   <a
                     href="https://unglobalcompact.org/what-is-gc/participants/161633"
@@ -191,13 +208,14 @@ export default function SustainabilityPage() {
                     rel="noopener noreferrer"
                     className="
                       inline-flex items-center justify-center
-                      rounded-full border border-[#1c2846]
-                      bg-transparent
+                      rounded-full border border-[#1F6F5C]
+                      bg-white/95
                       px-6 py-3
                       text-[0.7rem] font-semibold uppercase tracking-[0.25em]
-                      text-[#1c2846]
+                      text-[#1F6F5C]
                       transition-all duration-200
-                      hover:bg-[#1c2846] hover:text-white
+                      hover:bg-[#1F6F5C] hover:text-white
+                      hover:shadow-[0_18px_40px_rgba(31,111,92,0.45)]
                     "
                   >
                     {t("sustainability.buttons.view")}
@@ -205,14 +223,13 @@ export default function SustainabilityPage() {
                 </div>
               </div>
 
-              {/* Coluna direita: acordeões ONU + logo */}
+              {/* Coluna direita: acordeões ONU + logotipo */}
               <div className="space-y-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1c2846]">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1F6F5C] drop-shadow-[0_0_12px_rgba(79,175,149,0.7)]">
                   {t("sustainability.un.globalCompactLabel")}
                 </p>
 
                 <div className="space-y-3">
-                  {/* Direitos Humanos */}
                   <AccordionItem
                     id="un-human-rights"
                     title={t("sustainability.principles.humanRights.title")}
@@ -226,7 +243,6 @@ export default function SustainabilityPage() {
                     ))}
                   </AccordionItem>
 
-                  {/* Trabalho */}
                   <AccordionItem
                     id="un-labour"
                     title={t("sustainability.principles.labour.title")}
@@ -240,7 +256,6 @@ export default function SustainabilityPage() {
                     ))}
                   </AccordionItem>
 
-                  {/* Meio Ambiente */}
                   <AccordionItem
                     id="un-environment"
                     title={t("sustainability.principles.environment.title")}
@@ -256,7 +271,6 @@ export default function SustainabilityPage() {
                     ))}
                   </AccordionItem>
 
-                  {/* Anticorrupção */}
                   <AccordionItem
                     id="un-anticorruption"
                     title={t(
@@ -287,7 +301,7 @@ export default function SustainabilityPage() {
             </div>
           </motion.section>
 
-          {/* ODS */}
+          {/* Seção: Objetivos de Desenvolvimento Sustentável (ODS) */}
           <motion.section
             variants={sectionVariant}
             initial="hidden"
@@ -296,18 +310,15 @@ export default function SustainabilityPage() {
             className="space-y-6"
           >
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1c2846]">
-                {t("sustainability.ods.badge")}
-              </p>
-              <h2 className="mt-2 text-2xl font-semibold text-[#1c2846] md:text-3xl">
+              <h2 className="mt-2 text-2xl font-semibold text-[#1c2846] md:text-3xl drop-shadow-[0_0_16px_rgba(0,0,0,0.55)]">
                 {t("sustainability.ods.heading")}
               </h2>
+
               <p className="mt-2 max-w-6xl text-sm text-[#4b5563] md:text-base">
                 {t("sustainability.ods.description")}
               </p>
             </div>
 
-            {/* Lista dos ODS */}
             <div className="mt-4 space-y-3">
               {odsGoals.map((goal) => (
                 <div
@@ -315,10 +326,11 @@ export default function SustainabilityPage() {
                   className="
                     group
                     flex items-center gap-4
-                    rounded-2xl border border-[#d6d6d6]/70 bg-white/90
+                    rounded-2xl border border-[#d6d6d6]/70 bg-white/95
                     px-4 py-3
                     transition-all duration-200
-                    hover:border-[#1c2846]/70 hover:bg-white
+                    hover:border-[#1F6F5C]/80 hover:bg-white
+                    hover:shadow-[0_18px_40px_rgba(0,0,0,0.12)]
                   "
                 >
                   <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-lg bg-white">
@@ -334,7 +346,7 @@ export default function SustainabilityPage() {
                   </div>
 
                   <div>
-                    <p className="text-sm font-semibold text-[#1c2846]">
+                    <p className="text-sm font-semibold text-[#1F6F5C]">
                       {t("sustainability.ods.goalLabel", {
                         id: goal.id,
                         title: t(goal.titleKey),
@@ -348,7 +360,6 @@ export default function SustainabilityPage() {
               ))}
             </div>
 
-            {/* Logo + botão */}
             <div className="mt-8 flex flex-col items-center justify-center gap-4 text-center">
               <img
                 src="/images/Logos/goals_logo.webp"
@@ -363,12 +374,13 @@ export default function SustainabilityPage() {
                 rel="noopener noreferrer"
                 className="
                   inline-flex items-center gap-2 
-                  rounded-full border border-[#d6d6d6] bg-white 
+                  rounded-full border border-[#1F6F5C] bg-white/95 
                   px-4 py-1.5 
                   text-[0.7rem] font-semibold uppercase tracking-[0.25em] 
-                  text-[#333846] 
-                  hover:border-[#1c2846] hover:text-[#1c2846]
+                  text-[#1F6F5C] 
                   transition-all
+                  hover:bg-[#1F6F5C] hover:text-white
+                  hover:shadow-[0_18px_40px_rgba(31,111,92,0.45)]
                 "
               >
                 {t("sustainability.ods.viewAll")}
@@ -377,24 +389,20 @@ export default function SustainabilityPage() {
             </div>
           </motion.section>
 
-          {/* ICMA */}
-<motion.section
-  id="sustainabilitybonds"
-  variants={sectionVariant}
-  initial="hidden"
-  animate="visible"
-  custom={2}
->
+          {/* Seção: Princípios ICMA / Títulos de Sustentabilidade */}
+          <motion.section
+            id="sustainabilitybonds"
+            variants={sectionVariant}
+            initial="hidden"
+            animate="visible"
+            custom={2}
+          >
             <div className="grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-start">
-              {/* Texto ICMA */}
+              {/* Coluna esquerda: texto institucional ICMA */}
               <div className="space-y-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1c2846]">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1F6F5C] drop-shadow-[0_0_12px_rgba(79,175,149,0.7)]">
                   {t("sustainability.icma.badge")}
                 </p>
-
-                <h2 className="text-2xl font-semibold text-[#1c2846] md:text-3xl">
-                  {t("sustainability.icma.heading")}
-                </h2>
 
                 <p className="text-sm leading-relaxed text-[#333846] md:text-base">
                   {t("sustainability.icma.p1")}
@@ -432,9 +440,9 @@ export default function SustainabilityPage() {
                 </p>
               </div>
 
-              {/* Acordeões ICMA */}
+              {/* Coluna direita: acordeões ICMA */}
               <div className="space-y-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1c2846]">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1F6F5C] drop-shadow-[0_0_12px_rgba(79,175,149,0.7)]">
                   {t("sustainability.icma.principlesLabel")}
                 </p>
 
@@ -478,7 +486,7 @@ export default function SustainabilityPage() {
                 </AccordionItem>
 
                 <AccordionItem
-                  id="icma-project-selection"
+                  id="icma-projectSelection"
                   title={t(
                     "sustainability.icma.accordions.projectSelection.title"
                   )}
@@ -592,13 +600,13 @@ export default function SustainabilityPage() {
             </div>
           </motion.section>
 
-          {/* LOGOS FINAIS */}
+          {/* Seção: logos institucionais finais */}
           <motion.section
             variants={sectionVariant}
             initial="hidden"
             animate="visible"
             custom={3}
-            className="flex flex-col items-center justify-between gap-6 border-t border-[#d6d6d6] pt-8 md:flex-row"
+            className="flex flex-col justify-center gap-6 border-t border-[#d6d6d6] pt-8 md:flex-row"
           >
             <div className="flex items-center gap-8">
               <img
@@ -616,20 +624,21 @@ export default function SustainabilityPage() {
             </div>
           </motion.section>
 
-          {/* BOTÃO VOLTAR */}
-          <div className="mt-12 flex justify-end">
+          {/* Botão de retorno para a Home */}
+          <div className="flex justify-end">
             <button
               type="button"
               onClick={() => navigate("/")}
               className="
                 inline-flex items-center gap-2
-                rounded-full border border-[#d6d6d6]
-                bg-white/90
+                rounded-full border border-[#1F6F5C]
+                bg-white/95
                 px-6 py-3
                 text-[0.7rem] font-semibold uppercase tracking-[0.25em]
-                text-[#333846]
+                text-[#1F6F5C]
                 transition-all duration-200
-                hover:border-[#1c2846] hover:text-[#1c2846] hover:bg-[#f5f5f7]
+                hover:bg-[#1F6F5C] hover:text-white
+                hover:shadow-[0_18px_40px_rgba(31,111,92,0.45)]
               "
             >
               <span className="text-sm">←</span>
@@ -642,9 +651,9 @@ export default function SustainabilityPage() {
   );
 }
 
-/* -------------------------------
-   COMPONENTE DE ACORDEÃO genérico
---------------------------------*/
+/**
+ * Componente de acordeão reutilizável para ONU e ICMA.
+ */
 function AccordionItem({ id, title, isOpen, onToggle, children }) {
   return (
     <motion.div
@@ -654,13 +663,13 @@ function AccordionItem({ id, title, isOpen, onToggle, children }) {
         border bg-white/95 shadow-[0_18px_40px_rgba(0,0,0,0.04)]
         ${
           isOpen
-            ? "border-[#1c2846] shadow-[0_22px_55px_rgba(0,0,0,0.10)]"
-            : "border-[#d6d6d6] hover:border-[#1c2846]/60"
+            ? "border-[#1F6F5C] shadow-[0_22px_55px_rgba(0,0,0,0.12)]"
+            : "border-[#d6d6d6] hover:border-[#4FAF95]/70"
         }
       `}
       whileHover={!isOpen ? { y: -3, scale: 1.01 } : {}}
     >
-      {/* HEADER */}
+      {/* Cabeçalho do acordeão (título + ícone de expansão) */}
       <button
         type="button"
         onClick={onToggle}
@@ -676,14 +685,18 @@ function AccordionItem({ id, title, isOpen, onToggle, children }) {
             border-[#d6d6d6]
             text-xs font-semibold text-[#333846]
             transition-all
-            ${isOpen ? "rotate-45 bg-[#1c2846] text-white border-[#1c2846]" : ""}
+            ${
+              isOpen
+                ? "rotate-45 bg-[#1F6F5C] text-white border-[#1F6F5C] shadow-[0_0_14px_rgba(31,111,92,0.8)]"
+                : "group-hover:border-[#4FAF95] group-hover:text-[#1F6F5C]"
+            }
           `}
         >
           +
         </span>
       </button>
 
-      {/* CONTEÚDO */}
+      {/* Conteúdo do acordeão com animação de abertura/fechamento */}
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div

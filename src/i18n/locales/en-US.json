@@ -44,7 +44,7 @@
     },
     "about": {
       "badge": "Who We Are",
-      "headline": "We are a multinational company with operations in Brazil and Argentina, working in the low-carbon economy to connect sustainable projects, environmental preservation and financial operations. Our commitment is to generate positive impact for the next generations through transparent, secure and innovative solutions that drive a greener and more resilient future.",
+      "headline": "Stock Green Asset is a multinational company with operations in Brazil and Argentina, specialized in low-carbon economy solutions. We develop certified REDD+ projects, Nature-Based Solutions (NBS), and generate high-integrity carbon credits, while supporting companies in the implementation of corporate decarbonization strategies. Our work integrates rigorous financial and technical expertise, robust governance, and innovation to connect biome preservation, biodiversity conservation, and the creation of long-term environmental and economic value.",
       "mission": {
         "title": "Mission",
         "text": "To offer low-carbon economy projects that generate wealth in a sustainable way, through transparent, secure financial solutions capable of connecting companies and investors to real impact opportunities."
@@ -132,9 +132,10 @@
       "view": "View"
     },
     "intro": {
-      "p1": "We have publicly committed to sustainability by adhering to the UN Global Compact, incorporating advanced social and environmental responsibility practices aligned with the SDGs.",
-      "p2": "This commitment guides our decisions and reflects our determination to build real and lasting impact for society and the environment."
-    },
+    "p1": "Sustainability guides our actions and operational standards. As signatories to the UN Global Compact, we operate in alignment with the Paris Agreement and the Sustainable Development Goals (SDGs), which establish global targets for economic development, environmental preservation, and social inclusion.",
+    "p2": "This public commitment reinforces our determination to generate real and lasting impact, embedding integrity, transparency, and purpose into every strategic decision."
+  },
+  
     "principles": {
       "humanRights": {
         "title": "Human Rights",
@@ -263,19 +264,20 @@
     "logoAlt": "ICMA - International Capital Market Association"
   },
 
-  "governance": {
-    "badge": "Governance",
-    "heading": {
-      "line1": "We believe that the low-carbon economy",
-      "line2": "can be transparent, accessible and sustainable."
-    },
-    "buttonIr": "Access RI Portal",
-    "body": {
-      "p1": "Our governance philosophy is based on the conviction that the connection between capital and sustainable projects must happen with clear rules, reliable information and robust processes. That is why we structure our decision-making flows, compliance and risk management to ensure that every transaction reflects transparency, security and alignment with the low-carbon economy.",
-      "p2": "Operating in Brazil and Argentina, we follow global best practices in the financial market and ESG principles, aligned with ethics, loyalty, transparency, excellence and innovation. Our governance integrates the work of the board, executive management and independent monitoring structures, ensuring accountability at every stage of the value chain.",
-      "p3": "By making the low-carbon economy more accessible and sustainable, we provide investors with clear reports, dedicated communication channels, and a continued commitment to integrity. The RI Portal is one of the pillars of this journey, bringing together strategic information to support reliable, long-term decision-making."
-    }
+"governance": {
+  "badge": "Governance",
+  "heading": {
+    "line1": "We believe that the low-carbon economy",
+    "line2": "can be transparent, accessible, and sustainable."
   },
+  "buttonIr": "Access IR Portal",
+  "body": {
+    "p1": "Our governance philosophy is based on the belief that the connection between capital and sustainable projects requires clear rules, reliable information, and robust processes. That is why we structure decision-making, compliance, and risk management flows to ensure that every transaction reflects transparency, security, and full alignment with the low-carbon economy.",
+    "p2": "Operating in Brazil and Argentina, we follow global best practices in financial markets and ESG principles, guided by ethics, loyalty, transparency, excellence, and innovation. Our governance integrates an advisory board, executive management, and independent monitoring, ensuring accountability across the entire value chain.",
+    "p3": "By making the low-carbon economy more accessible and trustworthy, we offer investors clear reports, auditable metrics, and dedicated relationship channels. The IR Portal is one of the central pillars of this journey, bringing together strategic information to support sound, long-term decisions."
+  }
+}
+,
 
   "team": {
     "badge": "Team",
@@ -324,7 +326,7 @@
     },
     "investment": {
       "title": "Investment & Financing",
-      "text1": "Stock Green Asset aims to allocate US$ 1,000,000.00 to social projects, distributed equally between Brazil and Argentina.",
+      "text1": "Stock Green Asset aims to allocate US$ 1,000,000.00 until 2030 to social projects, distributed equally between Brazil and Argentina.",
       "text2": "Resources are raised through Sustainable Bonds and, after the initial implementation period, the project will be subsidised by revenue from the sale of carbon credits, aligning education, sustainable finance and the carbon market in a single strategy."
     },
     "ods": {
@@ -417,7 +419,12 @@
       "success": "Your message has been sent successfully! We will get back to you shortly.",
       "error": "Unable to send your message. Please try again later.",
       "disclaimer": "By sending this form, you agree to be contacted by Stock Green Asset for institutional purposes."
-    }
+    },
+  "ceoQuote": {
+    "label": "CEO Quote",
+    "text": "Our work is to transform the preservation of biomes and the conservation of biodiversity into environmental and economic value for companies and individuals seeking to reduce and neutralize their emissions. NBS solutions are among the most effective tools to protect forests, strengthen communities, and drive the global transition to a low-carbon economy.",
+    "author": "Augusto Lubian — CEO & Founder of Stock Green Asset"
+  }
   },
 
   "projectMazuay": {
@@ -601,20 +608,20 @@
     }
   },
 
-  "partners": {
-    "badge": "Our Partners",
-    "heading": {
-      "line1": "An ecosystem",
-      "line2": "of strategic partners."
-    },
-    "body": {
-      "p1": "Stock Green Asset connects companies, financial institutions, impact organizations and technology providers to form an ecosystem that accelerates the transition to a low-carbon economy.",
-      "p2": "Our partners scale projects, strengthen ESG governance and help transform capital into measurable climate, social and environmental impact."
-    },
-    "cta": {
-      "label": "Explore the ecosystem"
-    }
+"partners": {
+  "badge": "Our Partners",
+  "heading": {
+    "line1": "An ecosystem",
+    "line2": "of strategic partners."
   },
+  "body": {
+    "p1": "Stock Green Asset connects companies, financial institutions, international certifiers, impact organizations, and technology providers to form an ecosystem capable of accelerating the transition to a low-carbon economy.",
+    "p2": "Our partners scale nature-based solutions (NBS) projects, strengthen ESG governance, and help turn capital into measurable climate, social, and environmental impact."
+  },
+  "cta": {
+    "label": "Explore the ecosystem"
+  }
+},
 
   "partnersPage": {
     "badge": "Partners Ecosystem",

@@ -97,10 +97,6 @@ export function Sustainability() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45 }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1c2846]">
-              {t("sustainability.badge")}
-            </p>
-
             <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
               <span className="text-[#1c2846]">
                 {t("sustainability.heading.line1")}

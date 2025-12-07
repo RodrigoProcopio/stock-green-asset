@@ -2,14 +2,20 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
+import logoStock from "../../assets/logo-stock.webp";
 
+// Seção de contato com envio de formulário via EmailJS
 export function Contact() {
   const { t } = useTranslation();
 
+  // Referência ao elemento <form>, utilizada pelo EmailJS (sendForm)
   const formRef = useRef(null);
+
+  // Estado de envio e retorno do serviço de e-mail
   const [isSending, setIsSending] = useState(false);
   const [status, setStatus] = useState(null); // "success" | "error" | null
 
+  // Manipula o submit do formulário e integra com o EmailJS
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSending(true);
@@ -43,7 +49,7 @@ export function Contact() {
         text-[#333846]
       "
     >
-      {/* 🎥 Vídeo de fundo */}
+      {/* Camada de fundo: vídeo + overlay para legibilidade + glows de cor */}
       <video
         src="/videos/solutions.webm"
         autoPlay
@@ -53,7 +59,6 @@ export function Contact() {
         className="absolute inset-0 h-full w-full object-cover opacity-30"
       />
 
-      {/* Overlay claro institucional */}
       <div
         className="
           absolute inset-0
@@ -62,7 +67,6 @@ export function Contact() {
         "
       />
 
-      {/* Glows navy/slate */}
       <div className="pointer-events-none absolute inset-0">
         <div
           className="
@@ -90,30 +94,21 @@ export function Contact() {
         />
       </div>
 
-      {/* CONTEÚDO */}
+      {/* Conteúdo principal (grid: informações + formulário) */}
       <div className="relative mx-auto max-w-6xl px-4 md:px-6">
         <div className="grid gap-16 md:grid-cols-2 md:items-start">
-          {/* 🔹 ESQUERDA: Informações */}
+          {/* Coluna esquerda: informações de contato e canais institucionais */}
           <div>
             <p
               className="
-                text-xs font-semibold uppercase tracking-[0.25em]
-                text-[#1c2846]
+                mt-3 text-2xl font-semibold text-[#1c2846] md:text-3xl
               "
             >
               {t("contact.badge")}
             </p>
 
-            <h2 className="mt-3 text-2xl font-semibold text-[#1c2846] md:text-3xl">
-              {t("contact.title")}
-            </h2>
-
-            <p className="mt-3 max-w-lg text-sm text-[#333846] md:text-base">
-              {t("contact.subtitle")}
-            </p>
-
             <div className="mt-6 grid gap-4 text-sm text-[#333846]">
-              {/* Email Brasil */}
+              {/* E-mails institucionais */}
               <div>
                 <p className="text-xs uppercase tracking-[0.22em] text-[#333846]/70">
                   {t("contact.email.br.label")}
@@ -130,7 +125,6 @@ export function Contact() {
                 </a>
               </div>
 
-              {/* Email Argentina */}
               <div>
                 <p className="text-xs uppercase tracking-[0.22em] text-[#333846]/70">
                   {t("contact.email.ar.label")}
@@ -147,7 +141,7 @@ export function Contact() {
                 </a>
               </div>
 
-              {/* 🔗 Canais Institucionais */}
+              {/* Canais institucionais (RI, canal confidencial, canal ambiental) */}
               <div>
                 <p className="text-xs uppercase tracking-[0.22em] text-[#333846]/70">
                   {t("contact.channels.label")}
@@ -193,12 +187,15 @@ export function Contact() {
                   </a>
                 </div>
 
-                <div className="mt-10 flex justify-left">
+                {/* Logo institucional */}
+                <div className="mt-10 flex items-center gap-8">
                   <img
-                    src="/images/Logos/Global-Compact.webp"
-                    alt="UN Global Compact"
+                    src={logoStock}
+                    alt="Stock Green Asset"
                     className="
-                      h-48 w-auto opacity-85
+                      h-6 md:h-18
+                      w-auto
+                      opacity-85
                       transition hover:opacity-100
                     "
                   />
@@ -207,7 +204,7 @@ export function Contact() {
             </div>
           </div>
 
-          {/* 🔹 DIREITA: Formulário */}
+          {/* Coluna direita: formulário de contato */}
           <motion.div
             className="
               h-fit rounded-3xl border border-[#d6d6d6]
@@ -228,12 +225,13 @@ export function Contact() {
               {t("contact.form.badge")}
             </p>
 
+            {/* Formulário de contato integrado ao EmailJS */}
             <form
               ref={formRef}
               onSubmit={handleSubmit}
               className="mt-4 space-y-4"
             >
-              {/* Nome */}
+              {/* Campos do formulário */}
               <div>
                 <label className="text-xs text-[#333846]/80">
                   {t("contact.form.fields.name.label")}
@@ -252,7 +250,6 @@ export function Contact() {
                 />
               </div>
 
-              {/* E-mail */}
               <div>
                 <label className="text-xs text-[#333846]/80">
                   {t("contact.form.fields.email.label")}
@@ -271,7 +268,6 @@ export function Contact() {
                 />
               </div>
 
-              {/* Assunto */}
               <div>
                 <label className="text-xs text-[#333846]/80">
                   {t("contact.form.fields.subject.label")}
@@ -290,7 +286,6 @@ export function Contact() {
                 />
               </div>
 
-              {/* Mensagem */}
               <div>
                 <label className="text-xs text-[#333846]/80">
                   {t("contact.form.fields.message.label")}
@@ -309,7 +304,7 @@ export function Contact() {
                 />
               </div>
 
-              {/* Botão */}
+              {/* Botão de envio com estado de carregamento */}
               <button
                 type="submit"
                 disabled={isSending}
@@ -328,7 +323,7 @@ export function Contact() {
                   : t("contact.form.submit")}
               </button>
 
-              {/* Mensagens de status */}
+              {/* Mensagens de feedback pós-envio */}
               {status === "success" && (
                 <p className="text-[0.7rem] text-[#1c2846]">
                   {t("contact.form.success") ||
@@ -349,6 +344,22 @@ export function Contact() {
             </form>
           </motion.div>
         </div>
+      </div>
+
+      {/* Citação institucional do CEO (i18n) */}
+      <div className="relative mx-auto mt-20 max-w-4xl px-4 text-center md:px-6">
+        <p className="text-sm uppercase tracking-[0.25em] text-[#1c2846]">
+          {t("contact.ceoQuote.label")}
+        </p>
+
+        <p className="mt-4 text-sm italic leading-relaxed text-[#333846]/80 md:text-base">
+          {t("contact.ceoQuote.text")}
+        </p>
+
+        {/* Assinatura do CEO abaixo da citação */}
+        <p className="mt-3 text-[0.7rem] font-semibold tracking-[0.18em] text-[#1c2846]/70 uppercase">
+          {t("contact.ceoQuote.author")}
+        </p>
       </div>
     </section>
   );

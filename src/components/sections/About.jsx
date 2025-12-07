@@ -127,24 +127,32 @@ export function About() {
       {/* =============================== */}
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-16 px-4 py-20 md:px-6 md:py-28 lg:py-32">
         {/* Intro text */}
-        <div className="max-w-6xl space-y-6">
-          <motion.p
+        <div className="max-w-5xl space-y-4">
+          {/* Título "Quem Somos" */}
+          <motion.h2
+            id="about-title"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1c2846]"
+            className="text-3xl font-semibold leading-tight text-[#1c2846] md:text-4xl"
           >
             {t("navbar.about.badge")}
-          </motion.p>
+          </motion.h2>
 
+          {/* Parágrafo institucional (texto longo) */}
           <motion.p
-            id="about-title"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-2xl leading-snug text-[#1c2846] md:text-4xl md:leading-snug"
+            className="
+              mt-3
+              text-sm md:text-base
+              leading-relaxed
+              text-[#333846]
+              max-w-4xl lg:max-w-5xl
+            "
           >
             {t("navbar.about.headline")}
           </motion.p>

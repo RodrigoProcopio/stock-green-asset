@@ -77,19 +77,9 @@ export function Partners() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1c2846]">
+            <p className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
               {t("partners.badge")}
             </p>
-
-            <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
-              <span className="block text-[#1c2846]">
-                {t("partners.heading.line1")}
-              </span>
-              <span className="block text-[#333846]">
-                {t("partners.heading.line2")}
-              </span>
-            </h2>
-
             <button
               type="button"
               onClick={handleScrollToEcosystem}

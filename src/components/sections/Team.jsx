@@ -139,10 +139,6 @@ export function Team() {
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1c2846]">
-            {t("team.badge")}
-          </p>
-
           <h2 className="mt-3 text-3xl md:text-4xl">
             <span className="font-semibold text-[#1c2846]">
               {t("team.heading.strong")}

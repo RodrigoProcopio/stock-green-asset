@@ -44,7 +44,7 @@
     },
     "about": {
       "badge": "Quiénes Somos",
-      "headline": "Somos una empresa multinacional con operaciones en Brasil y Argentina, que actúa en la economía de bajo carbono para conectar proyectos sostenibles, preservación ambiental y operaciones financieras. Nuestro compromiso es generar impacto positivo para las próximas generaciones mediante soluciones transparentes, seguras e innovadoras que impulsan un futuro más verde y resiliente.",
+      "headline": "Stock Green Asset es una multinacional con operaciones en Brasil y Argentina, especializada en soluciones para la economía de bajo carbono. Desarrollamos proyectos REDD+ certificados, Soluciones Basadas en la Naturaleza (NBS) y generamos créditos de carbono de alta integridad, además de apoyar a empresas en la implementación de estrategias corporativas de descarbonización. Nuestra actuación integra rigor técnico y financiero, gobernanza sólida e innovación para conectar la preservación de biomas, la conservación de la biodiversidad y la generación de valor ambiental y económico a largo plazo.",
       "mission": {
         "title": "Misión",
         "text": "Ofrecer proyectos de economía de bajo carbono que generen riqueza de forma sostenible, a través de soluciones financieras transparentes y seguras, capaces de conectar empresas e inversores con oportunidades de impacto real."
@@ -132,9 +132,9 @@
       "view": "Ver"
     },
     "intro": {
-      "p1": "Asumimos públicamente nuestro compromiso con la sustentabilidad al adherirnos al Pacto Global de la ONU, incorporando prácticas avanzadas de responsabilidad social y ambiental alineadas con los ODS.",
-      "p2": "Este compromiso guía nuestras decisiones y refleja nuestra determinación de construir un impacto real y duradero para la sociedad y el medio ambiente."
-    },
+     "p1": "La sostenibilidad orienta nuestra actuación y nuestros estándares operativos. Como signatarios del Pacto Mundial de la ONU, actuamos en conformidad con el Acuerdo de París y con los Objetivos de Desarrollo Sostenible (ODS), que establecen metas globales para el desarrollo económico, la preservación ambiental y la inclusión social.",
+    "p2": "Este compromiso público refuerza nuestra determinación de generar un impacto real y duradero, incorporando integridad, transparencia y propósito en cada decisión estratégica."
+  },
     "principles": {
       "humanRights": {
         "title": "Derechos Humanos",
@@ -263,18 +263,18 @@
   },
 
   "governance": {
-    "badge": "Gobernanza",
-    "heading": {
-      "line1": "Creemos que la economía de bajo carbono",
-      "line2": "puede ser transparente, accesible y sustentable."
-    },
-    "buttonIr": "Acceder al RI Portal",
-    "body": {
-      "p1": "Nuestra filosofía de gobernanza parte de la convicción de que la conexión entre capital y proyectos sustentables debe ocurrir con reglas claras, información confiable y procesos robustos. Por ello, estructuramos nuestros flujos de decisión, cumplimiento y gestión de riesgos para garantizar que cada operación refleje transparencia, seguridad y alineación con la economía de bajo carbono.",
-      "p2": "Actuando en Brasil y Argentina, seguimos las mejores prácticas globales del mercado financiero y los principios ESG, alineados con la ética, la lealtad, la transparencia, la excelencia y la innovación. Nuestra gobernanza integra la actuación del consejo, de la dirección ejecutiva y de estructuras independientes de monitoreo, garantizando responsabilidad en cada etapa de la cadena de valor.",
-      "p3": "Al hacer que la economía de bajo carbono sea más accesible y sostenible, ofrecemos a los inversionistas informes claros, canales dedicados de comunicación y un compromiso continuo con la integridad. El Portal de RI es uno de los pilares de este camino, reuniendo información estratégica para respaldar decisiones confiables y de largo plazo."
-    }
+  "badge": "Gobernanza",
+  "heading": {
+    "line1": "Creemos que la economía baja en carbono",
+    "line2": "puede ser transparente, accesible y sostenible."
   },
+  "buttonIr": "Acceder al Portal de RI",
+  "body": {
+    "p1": "Nuestra filosofía de gobernanza parte de la convicción de que la conexión entre el capital y los proyectos sostenibles exige reglas claras, información confiable y procesos sólidos. Por eso estructuramos flujos de decisión, compliance y gestión de riesgos para garantizar que cada operación refleje transparencia, seguridad y un alineamiento integral con la economía baja en carbono.",
+    "p2": "Con actuación en Brasil y Argentina, seguimos las mejores prácticas globales del mercado financiero y los principios ESG, guiados por la ética, la lealtad, la transparencia, la excelencia y la innovación. Nuestra gobernanza integra consejo consultivo, directorio ejecutivo y monitoreo independiente, asegurando responsabilidad a lo largo de toda la cadena de valor.",
+    "p3": "Al hacer que la economía baja en carbono sea más accesible y confiable, ofrecemos a los inversores informes claros, métricas auditables y canales dedicados de relacionamiento. El Portal de RI es uno de los pilares centrales de este recorrido, reuniendo información estratégica para decisiones seguras y de largo plazo."
+  }
+},
 
   "team": {
     "badge": "Equipo",
@@ -323,7 +323,7 @@
     },
     "investment": {
       "title": "Inversión & Financiamiento",
-      "text1": "Stock Green Asset tiene como objetivo destinar US$ 1.000.000,00 a proyectos sociales, distribuidos equitativamente entre Brasil y Argentina.",
+      "text1": "Stock Green Asset tiene como objetivo destinar US$ 1.000.000,00 hasta 2030 a proyectos sociales, distribuidos equitativamente entre Brasil y Argentina.",
       "text2": "Los recursos se viabilizan por medio de Bonos Sustentables y, después del período inicial de implementación, el proyecto pasa a ser subsidiado por los ingresos provenientes de la comercialización de créditos de carbono, alineando educación, finanzas sustentables y mercado de carbono en una misma estrategia."
     },
     "ods": {
@@ -416,7 +416,12 @@
       "success": "¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.",
       "error": "No fue posible enviar tu mensaje. Inténtalo de nuevo más tarde.",
       "disclaimer": "Al enviar este formulario, aceptas ser contactado por Stock Green Asset con fines institucionales."
-    }
+    },
+  "ceoQuote": {
+    "label": "Cita del CEO",
+    "text": "Nuestro trabajo es transformar la preservación de los biomas y la conservación de la biodiversidad en valor ambiental y económico para empresas y personas que buscan reducir y neutralizar sus emisiones. Las soluciones NBS se encuentran entre las herramientas más eficaces para proteger los bosques, fortalecer a las comunidades e impulsar la transición global hacia una economía baja en carbono.",
+    "author": "Augusto Lubian — CEO y Fundador de Stock Green Asset"
+  }
   },
 
   "projectMazuay": {
@@ -600,20 +605,21 @@
     }
   },
 
-  "partners": {
-    "badge": "Nuestros Socios",
-    "heading": {
-      "line1": "Un ecosistema",
-      "line2": "de socios estratégicos."
-    },
-    "body": {
-      "p1": "Stock Green Asset conecta empresas, instituciones financieras, organizaciones de impacto y proveedores de tecnología para formar un ecosistema que acelera la transición hacia una economía de bajo carbono.",
-      "p2": "Nuestros socios amplifican la escala de los proyectos, fortalecen la gobernanza ESG y ayudan a transformar capital en impacto climático, social y ambiental medible."
-    },
-    "cta": {
-      "label": "Conoce el ecosistema"
-    }
+"partners": {
+  "badge": "Nuestros Socios",
+  "heading": {
+    "line1": "Un ecosistema",
+    "line2": "de socios estratégicos."
   },
+  "body": {
+    "p1": "Stock Green Asset conecta empresas, instituciones financieras, certificadoras internacionales, organizaciones de impacto y proveedores de tecnología para formar un ecosistema capaz de acelerar la transición hacia una economía baja en carbono.",
+    "p2": "Nuestros socios amplían la escala de los proyectos basados en la naturaleza (NBS), fortalecen la gobernanza ESG y ayudan a transformar el capital en impacto climático, social y ambiental medible."
+  },
+  "cta": {
+    "label": "Conoce el ecosistema"
+  }
+}
+,
 
   "partnersPage": {
     "badge": "Ecosistema de Socios",

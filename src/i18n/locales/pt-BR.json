@@ -44,7 +44,7 @@
     },
     "about": {
       "badge": "Quem Somos",
-      "headline": "Somos uma empresa multinacional com operações no Brasil e na Argentina, atuando na economia de baixo carbono para conectar projetos sustentáveis, preservação ambiental e operações financeiras. Nosso compromisso é gerar impacto positivo para as próximas gerações por meio de soluções transparentes, seguras e inovadoras que impulsionam um futuro mais verde e resiliente.",
+      "headline": "A Stock Green Asset é uma multinacional com operações no Brasil e na Argentina, especializada em soluções para a economia de baixo carbono. Desenvolvemos projetos REDD+ certificados, soluções baseadas na natureza (NBS) e geramos créditos de carbono de alta integridade, além de apoiar empresas na implementação de estratégias corporativas de descarbonização. Nossa atuação integra rigor técnico-financeiro, governança robusta e inovação para conectar a preservação de biomas, a conservação da biodiversidade e a geração de valor ambiental e econômico de longo prazo.",
       "mission": {
         "title": "Missão",
         "text": "Oferecer projetos de economia de baixo carbono que gerem riqueza de forma sustentável, por meio de soluções financeiras transparentes, seguras e capazes de conectar empresas e investidores a oportunidades de impacto real."
@@ -132,9 +132,9 @@
       "view": "Ver"
     },
     "intro": {
-      "p1": "Comprometemo-nos publicamente com a sustentabilidade ao aderir ao Pacto Global da ONU, incorporando práticas avançadas de responsabilidade social e ambiental alinhadas aos ODS.",
-      "p2": "Esse compromisso guia nossas decisões e reflete nossa determinação em construir um impacto real e duradouro para a sociedade e o meio ambiente."
-    },
+    "p1": "A sustentabilidade orienta nossa atuação e nossos padrões operacionais. Como signatários do Pacto Global da ONU, atuamos em conformidade com o Acordo de Paris e com os Objetivos de Desenvolvimento Sustentável (ODS), que estabelecem metas globais para desenvolvimento econômico, preservação ambiental e inclusão social.",
+    "p2": "Esse compromisso público reforça nossa determinação em gerar impacto real e duradouro, incorporando integridade, transparência e propósito em cada decisão estratégica."
+  },
 
     "principles": {
       "humanRights": {
@@ -266,19 +266,19 @@
     }
   },
 
-  "governance": {
-    "badge": "Governança",
-    "heading": {
-      "line1": "Acreditamos que a economia de baixo carbono",
-      "line2": "pode ser transparente, acessível e sustentável."
-    },
-    "buttonIr": "Acessar RI Portal",
-    "body": {
-      "p1": "Nossa filosofia de governança partem da convicção de que a conexão entre capital e projetos sustentáveis precisa acontecer com regras claras, informações confiáveis e processos robustos. Por isso, estruturamos nossos fluxos de decisão, compliance e gestão de risco para garantir que cada operação reflita transparência, segurança e alinhamento com a economia de baixo carbono.",
-      "p2": "Atuando no Brasil e na Argentina, seguimos as melhores práticas globais do mercado financeiro e princípios ESG, alinhados à ética, lealdade, transparência, excelência e inovação. Nossa governança integra a atuação do conselho, da diretoria executiva e de estruturas independentes de monitoramento, garantindo responsabilidade em cada etapa da cadeia de valor.",
-      "p3": "Ao tornar  a economia de baixo carbono mais acessível e sustentável, oferecemos aos investidores relatórios claros, canais dedicados de relacionamento e compromisso contínuo com a integridade. O RI Portal é um dos pilares dessa jornada, reunindo informações estratégicas para apoiar decisões confiáveis e de longo prazo."
-    }
+"governance": {
+  "badge": "Governança",
+  "heading": {
+    "line1": "Acreditamos que a economia de baixo carbono",
+    "line2": "pode ser transparente, acessível e sustentável."
   },
+  "buttonIr": "Acessar RI Portal",
+  "body": {
+    "p1": "Nossa filosofia de governança parte da convicção de que a conexão entre capital e projetos sustentáveis exige regras claras, informações confiáveis e processos robustos. Por isso, estruturamos fluxos de decisão, compliance e gestão de risco para garantir que cada operação reflita transparência, segurança e alinhamento integral à economia de baixo carbono.",
+    "p2": "Com atuação no Brasil e na Argentina, seguimos as melhores práticas globais do mercado financeiro e os princípios ESG, guiados por ética, lealdade, transparência, excelência e inovação. Nossa governança integra conselho consultivo, diretoria executiva e monitoramento independente, assegurando responsabilidade em toda a cadeia de valor.",
+    "p3": "Ao tornar a economia de baixo carbono mais acessível e confiável, oferecemos aos investidores relatórios claros, métricas auditáveis e canais dedicados de relacionamento. O Portal de RI é um dos pilares centrais dessa jornada, reunindo informações estratégicas para decisões seguras e de longo prazo."
+  }
+},
 
   "team": {
     "badge": "Equipe",
@@ -327,7 +327,7 @@
     },
     "investment": {
       "title": "Investimento & Financiamento",
-      "text1": "A Stock Green Asset tem como objetivo alocar US$ 1.000.000,00 em projetos sociais, distribuídos igualmente entre Brasil e Argentina.",
+      "text1": "A Stock Green Asset tem como objetivo alocar US$ 1.000.000,00 até 2030 em projetos sociais, distribuídos igualmente entre Brasil e Argentina.",
       "text2": "Os recursos são viabilizados por meio de Títulos Sustentáveis e, após o período inicial de implantação, o projeto passa a ser subsidiado pela receita proveniente da comercialização de créditos de carbono, alinhando educação, finanças sustentáveis e mercado de carbono em uma mesma estratégia."
     },
     "ods": {
@@ -378,51 +378,55 @@
   },
 
   "contact": {
-    "badge": "Fale Conosco",
-    "title": "Stock Green Asset",
-    "subtitle": "Transformando o mercado de capitais através de soluções sustentáveis e inovadoras.",
-    "email": {
-      "br": {
-        "label": "E-mail Brasil"
-      },
-      "ar": {
-        "label": "E-mail Argentina"
-      }
+  "badge": "Fale Conosco",
+  "title": "Stock Green Asset",
+  "subtitle": "Transformando o mercado de capitais através de soluções sustentáveis e inovadoras.",
+  "email": {
+    "br": {
+      "label": "E-mail Brasil"
     },
-    "channels": {
-      "label": "Canais institucionais",
-      "irPortal": "RI Portal",
-      "confidential": "Canal Confidencial",
-      "environmental": "Canal Ambiental"
-    },
-    "form": {
-      "badge": "Envie uma mensagem",
-      "fields": {
-        "name": {
-          "label": "Nome",
-          "placeholder": "Seu nome completo"
-        },
-        "email": {
-          "label": "E-mail",
-          "placeholder": "seuemail@empresa.com"
-        },
-        "subject": {
-          "label": "Assunto",
-          "placeholder": "Carbon Credits, ESG, GHG Protocol..."
-        },
-        "message": {
-          "label": "Mensagem",
-          "placeholder": "Conte brevemente como podemos apoiar sua empresa."
-        }
-      },
-      "submit": "Enviar Mensagem",
-      "sending": "Enviando...",
-      "success": "Mensagem enviada com sucesso! Retornaremos em breve.",
-      "error": "Não foi possível enviar a mensagem. Tente novamente mais tarde.",
-      "disclaimer": "Ao enviar, você concorda em ser contactado pela Stock Green Asset para fins institucionais."
+    "ar": {
+      "label": "E-mail Argentina"
     }
   },
-
+  "channels": {
+    "label": "Canais institucionais",
+    "irPortal": "RI Portal",
+    "confidential": "Canal Confidencial",
+    "environmental": "Canal Ambiental"
+  },
+  "form": {
+    "badge": "Envie uma mensagem",
+    "fields": {
+      "name": {
+        "label": "Nome",
+        "placeholder": "Seu nome completo"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "seuemail@empresa.com"
+      },
+      "subject": {
+        "label": "Assunto",
+        "placeholder": "Carbon Credits, ESG, GHG Protocol..."
+      },
+      "message": {
+        "label": "Mensagem",
+        "placeholder": "Conte brevemente como podemos apoiar sua empresa."
+      }
+    },
+    "submit": "Enviar Mensagem",
+    "sending": "Enviando...",
+    "success": "Mensagem enviada com sucesso! Retornaremos em breve.",
+    "error": "Não foi possível enviar a mensagem. Tente novamente mais tarde.",
+    "disclaimer": "Ao enviar, você concorda em ser contactado pela Stock Green Asset para fins institucionais."
+  },
+  "ceoQuote": {
+    "label": "Citação CEO",
+    "text": "Nosso trabalho é transformar a preservação de biomas e a conservação da biodiversidade em valor ambiental e econômico para empresas e pessoas que buscam reduzir e neutralizar suas emissões. As soluções NBS estão entre as ferramentas mais eficazes para proteger florestas, fortalecer comunidades e impulsionar a transição global para uma economia de baixo carbono.",
+    "author": "Augusto Lubian — CEO e Fundador da Stock Green Asset"
+  }
+},
   "projectMazuay": {
     "header": {
       "lead": "O projeto Stock Carbon – Mazuay REDD+ está localizado em Silves, no estado do Amazonas, e tem como objetivo evitar emissões provenientes do desmatamento e da degradação florestal, preservando uma área de floresta nativa de alta relevância ambiental e climática."
@@ -609,20 +613,20 @@
     }
   },
 
-  "partners": {
-    "badge": "Nossos Parceiros",
-    "heading": {
-      "line1": "Um ecossistema",
-      "line2": "de parceiros estratégicos."
-    },
-    "body": {
-      "p1": "A Stock Green Asset conecta empresas, instituições financeiras, organizações de impacto e provedores de tecnologia para formar um ecossistema que acelera a transição para uma economia de baixo carbono.",
-      "p2": "Nossos parceiros ampliam a escala dos projetos, fortalecem a governança ESG e ajudam a transformar capital em impacto climático, social e ambiental mensurável."
-    },
-    "cta": {
-      "label": "Conheça o ecossistema"
-    }
+"partners": {
+  "badge": "Nossos Parceiros",
+  "heading": {
+    "line1": "Um ecossistema",
+    "line2": "de parceiros estratégicos."
   },
+  "body": {
+    "p1": "A Stock Green Asset conecta empresas, instituições financeiras, certificadoras internacionais, organizações de impacto e provedores de tecnologia para formar um ecossistema capaz de acelerar a transição para a economia de baixo carbono.",
+    "p2": "Nossos parceiros ampliam a escala dos projetos baseados em natureza (NBS), fortalecem a governança ESG e ajudam a transformar capital em impacto climático, social e ambiental mensurável."
+  },
+  "cta": {
+    "label": "Conheça o ecossistema"
+  }
+},
 
   "partnersPage": {
     "badge": "Ecossistema de Parceiros",

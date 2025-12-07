@@ -42,16 +42,6 @@ export function Solutions() {
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-12 px-4 py-20 md:px-6 md:py-28 lg:py-32">
         {/* TÍTULO */}
         <div className="max-w-3xl space-y-3">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-xs font-semibold uppercase tracking-[0.25em] text-[#333846]"
-          >
-            {t("solutions.badge")}
-          </motion.p>
-
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}

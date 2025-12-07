@@ -77,7 +77,7 @@ export function Projects() {
         {/* HEADER */}
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#1c2846]">
+            <p className="text-3xl font-semibold tracking-tight md:text-4xl">
               {t("projects.sectionEyebrow")}
             </p>
 

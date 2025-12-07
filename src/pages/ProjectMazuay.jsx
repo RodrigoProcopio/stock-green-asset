@@ -3,7 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "../components/layout/Navbar";
 import { useTranslation } from "react-i18next";
 import { MetricCard } from "../components/project/MetricCard";
+import { useNavigate } from "react-router-dom";
 
+/**
+ * Variantes padrão de animação de entrada para seções e blocos.
+ * Usado com o framer-motion para dar um efeito suave de fade + translate.
+ */
 const sectionVariant = {
   hidden: { opacity: 0, y: 20 },
   visible: (i = 0) => ({
@@ -17,13 +22,22 @@ const sectionVariant = {
   }),
 };
 
-// Cards em estilo institucional claro
+/**
+ * Estilos base para cards de conteúdo principais (layout claro institucional).
+ */
 const baseCard =
   "rounded-2xl border border-[#d6d6d6] bg-white/95 backdrop-blur-md shadow-[0_18px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_22px_50px_rgba(0,0,0,0.08)] transition-all duration-300";
 
+/**
+ * Estilos para cards de destaque (ex.: potencial de créditos).
+ */
 const accentCard =
   "rounded-2xl border border-[#1c2846]/35 bg-[#1c2846]/4 backdrop-blur-xl shadow-[0_18px_45px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_22px_60px_rgba(0,0,0,0.12)]";
 
+/**
+ * Metadados das imagens de monitoramento por satélite.
+ * Centraliza paths, alt e legendas para facilitar manutenção.
+ */
 const satelliteImages = [
   {
     src: "/images/Monitoramento/DEZEMBRO 2024.webp",
@@ -47,8 +61,11 @@ const satelliteImages = [
   },
 ];
 
-/* ---------- UI SUBCOMPONENTES ---------- */
-
+/**
+ * Item de acordeão reutilizável.
+ * - Controla abertura/fechamento via prop isOpen.
+ * - Anima a expansão/colapso usando framer-motion.
+ */
 function AccordionItem({ id, title, eyebrow, children, isOpen, onToggle }) {
   return (
     <motion.div
@@ -72,12 +89,16 @@ function AccordionItem({ id, title, eyebrow, children, isOpen, onToggle }) {
           </h3>
         </div>
 
+        {/* Ícone de abrir/fechar em formato de "+" que rotaciona para "x" */}
         <span
           className={`
             flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border
-            border-[#d6d6d6] text-xs font-semibold
-            transition-transform
-            ${isOpen ? "rotate-45" : ""}
+            text-xs font-semibold transition-all
+            ${
+              isOpen
+                ? "rotate-45 border-[#1F6F5C] bg-[#1F6F5C] text-white"
+                : "border-[#d6d6d6] text-[#333846]"
+            }
           `}
         >
           +
@@ -103,9 +124,16 @@ function AccordionItem({ id, title, eyebrow, children, isOpen, onToggle }) {
   );
 }
 
+/**
+ * Tabs simples para alternar entre conteúdos (tempo real / satélite).
+ * Recebe:
+ * - tabs: [{ id, label }]
+ * - active: id da aba ativa
+ * - onChange: callback para trocar a aba
+ */
 function Tabs({ tabs, active, onChange }) {
   return (
-    <div className="inline-flex rounded-full border border-[#d6d6d6] bg-white/80 p-1 text-xs md:text-sm">
+    <div className="inline-flex rounded-full border border-[#4FAF95]/60 bg-white/90 p-1 text-xs shadow-sm md:text-sm">
       {tabs.map((tab) => (
         <button
           key={tab.id}
@@ -114,8 +142,8 @@ function Tabs({ tabs, active, onChange }) {
             rounded-full px-3 py-1.5 font-medium transition-all md:px-4
             ${
               active === tab.id
-                ? "bg-[#1c2846] text-white shadow-[0_0_0_1px_rgba(28,40,70,0.7)]"
-                : "text-[#333846]/80 hover:text-[#1c2846]"
+                ? "bg-[#1F6F5C] text-white shadow-[0_0_0_1px_rgba(31,111,92,0.7)]"
+                : "text-[#333846]/80 hover:text-[#1F6F5C]"
             }
           `}
         >
@@ -126,14 +154,35 @@ function Tabs({ tabs, active, onChange }) {
   );
 }
 
-/* ---------- PÁGINA PRINCIPAL ---------- */
-
+/**
+ * Página principal do Projeto Mazuay.
+ * Estrutura:
+ * - Navbar fixa no topo
+ * - Seção hero com métricas e vídeo de fundo
+ * - Layout com sidebar (navegação) + conteúdo em acordeões
+ * - Lightbox para visualização das imagens de satélite
+ */
 export default function ProjectMazuay() {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
 
+  /**
+   * IDs das seções usadas para:
+   * - Navegação lateral (sidebar)
+   * - Navegação mobile
+   * - Scroll para âncoras na página
+   */
   const sectionIds = ["about", "nature", "monitoring", "impacts", "governance"];
 
+  /**
+   * Seção atualmente ativa na navegação (para highlight de botões).
+   */
   const [activeSection, setActiveSection] = useState("about");
+
+  /**
+   * Estado de abertura dos acordeões principais.
+   * Mantém cada seção independente, mas permite controlar todas ao clicar na navegação.
+   */
   const [accordionOpen, setAccordionOpen] = useState({
     about: true,
     nature: false,
@@ -142,7 +191,10 @@ export default function ProjectMazuay() {
     governance: false,
   });
 
-  // ciclo das métricas (re-anima a cada 5s)
+  /**
+   * metricsCycle é usado como "resetKey" nos MetricCard.
+   * Incrementamos de 5 em 5 segundos para reacionar animações internas de contagem.
+   */
   const [metricsCycle, setMetricsCycle] = useState(0);
   useEffect(() => {
     const id = setInterval(() => {
@@ -151,7 +203,12 @@ export default function ProjectMazuay() {
     return () => clearInterval(id);
   }, []);
 
-  // clique no menu: scroll + abre apenas a sanfona correspondente
+  /**
+   * Clique na navegação (sidebar ou mobile):
+   * - Faz scroll suave até a seção
+   * - Marca a seção como ativa
+   * - Abre apenas o acordeão correspondente e fecha os demais
+   */
   const handleNavClick = (id) => {
     const el = document.getElementById(id);
     if (el) {
@@ -169,14 +226,25 @@ export default function ProjectMazuay() {
     });
   };
 
+  /**
+   * Aba ativa na área de monitoramento (tempo real / satélite).
+   */
   const [monitoringTab, setMonitoringTab] = useState("realtime");
 
-  // estados do lightbox
+  /**
+   * Index da imagem aberta no lightbox.
+   * - null = nenhum lightbox aberto
+   * - número = índice da imagem em satelliteImages
+   */
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
   const openLightbox = (index) => setLightboxIndex(index);
   const closeLightbox = () => setLightboxIndex(null);
 
+  /**
+   * Navegação do lightbox (imagem anterior / próxima).
+   * Usa stopPropagation para não fechar o lightbox ao clicar nos botões.
+   */
   const showPrev = (e) => {
     e.stopPropagation();
     setLightboxIndex((prev) =>
@@ -191,6 +259,10 @@ export default function ProjectMazuay() {
     );
   };
 
+  /**
+   * Locale usado para formatação de números e textos nos componentes de métricas.
+   * Depende do idioma atual do i18next.
+   */
   const locale =
     i18n.language === "en"
       ? "en-US"
@@ -202,13 +274,25 @@ export default function ProjectMazuay() {
     <>
       <Navbar />
 
-      <section className="relative min-h-screen overflow-x-hidden bg-[#f5f5f7] px-3 pt-28 pb-20 text-[#333846] sm:px-4">
-        {/* ---------- BACKGROUND INSTITUCIONAL ---------- */}
-        <div className="pointer-events-none absolute inset-0">
-          {/* gradiente base */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f5f5f7] via-white to-[#f5f5f7]" />
+      <section className="relative min-h-[100dvh] overflow-hidden bg-[#f5f5f7] px-3 pt-28 pb-20 text-[#333846] sm:px-4">
+        {/* Camada de fundo: vídeo + gradiente + glows + grid sutil */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          {/* Vídeo de fundo em loop */}
+          <div className="absolute inset-0 overflow-hidden">
+            <video
+              className="h-full w-full object-cover opacity-60"
+              src="/videos/ProjectMazuay.webm"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          </div>
 
-          {/* glows navy/slate */}
+          {/* Gradiente sobre o vídeo para reforçar a identidade visual */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1c2846]/65 via-[#1c2846]/35 to-[#1c2846]/65" />
+
+          {/* Glows animados para dar sensação de profundidade */}
           <motion.div
             className="absolute left-[-10%] top-[-12%] h-[420px] w-[420px] rounded-full bg-[#1c2846]/20 blur-[140px]"
             animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
@@ -230,39 +314,49 @@ export default function ProjectMazuay() {
           <div className="absolute left-1/2 top-[35%] h-[260px] w-[420px] -translate-x-1/2 rounded-full bg-[#1c2846]/10 blur-[110px] opacity-60" />
         </div>
 
-        {/* grid técnico bem sutil */}
+        {/* Grid técnico sutil sobre o fundo (efeito visual, sem interação) */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-multiply">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.5)_1px,transparent_1px)] bg-[length:80px_80px]" />
           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(148,163,184,0.45)_1px,transparent_1px)] bg-[length:80px_80px]" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl space-y-10 md:space-y-12">
-          {/* HEADER / HERO */}
+          {/* HEADER / HERO com título, subtítulo e métricas principais */}
           <motion.header
             initial="hidden"
             animate="visible"
             variants={sectionVariant}
           >
-            <span className="text-xs uppercase tracking-[0.35em] text-[#1c2846]">
-              {t("projects.sectionEyebrow")}
-            </span>
+            <div className="relative inline-block">
+              <span className="relative z-10 text-xs uppercase tracking-[0.35em] text-[#4FAF95] drop-shadow-[0_0_16px_rgba(79,175,149,0.9)]">
+                {t("projects.sectionEyebrow")}
+              </span>
+              <div className="pointer-events-none absolute inset-x-[-12px] top-1/2 -z-10 h-7 -translate-y-1/2 rounded-full bg-[#4FAF95]/25 blur-xl" />
+            </div>
 
             <div className="mt-4 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
-                <h1 className="text-3xl font-semibold tracking-tight text-[#1c2846] md:text-5xl">
+                <h1
+                  className="
+      text-3xl md:text-5xl font-semibold tracking-tight
+      text-[#1c2846]
+      drop-shadow-[0_0_18px_rgba(79,175,149,0.85)]
+    "
+                >
                   {t("projects.projectName")}
                 </h1>
-                <h2 className="mt-1 text-2xl font-light text-[#333846]">
+
+                <h2 className="mt-1 bg-gradient-to-r from-[#4FAF95] via-[#1F6F5C] to-[#4FAF95] bg-clip-text text-2xl font-semibold text-transparent drop-shadow-[0_0_22px_rgba(31,111,92,0.85)]">
                   {t("projects.projectSubtitle")}
                 </h2>
               </div>
             </div>
 
-            <p className="mt-4 max-w-6xl text-sm text-[#333846] md:text-base">
+            <p className="mt-4 max-w-6xl text-sm text-[#d6d6d6] md:text-base">
               {t("projectMazuay.header.lead")}
             </p>
 
-            {/* MÉTRICAS PRINCIPAIS */}
+            {/* Métricas principais do projeto (localização, área, cobertura, créditos) */}
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <MetricCard
                 label={t("projectMazuay.metrics.locationLabel") || "Localização"}
@@ -310,7 +404,7 @@ export default function ProjectMazuay() {
             </div>
           </motion.header>
 
-          {/* LAYOUT: SIDEBAR + CONTEÚDO */}
+          {/* LAYOUT PRINCIPAL: sidebar de navegação + conteúdo em acordeões */}
           <motion.div
             custom={1}
             initial="hidden"
@@ -318,10 +412,10 @@ export default function ProjectMazuay() {
             variants={sectionVariant}
             className="grid max-w-full gap-8 md:grid-cols-[230px_minmax(0,1fr)]"
           >
-            {/* SIDEBAR */}
+            {/* SIDEBAR (navegação entre seções) */}
             <aside className="min-w-0 md:pt-4">
-              {/* Mobile: navegação horizontal */}
-              <div className="mb-2 text-[0.65rem] uppercase tracking-[0.2em] text-[#333846]/60 md:hidden">
+              {/* Navegação mobile (horizontal) */}
+              <div className="text-[0.65rem] uppercase tracking-[0.22em] text-[#d6d6d6]/90 drop-shadow-[0_0_8px_rgba(0,0,0,0.35)] md:hidden">
                 {t("projectMazuay.ui.sectionsLabel") || "Navegação do projeto"}
               </div>
               <div className="no-scrollbar mb-2 overflow-x-auto md:hidden">
@@ -334,8 +428,8 @@ export default function ProjectMazuay() {
                         whitespace-nowrap rounded-full border px-3 py-1.5 text-xs
                         ${
                           activeSection === id
-                            ? "border-[#1c2846] bg-[#1c2846] text-white"
-                            : "border-[#d6d6d6] bg-white/80 text-[#333846]/70 hover:text-[#1c2846]"
+                            ? "border-[#1F6F5C] bg-[#1F6F5C] text-white"
+                            : "border-[#d6d6d6] bg-white/80 text-[#333846]/70 hover:text-[#1F6F5C]"
                         }
                       `}
                     >
@@ -359,9 +453,9 @@ export default function ProjectMazuay() {
                 </div>
               </div>
 
-              {/* Desktop: lista vertical */}
+              {/* Navegação desktop (lista vertical fixa) */}
               <div className="sticky top-28 hidden space-y-3 text-sm md:block">
-                <p className="text-[0.65rem] uppercase tracking-[0.22em] text-[#1c2846]">
+                <p className="text-[0.65rem] uppercase tracking-[0.22em] text-[#d6d6d6]/90 drop-shadow-[0_0_8px_rgba(0,0,0,0.35)]">
                   {t("projectMazuay.ui.sectionsLabel") ||
                     "Navegação do projeto"}
                 </p>
@@ -377,8 +471,8 @@ export default function ProjectMazuay() {
                         transition-all
                         ${
                           activeSection === id
-                            ? "border-[#1c2846] bg-[#1c2846] text-white shadow-[0_0_0_1px_rgba(28,40,70,0.6)]"
-                            : "border-[#d6d6d6] bg-white/90 text-[#333846]/75 hover:bg-white"
+                            ? "border-[#1F6F5C] bg-[#1F6F5C] text-white shadow-[0_0_0_1px_rgba(31,111,92,0.6)]"
+                            : "border-[#d6d6d6] bg-white/90 text-[#333846]/75 hover:border-[#4FAF95] hover:text-[#1F6F5C]"
                         }
                       `}
                     >
@@ -404,7 +498,7 @@ export default function ProjectMazuay() {
                           h-1.5 w-1.5 rounded-full
                           ${
                             activeSection === id
-                              ? "bg-white"
+                              ? "bg-[#4FAF95]"
                               : "bg-[#333846]/40"
                           }
                         `}
@@ -490,7 +584,7 @@ export default function ProjectMazuay() {
                 </div>
               </AccordionItem>
 
-              {/* 2. NATUREZA & CRÉDITOS */}
+              {/* 2. NATUREZA & CRÉDITOS (biodiversidade e potencial de créditos) */}
               <AccordionItem
                 id="nature"
                 eyebrow={
@@ -547,7 +641,7 @@ export default function ProjectMazuay() {
                 </div>
               </AccordionItem>
 
-              {/* 3. MONITORAMENTO (TEMPO REAL + SATÉLITE) */}
+              {/* 3. MONITORAMENTO (tempo real + satélite) */}
               <AccordionItem
                 id="monitoring"
                 eyebrow={
@@ -644,13 +738,14 @@ export default function ProjectMazuay() {
                               </p>
                             </div>
 
+                            {/* Grade de imagens de satélite com abertura em lightbox */}
                             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                               {satelliteImages.map((img, index) => (
                                 <button
                                   key={img.src}
                                   type="button"
                                   onClick={() => openLightbox(index)}
-                                  className="group overflow-hidden rounded-xl border border-[#d6d6d6] bg-white/95 focus:outline-none focus:ring-2 focus:ring-[#1c2846]/60"
+                                  className="group overflow-hidden rounded-xl border border-[#d6d6d6] bg-white/95 focus:outline-none focus:ring-2 focus:ring-[#1F6F5C]/60"
                                 >
                                   <img
                                     src={img.src}
@@ -672,7 +767,7 @@ export default function ProjectMazuay() {
                 </div>
               </AccordionItem>
 
-              {/* 4. IMPACTOS */}
+              {/* 4. IMPACTOS (climático, social e ambiental) */}
               <AccordionItem
                 id="impacts"
                 eyebrow={
@@ -727,7 +822,7 @@ export default function ProjectMazuay() {
                 </div>
               </AccordionItem>
 
-              {/* 5. GOVERNANÇA & TRANSPARÊNCIA */}
+              {/* 5. GOVERNANÇA & TRANSPARÊNCIA (blockchain, relatório, ODS) */}
               <AccordionItem
                 id="governance"
                 eyebrow={
@@ -744,7 +839,7 @@ export default function ProjectMazuay() {
                 }
               >
                 <div className="space-y-6">
-                  {/* Blockchain */}
+                  {/* Blockchain e rastreabilidade */}
                   <div>
                     <p className="text-sm text-[#333846]">
                       {t("projectMazuay.blockchain.p1")}
@@ -768,13 +863,13 @@ export default function ProjectMazuay() {
                       href="https://dash.betteruseblockchain.com/transparency-portal/9e826be8-4b83-45db-a11a-4cc10ba04677"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-2 inline-block text-sm font-semibold text-[#1c2846] underline underline-offset-4 hover:text-[#111827]"
+                      className="mt-2 inline-block text-sm font-semibold text-[#1F6F5C] underline underline-offset-4 hover:text-[#145445]"
                     >
                       {t("projectMazuay.blockchain.ctaLabel")}
                     </a>
                   </div>
 
-                  {/* Relatório */}
+                  {/* Relatório integrado do projeto */}
                   <div className="border-t border-[#d6d6d6] pt-5">
                     <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#1c2846]">
                       {t("projectMazuay.report.heading")}
@@ -793,7 +888,7 @@ export default function ProjectMazuay() {
                     </ul>
                   </div>
 
-                  {/* ODS */}
+                  {/* ODS vinculados ao projeto */}
                   <div className="border-t border-[#d6d6d6] pt-5">
                     <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#1c2846]">
                       {t("projectMazuay.sdgs.heading")}
@@ -823,7 +918,7 @@ export default function ProjectMazuay() {
                 </div>
               </AccordionItem>
 
-              {/* CTA FINAL */}
+              {/* CTA FINAL: certificação + botões de contato / voltar para home */}
               <motion.div
                 custom={2}
                 initial="hidden"
@@ -831,26 +926,30 @@ export default function ProjectMazuay() {
                 variants={sectionVariant}
                 className="flex flex-col gap-4 pt-4"
               >
-                {/* Logo CCB */}
+                {/* Logo CCB (certificação do projeto) */}
                 <div className="mb-8 flex justify-center">
                   <img
                     src="/images/Logos/ccb.webp"
                     alt="Certificação CCB"
-                    className="w-64 opacity-90 md:w-[28rem]"
                     loading="lazy"
+                    className="
+      w-64 md:w-[28rem]
+      drop-shadow-[0_0_18px_rgba(79,175,149,0.85)]
+    "
                   />
                 </div>
 
-                {/* Botões */}
+                {/* Botões de ação */}
                 <div className="flex w-full flex-col gap-4 md:flex-row md:items-center md:justify-between">
                   <button
-  onClick={() => {
-    window.location.href = "/?scroll=contact";
-  }}
-  className="inline-flex w-full items-center justify-center rounded-full border border-[#1c2846] bg-[#1c2846] px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white transition-all hover:bg-[#111827] md:w-auto md:px-8"
->
-  {t("projectMazuay.cta.talkToTeam")}
-</button>
+                    onClick={() => {
+                      navigate({ pathname: "/", hash: "#contact" });
+                    }}
+                    className="inline-flex w-full items-center justify-center rounded-full border border-[#1F6F5C] bg-[#1F6F5C] px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white transition-all hover:bg-[#145445] md:w-auto md:px-8"
+                  >
+                    {t("projectMazuay.cta.talkToTeam")}
+                  </button>
+
                   <a
                     href="/"
                     className="
@@ -859,7 +958,7 @@ export default function ProjectMazuay() {
                       bg-white/90 px-6 py-3 text-xs
                       font-semibold uppercase tracking-[0.22em]
                       text-[#333846] transition-all
-                      hover:border-[#1c2846] hover:bg-[#f5f5f7]
+                      hover:border-[#1F6F5C] hover:text-[#1F6F5C] hover:bg-[#f5f5f7]
                       md:w-auto
                     "
                   >
@@ -889,15 +988,15 @@ export default function ProjectMazuay() {
                 transition={{ duration: 0.25, ease: "easeOut" }}
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* Botão fechar */}
+                {/* Botão fechar do lightbox */}
                 <button
                   onClick={closeLightbox}
-                  className="absolute -top-10 right-0 flex h-8 w-8 items-center justify-center rounded-full border border-white/30 bg-black/60 text-xs text-white hover:bg-white/10"
+                  className="absolute -top-10 right-0 flex h-8 w-8 items-center justify-center rounded-full border border-white/30 bg-black/60 text-xs text-white hover:bg:white/10"
                 >
                   ✕
                 </button>
 
-                {/* Imagem */}
+                {/* Imagem ampliada */}
                 <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/60">
                   <img
                     src={satelliteImages[lightboxIndex].src}
@@ -907,7 +1006,7 @@ export default function ProjectMazuay() {
                   />
                 </div>
 
-                {/* Caption + navegação */}
+                {/* Legenda e navegação dentro do lightbox */}
                 <div className="mt-3 flex items-center justify-between gap-4 text-xs text-white/75">
                   <span className="truncate">
                     {t(satelliteImages[lightboxIndex].captionKey)}
@@ -916,13 +1015,13 @@ export default function ProjectMazuay() {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={showPrev}
-                      className="rounded-full border border-white/30 bg-white/5 px-3 py-1 text-[0.7rem] uppercase tracking-[0.18em] hover:bg-white/10"
+                      className="rounded-full border border-[#4FAF95]/80 bg:white/5 px-3 py-1 text-[0.7rem] uppercase tracking-[0.18em] hover:bg:white/10"
                     >
                       ← {t("projectMazuay.satellite.ui.prev") || "Anterior"}
                     </button>
                     <button
                       onClick={showNext}
-                      className="rounded-full border border-[#1c2846] bg-[#1c2846]/40 px-3 py-1 text-[0.7rem] uppercase tracking-[0.18em] hover:bg-[#1c2846]"
+                      className="rounded-full border border-[#1F6F5C] bg-[#1F6F5C]/75 px-3 py-1 text-[0.7rem] uppercase tracking-[0.18em] hover:bg-[#1F6F5C]"
                     >
                       {t("projectMazuay.satellite.ui.next") || "Próxima"} →
                     </button>
