@@ -1,12 +1,144 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
+    <!-- Configuração básica -->
     <meta charset="UTF-8" />
-    <link rel="icon" href="assets/logo-stock-green.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stock Green Asset</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <!-- Título SEO otimizado -->
+    <title>Stock Green Asset – Créditos de Carbono, ESG e Economia de Baixo Carbono</title>
+
+    <!-- Meta description -->
+    <meta
+      name="description"
+      content="A Stock Green Asset, parte do ecossistema Stock Capital, é focada em economia de baixo carbono, créditos de carbono, governança ESG e projetos ambientais certificados no Brasil e Argentina."
+    />
+
+    <!-- Keywords -->
+    <meta
+      name="keywords"
+      content="Stock Green Asset, Stock Capital, créditos de carbono, carbono, ESG, GHG Protocol, economia de baixo carbono, sustentabilidade, mercado de carbono, projetos ambientais, Brasil, Argentina"
+    />
+
+    <!-- Robots -->
+    <meta name="robots" content="index,follow" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/logo-stock-green.svg" type="image/svg+xml" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://stockgreenasset.com.br/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Stock Green Asset" />
+    <meta
+      property="og:title"
+      content="Stock Green Asset – Soluções em Economia de Baixo Carbono e ESG"
+    />
+    <meta
+      property="og:description"
+      content="Projetos de créditos de carbono, governança ESG e soluções financeiras sustentáveis conectadas ao ecossistema Stock Capital."
+    />
+    <!-- Ajuste o caminho da imagem OG quando tiver o arquivo final -->
+    <meta property="og:image" content="/og-image/og-image.jpg" />
+    <meta name="twitter:image" content="/og-image/og-image.jpg" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Stock Green Asset – Low Carbon Economy & ESG" />
+    <meta
+      name="twitter:description"
+      content="Economia de baixo carbono, créditos de carbono e governança ESG com transparência e segurança."
+    />
+    <meta name="twitter:image" content="https://stockgreenasset.com.br/og-image/og-image.jpg" />
+
+    <!-- Cor do navegador -->
+    <meta name="theme-color" content="#020617" />
+
+    <!-- ========================================================= -->
+    <!-- 📌 SCHEMA.ORG - DADOS ESTRUTURADOS (Google SEO)           -->
+    <!-- ========================================================= -->
+
+    <!-- Corporation / Marca -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Corporation",
+      "name": "Stock Capital",
+      "brand": {
+        "@type": "Brand",
+        "name": "Stock Green Asset"
+      },
+      "url": "https://stockgreenasset.com.br",
+      "logo": "https://stockgreenasset.com.br/assets/logo-stock-green.svg",
+      "description": "Multinacional com operações no Brasil e Argentina, especializada em créditos de carbono, economia de baixo carbono, governança ESG e projetos ambientais certificados.",
+      "foundingLocation": "Brasil",
+      "areaServed": ["Brasil", "Argentina"],
+      "slogan": "Shaping the Future and Transforming the World Around You.",
+      "sameAs": [
+        "https://www.linkedin.com/company/stockcapital"
+      ]
+    }
+    </script>
+
+    <!-- Services -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Carbon Credits, ESG Governance, GHG Protocol",
+      "provider": {
+        "@type": "Corporation",
+        "name": "Stock Capital",
+        "brand": {
+          "@type": "Brand",
+          "name": "Stock Green Asset"
+        }
+      },
+      "url": "https://stockgreenasset.com.br",
+      "description": "Soluções em créditos de carbono certificados, governança ESG, inventário de emissões (GHG Protocol) e projetos ambientais em conformidade com padrões internacionais."
+    }
+    </script>
+
+    <!-- Project: REDD+ Mazuay -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Project",
+      "name": "Stock Carbon – Mazuay REDD+",
+      "description": "Projeto REDD+ localizado em Silves, Amazonas, focado na conservação de 989,34 hectares, com 18.697 árvores catalogadas, 76 espécies e governança via blockchain. Estimativa de 718.455,73 créditos de carbono em 20 anos.",
+      "location": "Silves, Amazonas, Brasil",
+      "identifier": "REDD+ Mazuay",
+      "url": "https://stockgreenasset.com.br",
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Área total", "value": "989,34 ha" },
+        { "@type": "PropertyValue", "name": "Vegetação nativa", "value": "966,42 ha (97%)" },
+        { "@type": "PropertyValue", "name": "Árvores catalogadas", "value": "18.697" },
+        { "@type": "PropertyValue", "name": "Espécies", "value": "76" },
+        { "@type": "PropertyValue", "name": "Créditos estimados", "value": "718.455,73 (20 anos)" }
+      ]
+    }
+    </script>
+
+    <!-- Project: Verra 5343 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Project",
+      "name": "Verra Project ID 5343",
+      "description": "Projeto ambiental em processo de validação na plataforma Verra.",
+      "identifier": "5343",
+      "url": "https://stockgreenasset.com.br"
+    }
+    </script>
+
   </head>
-  <body>
+
+  <body class="bg-slate-950 text-slate-50">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
