@@ -24,7 +24,6 @@
       "sustainabilitybonds": "Sustainability bonds",
       "governance": "Governance",
       "team": "Team",
-      "advisoryBoard": "Advisory Board",
       "partners": "Our Partners",
       "contact": "Contact"   
     },
@@ -286,19 +285,11 @@
       "light": "Team"
     },
     "coreSection": "Executive Team",
-    "advisorySection": "Advisory Board",
     "core": {
       "augusto": { "role": "Chairman & CEO" },
       "axel": { "role": "COO" },
       "igorVille": { "role": "Compliance Officer" },
       "igorDudeque": { "role": "Chief Investment Officer" }
-    },
-    "advisory": {
-      "celso": { "role": "Advisor" },
-      "patrick": { "role": "Advisor" },
-      "alberto": { "role": "Advisor" },
-      "kaline": { "role": "Advisor" },
-      "ortiz": { "role": "Advisor" }
     }
   },
 

@@ -32,44 +32,6 @@ const coreTeam = [
   },
 ];
 
-const advisory = [
-  {
-    name: "Celso C Souza",
-    roleKey: "team.advisory.celso.role",
-    image: "Celso.webp",
-    path: "Advisory",
-    linkedin: "https://www.linkedin.com/in/celso-c-souza-01255b52/",
-  },
-  {
-    name: "Patrick Sousa",
-    roleKey: "team.advisory.patrick.role",
-    image: "Patrick.webp",
-    path: "Advisory",
-    linkedin: "https://www.linkedin.com/in/patrickasousa/",
-  },
-  {
-    name: "Alberto Malta",
-    roleKey: "team.advisory.alberto.role",
-    image: "Alberto.webp",
-    path: "Advisory",
-    linkedin: "https://www.linkedin.com/in/albertomjunior/",
-  },
-  {
-    name: "Kaline Cassemiro",
-    roleKey: "team.advisory.kaline.role",
-    image: "Kaline.webp",
-    path: "Advisory",
-    linkedin: "https://www.linkedin.com/in/kaline-cassemiro-lubian/",
-  },
-  {
-    name: "Artêmio Picanço",
-    roleKey: "team.advisory.ortiz.role",
-    image: "Artemio.webp",
-    path: "Advisory",
-    linkedin:
-      "https://www.linkedin.com/in/art%C3%AAmio-pican%C3%A7o-25a842115/",
-  },
-];
 
 const containerVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -213,70 +175,6 @@ export function Team() {
           </div>
         </motion.div>
 
-        {/* ADVISORY */}
-        <motion.div
-          id="advisory"
-          className="mt-16 scroll-mt-24"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0 }}
-        >
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1c2846]">
-            {t("team.advisorySection")}
-          </p>
-
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-            {advisory.map((member) => {
-              const handleClick = () => {
-                if (member.linkedin) {
-                  window.open(member.linkedin, "_blank", "noopener,noreferrer");
-                }
-              };
-
-              return (
-                <motion.div
-                  key={member.name}
-                  variants={cardVariants}
-                  className="
-                    overflow-hidden rounded-3xl
-                    border border-[#d6d6d6]
-                    bg-white/90
-                    backdrop-blur-sm
-                    shadow-[0_18px_40px_rgba(0,0,0,0.04)]
-                  "
-                >
-                  <div className="aspect-[3/4]">
-                    <img
-                      src={`/images/Advisory/${member.image}`}
-                      alt={member.name}
-                      loading="lazy"
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-
-                  <div className="p-4">
-                    <motion.button
-                      type="button"
-                      onClick={handleClick}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.97 }}
-                      className="group block w-full text-left"
-                    >
-                      <p className="text-sm font-medium text-[#1c2846] transition-colors group-hover:text-[#333846]">
-                        {member.name}
-                      </p>
-                      <p className="mt-1 text-xs text-[#333846]/80 group-hover:text-[#1c2846]">
-                        {t(member.roleKey)}
-                      </p>
-                      <div className="mt-2 h-px w-0 bg-[#1c2846] transition-all duration-300 group-hover:w-full" />
-                    </motion.button>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
